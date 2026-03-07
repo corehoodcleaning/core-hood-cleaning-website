@@ -1,0 +1,94 @@
+import type { Metadata } from 'next'
+import Image from 'next/image'
+import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'Hood Cleaning Blog | San Diego Kitchen Compliance Tips | Core Hood Cleaning',
+  description: 'Expert advice on commercial kitchen hood cleaning, NFPA 96 compliance, grease fire prevention, and restaurant maintenance in San Diego.',
+  alternates: { canonical: 'https://www.corehoodcleaning.com/blog' }
+}
+
+const POSTS = [
+  { slug: 'how-often-should-restaurant-hood-be-cleaned', title: 'How Often Should a Restaurant Hood Be Cleaned? (NFPA 96 Guide)', date: 'February 2025', excerpt: 'NFPA 96 sets the cleaning frequency based on your cooking type and volume. Here\'s exactly what the code requires — and what it means for your San Diego restaurant.', img: '/images/before-after-1.jpg', category: 'Compliance' },
+  { slug: 'what-is-nfpa-96', title: 'What Is NFPA 96? A Restaurant Owner\'s Plain-English Guide', date: 'January 2025', excerpt: 'NFPA 96 is the fire code standard every commercial kitchen must follow. This guide breaks down what it covers, why it matters, and what happens if you\'re not compliant.', img: '/images/tech-rooftop-palms.jpg', category: 'Compliance' },
+  { slug: 'restaurant-fire-prevention-san-diego', title: 'Restaurant Fire Prevention in San Diego: What Every Owner Needs to Know', date: 'January 2025', excerpt: 'Grease fires are the #1 cause of restaurant fires in California. Here\'s how to protect your San Diego restaurant with proper exhaust maintenance and fire prevention.', img: '/images/before-after-2.jpg', category: 'Fire Safety' },
+  { slug: 'hood-cleaning-cost-san-diego', title: 'How Much Does Hood Cleaning Cost in San Diego? (2025 Pricing Guide)', date: 'December 2024', excerpt: 'Hood cleaning costs in San Diego range from $150 to $500+ depending on system size and frequency. Here\'s a transparent breakdown of what affects pricing.', img: '/images/team-rooftop.jpg', category: 'Pricing' },
+]
+
+export default function BlogPage() {
+  return (
+    <>
+      <nav>
+        <div className="nav-inner">
+          <Link href="/" className="nav-logo">
+            <Image src="/images/core-logo.png" alt="Core Services" width={120} height={40} className="nav-logo-img" />
+            <div className="nav-logo-text">Core Hood Cleaning<span className="nav-logo-sub">San Diego, CA · NFPA 96 Certified</span></div>
+          </Link>
+          <ul className="nav-links">
+            <li><Link href="/#services">Services</Link></li>
+            <li><Link href="/#gallery">Work</Link></li>
+            <li><Link href="/about">About</Link></li>
+            <li><Link href="/blog">Blog</Link></li>
+          </ul>
+          <div className="nav-cta">
+            <a href="tel:8583612570" className="nav-phone">📞 (858) 361-2570</a>
+            <a href="https://api.leadconnectorhq.com/widget/bookings/corehoodcleaning" className="btn-primary" style={{padding:'10px 20px', fontSize:'0.85rem'}}>Book Now</a>
+          </div>
+        </div>
+      </nav>
+
+      <section style={{paddingTop:'120px', paddingBottom:'64px', background:'var(--true-blue)'}}>
+        <div className="container" style={{maxWidth:'800px'}}>
+          <p className="section-label">Resources</p>
+          <h1 className="section-title light" style={{marginBottom:'16px'}}>Hood Cleaning Blog</h1>
+          <p style={{color:'rgba(238,239,226,0.6)', fontSize:'1rem', lineHeight:'1.7'}}>
+            Expert guidance on commercial kitchen compliance, grease fire prevention, and NFPA 96 standards for San Diego restaurants.
+          </p>
+        </div>
+      </section>
+
+      <section style={{padding:'80px 0', background:'var(--off-white)'}}>
+        <div className="container">
+          <div style={{display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(320px, 1fr))', gap:'28px'}}>
+            {POSTS.map(post => (
+              <Link key={post.slug} href={`/blog/${post.slug}`} style={{display:'block', background:'var(--white)', borderRadius:'8px', overflow:'hidden', border:'1px solid var(--gray-light)', transition:'all 0.25s', textDecoration:'none', color:'inherit'}}>
+                <div style={{position:'relative', aspectRatio:'16/9', overflow:'hidden'}}>
+                  <Image src={post.img} alt={post.title} fill style={{objectFit:'cover', transition:'transform 0.4s'}} sizes="(max-width:768px) 100vw, 50vw" />
+                </div>
+                <div style={{padding:'28px'}}>
+                  <div style={{display:'flex', gap:'12px', alignItems:'center', marginBottom:'14px'}}>
+                    <span style={{fontFamily:'var(--font-display)', fontSize:'0.7rem', fontWeight:800, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--rust)', background:'rgba(137,29,27,0.1)', padding:'4px 10px', borderRadius:'4px'}}>{post.category}</span>
+                    <span style={{fontSize:'0.78rem', color:'var(--gray-mid)'}}>{post.date}</span>
+                  </div>
+                  <h2 style={{fontFamily:'var(--font-display)', fontSize:'1.25rem', fontWeight:900, textTransform:'uppercase', lineHeight:'1.2', color:'var(--black)', marginBottom:'12px'}}>{post.title}</h2>
+                  <p style={{fontSize:'0.875rem', color:'var(--gray-text)', lineHeight:'1.7'}}>{post.excerpt}</p>
+                  <div style={{marginTop:'20px', fontFamily:'var(--font-display)', fontSize:'0.85rem', fontWeight:800, textTransform:'uppercase', letterSpacing:'0.06em', color:'var(--rust)'}}>Read More →</div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section style={{padding:'80px 0', background:'var(--rust)'}}>
+        <div className="cta-inner">
+          <h2>Need Hood Cleaning?</h2>
+          <p>San Diego&apos;s NFPA 96 certified team — free quotes, same-day response.</p>
+          <div className="cta-actions">
+            <a href="https://api.leadconnectorhq.com/widget/bookings/corehoodcleaning" className="btn-white">📅 Book a Quote</a>
+            <a href="tel:8583612570" className="btn-secondary">📞 (858) 361-2570</a>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div className="container">
+          <div className="footer-bottom" style={{paddingTop:'24px', justifyContent:'center', flexDirection:'column', gap:'8px', textAlign:'center'}}>
+            <Link href="/" style={{color:'rgba(238,239,226,0.4)', fontSize:'0.85rem'}}>← Back to Home</Link>
+            <p>© 2025 Core Hood Cleaning. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </>
+  )
+}

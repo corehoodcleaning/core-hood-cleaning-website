@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -32,18 +33,67 @@ const FAQS = [
   { q: 'Do you offer emergency hood cleaning?', a: "Yes — 24/7 emergency service is available. If you're facing a health inspection, fire marshal visit, or grease emergency, call us at (858) 361-2570 and we'll dispatch immediately." },
 ]
 
+const GALLERY = [
+  { src: '/images/before-after-1.jpg', label: 'Exhaust Duct — Before & After' },
+  { src: '/images/before-after-2.jpg', label: 'Hood Interior — Before & After' },
+  { src: '/images/before-after-3.jpg', label: 'Hood Seams — Before & After' },
+  { src: '/images/before-after-4.png', label: 'Exhaust Fan — Before & After' },
+  { src: '/images/before-after-5.png', label: 'Fan Housing — Before & After' },
+  { src: '/images/after-clean-hood.jpg', label: 'Completed Clean — Hood Interior' },
+]
+
+const SERVE = [
+  {
+    title: 'Restaurants',
+    desc: 'From downtown to Oceanside — all sizes, all cuisines across San Diego County.',
+    img: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
+  },
+  {
+    title: 'Bars & Breweries',
+    desc: 'Craft breweries and bars throughout San Diego that need compliant kitchen exhaust.',
+    img: 'https://images.unsplash.com/photo-1559329255-be90b7ad9c76?w=800&q=80',
+  },
+  {
+    title: 'Schools & Hospitals',
+    desc: 'Institutional kitchens that require certified, documented compliance services.',
+    img: 'https://images.unsplash.com/photo-1567521464027-f127ff144326?w=800&q=80',
+  },
+  {
+    title: 'Hotels & Resorts',
+    desc: "San Diego's hospitality industry trusts Core for reliable kitchen maintenance.",
+    img: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80',
+  },
+  {
+    title: 'Commercial Commissaries',
+    desc: 'Large-scale food production facilities across San Diego County.',
+    img: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80',
+  },
+  {
+    title: 'Food Trucks',
+    desc: 'Mobile food vendors operating throughout San Diego — we keep you compliant.',
+    img: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=800&q=80',
+  },
+]
+
 export default function HomePage() {
   return (
     <>
       {/* NAV */}
       <nav>
         <div className="nav-inner">
-          <div className="nav-logo">CORE <span>HOOD</span> CLEANING</div>
+          <Link href="/" className="nav-logo">
+            <Image src="/images/core-logo.png" alt="Core Services" width={120} height={40} className="nav-logo-img" />
+            <div className="nav-logo-text">
+              Core Hood Cleaning
+              <span className="nav-logo-sub">San Diego, CA · NFPA 96 Certified</span>
+            </div>
+          </Link>
           <ul className="nav-links">
             <li><a href="#services">Services</a></li>
-            <li><a href="#why-core">Why Core</a></li>
+            <li><a href="#gallery">Work</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="#locations">Locations</a></li>
-            <li><a href="#faq">FAQ</a></li>
+            <li><Link href="/blog">Blog</Link></li>
           </ul>
           <div className="nav-cta">
             <a href="tel:8583612570" className="nav-phone">📞 (858) 361-2570</a>
@@ -54,8 +104,10 @@ export default function HomePage() {
 
       {/* HERO */}
       <section className="hero">
-        <div className="hero-bg" />
-        <div className="hero-grid" />
+        <div className="hero-bg-photo">
+          <Image src="/images/tech-rooftop-palms.jpg" alt="Core Services technician on San Diego rooftop" fill style={{objectFit:'cover',objectPosition:'center 30%'}} priority />
+        </div>
+        <div className="hero-bg-overlay" />
         <div className="hero-content">
           <div>
             <div className="hero-badge">
@@ -99,23 +151,17 @@ export default function HomePage() {
 
           <div className="hero-card">
             <h3>Get a Free Quote</h3>
-            <p>No pressure. Same-day estimates available.</p>
+            <p>Same-day response · No obligation · NFPA 96 certified</p>
             <a href="https://api.leadconnectorhq.com/widget/bookings/corehoodcleaning" className="btn-primary">
-              📅 Book Online Now
+              📅 Schedule Online
             </a>
             <a href="tel:8583612570" className="call-link">
               📞 (858) 361-2570
             </a>
             <div className="card-trust">
-              <div className="card-trust-item">
-                <span className="icon">✅</span>NFPA 96<br/>Certified
-              </div>
-              <div className="card-trust-item">
-                <span className="icon">🛡️</span>Licensed &<br/>Insured
-              </div>
-              <div className="card-trust-item">
-                <span className="icon">📸</span>Before/After<br/>Photos
-              </div>
+              <div className="card-trust-item"><span className="icon">🏅</span>NFPA 96<br/>Certified</div>
+              <div className="card-trust-item"><span className="icon">⭐</span>40+ Five<br/>Star Reviews</div>
+              <div className="card-trust-item"><span className="icon">🛡️</span>Fully<br/>Insured</div>
             </div>
           </div>
         </div>
@@ -124,11 +170,9 @@ export default function HomePage() {
       {/* TRUST BAR */}
       <div className="trust-bar">
         <div className="trust-bar-inner">
-          <div className="trust-pill"><span className="dot" />NFPA 96 Certified</div>
-          <div className="trust-pill"><span className="dot" />Fully Licensed & Insured</div>
-          <div className="trust-pill"><span className="dot" />Same-Day Service Available</div>
-          <div className="trust-pill"><span className="dot" />Before & After Photo Documentation</div>
-          <div className="trust-pill"><span className="dot" />100% Satisfaction Guarantee</div>
+          {['NFPA 96 Certified', 'Fully Licensed & Insured', 'Same-Day Emergency Service', '200+ San Diego Restaurants Served', 'Photo Documentation Included'].map(t => (
+            <div key={t} className="trust-pill"><span className="dot" />{t}</div>
+          ))}
         </div>
       </div>
 
@@ -136,71 +180,90 @@ export default function HomePage() {
       <section className="services-section" id="services">
         <div className="container">
           <div className="services-header">
-            <div className="section-label">What We Do</div>
-            <h2 className="section-title">Complete Hood Cleaning Services</h2>
+            <p className="section-label">What We Do</p>
+            <h2 className="section-title">Commercial Kitchen<br/>Exhaust Services</h2>
           </div>
           <div className="services-grid">
             <div className="service-card">
               <div className="service-icon">🔥</div>
-              <h3>Professional Hood Cleaning</h3>
-              <p>Full-service commercial kitchen exhaust system cleaning throughout San Diego County. We clean every component to NFPA 96 standards.</p>
+              <h3>Hood Cleaning</h3>
+              <p>Full system pressure washing from hood to rooftop fan. NFPA 96 compliant with photo documentation and compliance certificate included on every service.</p>
               <ul className="service-list">
-                <li>Hood Interior & Exterior Cleaning</li>
-                <li>Plenum & Grease Duct Cleaning</li>
-                <li>Exhaust Fan Cleaning & Service</li>
-                <li>Interior & Exterior Hood Polish</li>
-                <li>Hood Filter Degreasing & Cleaning</li>
-                <li>Before & After Photo Documentation</li>
-                <li>Compliance Certificate Provided</li>
-                <li>Customer Portal Access</li>
+                <li>Hood canopy, filters & plenum</li>
+                <li>Ductwork — full run to rooftop</li>
+                <li>Exhaust fan housing & blades</li>
+                <li>Grease containment & disposal</li>
+                <li>Before/after photos + certificate</li>
               </ul>
-              <a href="https://api.leadconnectorhq.com/widget/bookings/corehoodcleaning" className="btn-primary">Request a Quote</a>
+              <Link href="/services/hood-cleaning" className="btn-primary" style={{fontSize:'0.9rem',padding:'12px 24px'}}>Learn More →</Link>
             </div>
-
             <div className="service-card">
               <div className="service-icon">🔄</div>
-              <h3>Filter Exchange Program</h3>
-              <p>Grease filters are your first line of defense — and one of the most neglected. Our rotating exchange program keeps you compliant and running efficiently.</p>
+              <h3>Filter Exchange</h3>
+              <p>Weekly or bi-weekly clean filter swap programs. Your kitchen always has clean, compliant filters without managing the cleaning yourself.</p>
               <ul className="service-list">
-                <li>Clean Filters Delivered on Schedule</li>
-                <li>Weekly, Bi-Weekly, or Monthly</li>
-                <li>Fire Safety Compliance Maintained</li>
-                <li>Covering Pacific Beach, Mission Valley, Del Mar & more</li>
-                <li>No Contract Required</li>
-                <li>Automated Service Reminders</li>
+                <li>Clean filters every service visit</li>
+                <li>Weekly or bi-weekly schedules</li>
+                <li>Multiple filter types stocked</li>
+                <li>No downtime — swap & go</li>
+                <li>Flat monthly pricing</li>
               </ul>
-              <a href="https://api.leadconnectorhq.com/widget/bookings/corehoodcleaning" className="btn-primary">Start Exchange Program</a>
+              <Link href="/services/filter-exchange" className="btn-primary" style={{fontSize:'0.9rem',padding:'12px 24px'}}>Learn More →</Link>
             </div>
-
-            <div className="service-card">
-              <div className="service-icon">⚡</div>
-              <h3>Emergency & Same-Day Service</h3>
-              <p>Facing a surprise inspection or urgent compliance issue? We dispatch same-day or 24/7 for emergencies anywhere in San Diego County.</p>
-              <ul className="service-list">
-                <li>24/7 Emergency Dispatch</li>
-                <li>Same-Day Availability</li>
-                <li>Fire Marshal Inspection Prep</li>
-                <li>Health Inspector Compliance</li>
-                <li>Urgent Compliance Certificates</li>
-                <li>All San Diego County Locations</li>
-              </ul>
-              <a href="tel:8583612570" className="btn-primary">📞 Call Now — (858) 361-2570</a>
-            </div>
-
             <div className="service-card">
               <div className="service-icon">📋</div>
-              <h3>NFPA 96 Compliance Inspection</h3>
-              <p>Full compliance inspection and certification to ensure your kitchen meets NFPA 96 standards. Required documentation for insurance and fire marshal visits.</p>
+              <h3>NFPA 96 Inspections</h3>
+              <p>Certified compliance inspections to ensure your kitchen meets fire code. Essential for health department visits, insurance, and fire marshal compliance.</p>
               <ul className="service-list">
-                <li>Full NFPA 96 Compliance Audit</li>
-                <li>Written Compliance Report</li>
-                <li>Certificate for Fire Marshal</li>
-                <li>Insurance Documentation</li>
-                <li>Health Code Compliance Review</li>
-                <li>Free Re-Inspection if Needed</li>
+                <li>Full NFPA 96 system inspection</li>
+                <li>Written compliance report</li>
+                <li>Deficiency documentation</li>
+                <li>Inspection sticker & certificate</li>
+                <li>Re-inspection if needed</li>
               </ul>
-              <a href="https://api.leadconnectorhq.com/widget/bookings/corehoodcleaning" className="btn-primary">Book Inspection</a>
+              <Link href="/services/nfpa-inspection" className="btn-primary" style={{fontSize:'0.9rem',padding:'12px 24px'}}>Learn More →</Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* BEFORE/AFTER GALLERY */}
+      <section className="gallery-section" id="gallery">
+        <div className="container">
+          <div className="gallery-header">
+            <p className="section-label" style={{color:'#d47c7b'}}>Our Work</p>
+            <h2 className="section-title light">Before &amp; After</h2>
+            <p style={{color:'rgba(238,239,226,0.5)', marginTop:'16px', fontSize:'1rem'}}>Real results from real San Diego kitchens</p>
+          </div>
+          <div className="gallery-grid">
+            {GALLERY.map((item) => (
+              <div key={item.src} className="gallery-item">
+                <Image src={item.src} alt={item.label} fill style={{objectFit:'cover'}} sizes="(max-width:768px) 100vw, 50vw" />
+                <div className="gallery-item-label">{item.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WHO WE SERVE */}
+      <section className="serve-section" id="who-we-serve">
+        <div className="container">
+          <div className="serve-header">
+            <p className="section-label">Who We Serve</p>
+            <h2 className="section-title">Commercial Hood Cleaning<br/>Throughout San Diego County</h2>
+          </div>
+          <div className="serve-grid">
+            {SERVE.map((item) => (
+              <div key={item.title} className="serve-card">
+                <img src={item.img} alt={item.title} loading="lazy" />
+                <div className="serve-card-overlay" />
+                <div className="serve-card-text">
+                  <h3>{item.title}</h3>
+                  <p>{item.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -210,43 +273,37 @@ export default function HomePage() {
         <div className="container">
           <div className="why-grid">
             <div className="why-left">
-              <div className="section-label">Why Core</div>
-              <h2 className="section-title light" style={{marginBottom:'24px'}}>Built on Work Ethic. Backed by Execution.</h2>
-              <p>We&apos;re not just hood cleaners — we&apos;re San Diego&apos;s trusted partners in keeping your kitchen safe, fire-code compliant, and running at full capacity.</p>
-              <p>We started Core after growing up in the restaurant business. We built our service around what we always wanted as operators: honest pricing, real documentation, and technicians who treat your kitchen like their own.</p>
+              <p className="section-label">Why Core</p>
+              <h2 className="section-title light">San Diego&apos;s Most<br/>Trusted Hood Crew</h2>
+              <p style={{marginTop:'24px'}}>
+                We grew up in the restaurant industry — we know what it means to keep a kitchen running. 
+                Core Hood Cleaning isn&apos;t a franchise or a call center. It&apos;s a San Diego crew that shows 
+                up on time, does the job right, and gives you the documentation you need.
+              </p>
+              <p>
+                Every technician is trained to NFPA 96 standards. Every job includes photo documentation 
+                and a compliance certificate. No shortcuts, no upsells you don&apos;t need.
+              </p>
               <div className="why-stats">
-                <div className="why-stat">
-                  <div className="big">200+</div>
-                  <div className="small">Restaurants Served</div>
-                </div>
-                <div className="why-stat">
-                  <div className="big">5.0★</div>
-                  <div className="small">Google Rating</div>
-                </div>
-                <div className="why-stat">
-                  <div className="big">24/7</div>
-                  <div className="small">Emergency Service</div>
-                </div>
-                <div className="why-stat">
-                  <div className="big">100%</div>
-                  <div className="small">Satisfaction Guarantee</div>
-                </div>
+                <div className="why-stat"><div className="big">200+</div><div className="small">Restaurants Served</div></div>
+                <div className="why-stat"><div className="big">40+</div><div className="small">5-Star Reviews</div></div>
+                <div className="why-stat"><div className="big">24/7</div><div className="small">Emergency Available</div></div>
+                <div className="why-stat"><div className="big">100%</div><div className="small">Photo Documented</div></div>
               </div>
             </div>
-
             <div className="why-right">
               {[
-                { icon: '📸', title: 'Before & After Documentation', desc: 'Every service includes photo documentation. Proof of work you can show your fire marshal, health inspector, and insurance company.' },
-                { icon: '🔐', title: 'Digital Compliance Portal', desc: 'Access your service history, certificates, and photos anytime from your customer portal. Never scramble for paperwork again.' },
-                { icon: '🔔', title: 'Automated Service Reminders', desc: 'We track your cleaning schedule and send reminders before you fall out of compliance. Stay protected without the admin.' },
-                { icon: '🤝', title: 'Restaurant Industry Roots', desc: "We grew up in the restaurant business. We know what's at stake when a kitchen goes down — and we treat your operation accordingly." },
-                { icon: '⭐', title: 'No-Pressure, Transparent Pricing', desc: 'Flat-rate quotes, no hidden fees. We tell you what it costs upfront and we stand behind the price we quote.' },
-              ].map((item) => (
-                <div className="diff-item" key={item.title}>
-                  <div className="diff-icon">{item.icon}</div>
+                { icon: '📸', title: 'Photo Documentation', desc: 'Before and after photos on every single job. We hand you proof, not promises.' },
+                { icon: '🏅', title: 'NFPA 96 Certified', desc: 'Fully certified technicians. Your compliance certificate is valid for insurance, fire marshal, and health inspections.' },
+                { icon: '🌙', title: 'Night & Weekend Service', desc: 'We work when your kitchen is closed — no disruption to service, no lost revenue.' },
+                { icon: '🤝', title: 'No Long-Term Contracts', desc: 'Month-to-month service. We earn your business every visit, not just once.' },
+                { icon: '📋', title: 'Full Compliance Reports', desc: 'Detailed service reports you can file with your insurance and show any inspector.' },
+              ].map(d => (
+                <div key={d.title} className="diff-item">
+                  <div className="diff-icon">{d.icon}</div>
                   <div>
-                    <h4>{item.title}</h4>
-                    <p>{item.desc}</p>
+                    <h4>{d.title}</h4>
+                    <p>{d.desc}</p>
                   </div>
                 </div>
               ))}
@@ -255,31 +312,36 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* WHO WE SERVE */}
-      <section style={{padding:'96px 0', background:'var(--white)'}}>
+      {/* TEAM / ABOUT */}
+      <section className="team-section" id="about">
         <div className="container">
-          <div style={{textAlign:'center', marginBottom:'64px'}}>
-            <div className="section-label">Who We Serve</div>
-            <h2 className="section-title">Every Commercial Kitchen in San Diego</h2>
-          </div>
-          <div style={{display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(200px, 1fr))', gap:'16px'}}>
-            {[
-              { icon: '🍽️', label: 'Restaurants', desc: 'Fine dining to fast casual' },
-              { icon: '🍺', label: 'Bars & Breweries', desc: 'Craft beer & cocktail venues' },
-              { icon: '🏨', label: 'Hotels & Resorts', desc: "San Diego's hospitality industry" },
-              { icon: '🏫', label: 'Schools & Hospitals', desc: 'Institutional kitchens' },
-              { icon: '🚚', label: 'Food Trucks', desc: 'Mobile food vendors' },
-              { icon: '🏭', label: 'Commissaries', desc: 'Large-scale food production' },
-            ].map((item) => (
-              <div key={item.label} style={{
-                padding:'28px', background:'var(--off-white)', borderRadius:'8px',
-                border:'1px solid var(--gray-light)', textAlign:'center'
-              }}>
-                <div style={{fontSize:'2rem', marginBottom:'12px'}}>{item.icon}</div>
-                <div style={{fontFamily:'var(--font-display)', fontWeight:900, fontSize:'1.1rem', textTransform:'uppercase', marginBottom:'4px'}}>{item.label}</div>
-                <div style={{fontSize:'0.8rem', color:'var(--gray-text)'}}>{item.desc}</div>
+          <div className="team-grid">
+            <div className="team-photo">
+              <Image src="/images/team-rooftop.jpg" alt="Core Hood Cleaning team on San Diego rooftop" width={600} height={500} style={{objectFit:'cover', width:'100%', height:'100%'}} />
+              <div className="team-photo-badge">San Diego, CA · Est. 2022</div>
+            </div>
+            <div className="team-content">
+              <p className="section-label">Our Story</p>
+              <h2 className="section-title light">At the Core<br/>of Every Job</h2>
+              <p style={{marginTop:'24px'}}>
+                Core Hood Cleaning was founded by Chase Mangini, who grew up in the restaurant industry 
+                and saw firsthand how compliance gets treated like a checkbox instead of a commitment.
+              </p>
+              <p>
+                We built Core Services on a different standard: blue-collar work ethic, honest pricing, 
+                and the kind of professionalism that makes restaurant operators actually look forward 
+                to their next service call.
+              </p>
+              <p>
+                Our crew — Team 360 — operates exclusively in San Diego County. Every technician 
+                is NFPA 96 certified, uniformed, and trained to treat your kitchen like their own.
+              </p>
+              <p className="team-tagline">+ At the Core of Every Job +</p>
+              <div style={{marginTop:'32px', display:'flex', gap:'16px', flexWrap:'wrap'}}>
+                <a href="https://api.leadconnectorhq.com/widget/bookings/corehoodcleaning" className="btn-primary">Book a Service</a>
+                <Link href="/about" className="btn-secondary">Meet the Team</Link>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
@@ -288,13 +350,14 @@ export default function HomePage() {
       <section className="reviews-section" id="reviews">
         <div className="container">
           <div className="reviews-header">
-            <div className="section-label">What Clients Say</div>
+            <p className="section-label">Customer Reviews</p>
             <h2 className="section-title">40+ Five-Star Reviews</h2>
-            <div className="stars" style={{fontSize:'1.4rem', marginTop:'12px'}}>★★★★★</div>
+            <div className="stars" style={{marginTop:'16px', textAlign:'center'}}>★★★★★</div>
+            <p style={{textAlign:'center', color:'var(--gray-text)', marginTop:'8px', fontSize:'0.9rem'}}>Rated 5.0 on Google · San Diego County</p>
           </div>
           <div className="reviews-grid">
-            {REVIEWS.map((r) => (
-              <div className="review-card" key={r.name}>
+            {REVIEWS.map(r => (
+              <div key={r.name} className="review-card">
                 <div className="stars">★★★★★</div>
                 <blockquote>&ldquo;{r.text}&rdquo;</blockquote>
                 <div className="reviewer">
@@ -304,11 +367,6 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-          <div style={{textAlign:'center', marginTop:'40px'}}>
-            <a href="https://www.google.com/maps/place/Core+Hood+Cleaning" className="btn-outline-dark" target="_blank" rel="noopener noreferrer">
-              View All Reviews on Google →
-            </a>
-          </div>
         </div>
       </section>
 
@@ -316,42 +374,17 @@ export default function HomePage() {
       <section className="locations-section" id="locations">
         <div className="container">
           <div className="locations-header">
-            <div className="section-label">Service Area</div>
-            <h2 className="section-title">Hood Cleaning Throughout San Diego County</h2>
-            <p style={{color:'var(--gray-text)', marginTop:'16px', maxWidth:'560px', margin:'16px auto 0'}}>
-              We provide NFPA 96 certified commercial hood cleaning to restaurants and commercial kitchens across all of San Diego County.
-            </p>
+            <p className="section-label">Service Area</p>
+            <h2 className="section-title">Serving All of San Diego County</h2>
+            <p style={{color:'var(--gray-text)', marginTop:'16px', textAlign:'center'}}>Commercial hood cleaning in every neighborhood — north county to the border</p>
           </div>
           <div className="locations-grid">
-            {LOCATIONS.map((loc) => {
-              const slug = loc.toLowerCase().replace(/ /g, '-')
-              return (
-                <Link href={`/locations/${slug}`} className="location-chip" key={loc}>
-                  {loc}
-                </Link>
-              )
-            })}
-          </div>
-          <p style={{textAlign:'center', color:'var(--gray-text)', fontSize:'0.9rem'}}>
-            Don&apos;t see your area? <a href="https://api.leadconnectorhq.com/widget/bookings/corehoodcleaning" style={{color:'var(--orange)', fontWeight:600}}>Contact us</a> — we serve all of San Diego County.
-          </p>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="faq-section" id="faq">
-        <div className="container">
-          <div className="faq-header">
-            <div className="section-label">Common Questions</div>
-            <h2 className="section-title">Hood Cleaning FAQ</h2>
-          </div>
-          <div className="faq-grid">
-            {FAQS.map((faq) => (
-              <div className="faq-item" key={faq.q}>
-                <h3>{faq.q}</h3>
-                <p>{faq.a}</p>
-              </div>
+            {LOCATIONS.map(loc => (
+              <Link key={loc} href={`/locations/${loc.toLowerCase().replace(/ /g,'-')}`} className="location-chip">{loc}</Link>
             ))}
+          </div>
+          <div style={{textAlign:'center'}}>
+            <p style={{color:'var(--gray-text)', fontSize:'0.9rem'}}>Don&apos;t see your city? <a href="tel:8583612570" style={{color:'var(--rust)', fontWeight:700}}>Call us — we likely serve your area.</a></p>
           </div>
         </div>
       </section>
@@ -359,15 +392,29 @@ export default function HomePage() {
       {/* CTA */}
       <section className="cta-section">
         <div className="cta-inner">
-          <h2>Ready to Get Compliant?</h2>
-          <p>Join 200+ San Diego restaurants that trust Core for their hood cleaning. Free estimates, same-day availability, NFPA 96 certified.</p>
+          <h2>Ready to Schedule?</h2>
+          <p>Get a free quote today. Same-day response, no obligation, NFPA 96 certified service.</p>
           <div className="cta-actions">
-            <a href="https://api.leadconnectorhq.com/widget/bookings/corehoodcleaning" className="btn-white">
-              📅 Book a Free Quote
-            </a>
-            <a href="tel:8583612570" className="btn-secondary">
-              📞 (858) 361-2570
-            </a>
+            <a href="https://api.leadconnectorhq.com/widget/bookings/corehoodcleaning" className="btn-white">📅 Book Online</a>
+            <a href="tel:8583612570" className="btn-secondary">📞 (858) 361-2570</a>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="faq-section" id="faq">
+        <div className="container">
+          <div className="faq-header">
+            <p className="section-label">Common Questions</p>
+            <h2 className="section-title">Hood Cleaning FAQ</h2>
+          </div>
+          <div className="faq-grid">
+            {FAQS.map(f => (
+              <div key={f.q} className="faq-item">
+                <h3>{f.q}</h3>
+                <p>{f.a}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -377,40 +424,41 @@ export default function HomePage() {
         <div className="container">
           <div className="footer-grid">
             <div className="footer-brand">
-              <div className="nav-logo">CORE <span style={{color:'var(--orange)'}}>HOOD</span> CLEANING</div>
-              <p>San Diego&apos;s premier NFPA 96 certified commercial kitchen hood cleaning company. Trusted by 200+ restaurants across San Diego County.</p>
-              <a href="tel:8583612570" style={{color:'var(--orange)', fontFamily:'var(--font-display)', fontWeight:800, fontSize:'1.2rem'}}>
-                (858) 361-2570
-              </a>
+              <Image src="/images/core-logo.png" alt="Core Services" width={100} height={34} style={{filter:'brightness(0) invert(0.8)'}} />
+              <p>San Diego&apos;s NFPA 96 certified commercial hood cleaning company. Serving restaurants, hotels, schools, and commercial kitchens throughout San Diego County.</p>
+              <span className="footer-tagline">+ At the Core of Every Job +</span>
             </div>
             <div className="footer-col">
               <h4>Services</h4>
               <ul>
-                <li><a href="#services">Hood Cleaning</a></li>
-                <li><a href="#services">Filter Exchange</a></li>
-                <li><a href="#services">Emergency Service</a></li>
-                <li><a href="#services">NFPA 96 Inspection</a></li>
+                <li><Link href="/services/hood-cleaning">Hood Cleaning</Link></li>
+                <li><Link href="/services/filter-exchange">Filter Exchange</Link></li>
+                <li><Link href="/services/nfpa-inspection">NFPA 96 Inspections</Link></li>
+                <li><Link href="/blog">Blog & Resources</Link></li>
               </ul>
             </div>
             <div className="footer-col">
               <h4>Locations</h4>
               <ul>
-                {['La Jolla', 'Pacific Beach', 'Mission Valley', 'Chula Vista', 'Oceanside', 'Carlsbad'].map(l => (
+                {['La Jolla','Pacific Beach','Downtown San Diego','Chula Vista','Oceanside','Carlsbad','Escondido'].map(l => (
                   <li key={l}><Link href={`/locations/${l.toLowerCase().replace(/ /g,'-')}`}>{l}</Link></li>
                 ))}
               </ul>
             </div>
             <div className="footer-col">
               <h4>Contact</h4>
-              <div className="footer-contact-item">📍 5284 Eastgate Mall, San Diego, CA 92121</div>
               <div className="footer-contact-item">📞 <a href="tel:8583612570">(858) 361-2570</a></div>
               <div className="footer-contact-item">✉️ <a href="mailto:chase@corehoodcleaning.com">chase@corehoodcleaning.com</a></div>
-              <div className="footer-contact-item">🕐 Mon–Sun 8AM–10PM · 24/7 Emergency</div>
+              <div className="footer-contact-item">📍 5284 Eastgate Mall<br/>San Diego, CA 92121</div>
+              <div className="footer-contact-item">🕐 24/7 Emergency Service</div>
             </div>
           </div>
           <div className="footer-bottom">
-            <p>© {new Date().getFullYear()} Core Hood Cleaning. All rights reserved. | <a href="/privacy">Privacy Policy</a></p>
-            <p>NFPA 96 Certified · Licensed & Insured · Serving All of San Diego County</p>
+            <p>© 2025 Core Hood Cleaning / Core Services. All rights reserved.</p>
+            <div style={{display:'flex', gap:'24px'}}>
+              <Link href="/privacy">Privacy Policy</Link>
+              <Link href="/terms">Terms of Service</Link>
+            </div>
           </div>
         </div>
       </footer>
