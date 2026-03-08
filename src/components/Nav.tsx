@@ -10,7 +10,7 @@ export default function Nav() {
     <nav>
       <div className="nav-inner">
         <Link href="/" onClick={() => setMenuOpen(false)}>
-          <Image src="/images/core-logo.png" alt="Core Services" width={160} height={84} className="nav-logo-img" />
+          <Image src="/images/core-logo-red.png" alt="Core Services" width={160} height={84} className="nav-logo-img" />
         </Link>
         <ul className="nav-links">
           <li className="nav-dropdown">
@@ -35,9 +35,9 @@ export default function Nav() {
             aria-label="Toggle menu"
             
           >
-            <span style={{display:'block', width:'24px', height:'2px', background:'#1a1a1a'}} />
-            <span style={{display:'block', width:'24px', height:'2px', background:'#1a1a1a'}} />
-            <span style={{display:'block', width:'24px', height:'2px', background:'#1a1a1a'}} />
+            <span style={{display:'block', width:'24px', height:'2px', background:'#9B1C1C'}} />
+            <span style={{display:'block', width:'24px', height:'2px', background:'#9B1C1C'}} />
+            <span style={{display:'block', width:'24px', height:'2px', background:'#9B1C1C'}} />
           </button>
         </div>
       </div>
