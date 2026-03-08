@@ -15,8 +15,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
+  const staticPages = [
+    { url: base, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 1.0 },
+    { url: `${base}/services/hood-cleaning`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.9 },
+    { url: `${base}/services/filter-exchange`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.9 },
+    { url: `${base}/services/nfpa-inspection`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.9 },
+    { url: `${base}/about`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: `${base}/blog`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.8 },
+  ]
+
   return [
-    { url: base, lastModified: new Date(), changeFrequency: 'weekly', priority: 1.0 },
+    ...staticPages,
     ...locationPages,
   ]
 }
