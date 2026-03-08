@@ -10,11 +10,7 @@ export default function Nav() {
     <nav>
       <div className="nav-inner">
         <Link href="/" onClick={() => setMenuOpen(false)}>
-          <Image src="/images/core-logo.png" alt="Core Services" width={110} height={58} className="nav-logo-img" />
-          <div className="nav-logo-text">
-            Core Hood Cleaning
-            <span className="nav-logo-sub">San Diego, CA &middot; NFPA 96 Certified</span>
-          </div>
+          <Image src="/images/core-logo.png" alt="Core Services" width={160} height={84} className="nav-logo-img" />
         </Link>
         <ul className="nav-links">
           <li className="nav-dropdown">
