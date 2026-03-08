@@ -14,9 +14,9 @@ export default function FilterExchangePage() {
   return (
     <>
       <Nav />
-      <section style={{paddingTop:'0', minHeight:'55vh', background:'var(--true-blue)', position:'relative', overflow:'hidden', display:'flex', alignItems:'center'}}>
-        <div style={{position:'absolute', inset:0, backgroundImage:'url(/images/filter-exchange.webp)', backgroundSize:'cover', backgroundPosition:'center', opacity:0.18, filter:'blur(3px)', transform:'scale(1.05)'}} />
-        <div style={{position:'absolute', inset:0, background:'linear-gradient(105deg, rgba(51,54,87,0.95) 0%, rgba(51,54,87,0.75) 100%)'}} />
+      <section style={{paddingTop:'0', minHeight:'55vh', background:'var(--black)', position:'relative', overflow:'hidden', display:'flex', alignItems:'center'}}>
+        <div style={{position:'absolute', inset:0, backgroundImage:'url(/images/filter-exchange.webp)', backgroundSize:'cover', backgroundPosition:'center', opacity:0.35, filter:'blur(3px)', transform:'scale(1.05)'}} />
+        <div style={{position:'absolute', inset:0, background:'linear-gradient(105deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.65) 100%)'}} />
         <div className="container" style={{position:'relative', zIndex:2, paddingTop:'140px', paddingBottom:'80px', maxWidth:'800px'}}>
           <p className="section-label">Our Services</p>
           <h1 className="section-title light" style={{fontSize:'clamp(2.5rem,5vw,4.5rem)', marginBottom:'24px'}}>Grease Filter<br/>Exchange Program</h1>
