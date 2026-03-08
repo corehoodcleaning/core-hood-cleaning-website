@@ -37,7 +37,7 @@ export default function Nav() {
             className="nav-hamburger"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
-            style={{display:'flex', flexDirection:'column', gap:'5px', background:'none', border:'none', cursor:'pointer', padding:'8px'}}
+            
           >
             <span style={{display:'block', width:'24px', height:'2px', background:'#1a1a1a'}} />
             <span style={{display:'block', width:'24px', height:'2px', background:'#1a1a1a'}} />
