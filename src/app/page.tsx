@@ -140,13 +140,13 @@ export default function HomePage() {
           </div>
           <div className="services-grid">
             {[
-              { href:'/services/hood-cleaning', img:'/images/tech-kitchen-cleaning.jpg', imgAlt:'Hood cleaning technician at work', title:'Hood Cleaning', desc:'Full system pressure washing from hood to rooftop fan. NFPA 96 compliant with photo documentation and compliance certificate on every service.', items:['Hood canopy, filters & plenum','Ductwork full run to rooftop','Exhaust fan housing & blades','Grease containment & disposal','Before/after photos + certificate'], imgPos:'center 20%' },
+              { href:'/services/hood-cleaning', img:'/images/tech-kitchen-cleaning.jpg', imgAlt:'Hood cleaning technician at work', title:'Hood Cleaning', desc:'Full system pressure washing from hood to rooftop fan. NFPA 96 compliant with photo documentation and compliance certificate on every service.', items:['Hood canopy, filters & plenum','Ductwork full run to rooftop','Exhaust fan housing & blades','Grease containment & disposal','Before/after photos + certificate'], imgPos:'center 60%' },
               { href:'/services/filter-exchange', img:'/images/filter-exchange.webp', imgAlt:'Clean commercial hood filters', title:'Filter Exchange', desc:'Weekly or bi-weekly clean filter swap programs. Your kitchen always has clean, compliant filters without managing the cleaning yourself.', items:['Clean filters every service visit','Weekly or bi-weekly schedules','Multiple filter types stocked','No downtime swap and go','Flat monthly program'], imgPos:'center center' },
               { href:'/services/nfpa-inspection', img:'/images/NFPA-96-2.jpg', imgAlt:'NFPA 96 certified inspection', title:'NFPA 96 Inspections', desc:'Certified compliance inspections to ensure your kitchen meets fire code. Essential for health departments, insurance, and fire marshal visits.', items:['Full NFPA 96 system inspection','Written compliance report','Deficiency documentation','Inspection sticker & certificate','Re-inspection if needed'], imgPos:'center center' },
             ].map(s => (
               <div key={s.href} className="service-card">
                 <div className="service-card-img">
-                  <Image src={s.img} alt={s.imgAlt} width={400} height={220} style={{width:'100%',height:'220px',objectFit:'cover',objectPosition:s.imgPos}} />
+                  <Image src={s.img} alt={s.imgAlt} width={400} height={260} style={{width:'100%',height:'260px',objectFit:'cover',objectPosition:s.imgPos}} />
                 </div>
                 <div className="service-card-body">
                   <h3>{s.title}</h3>

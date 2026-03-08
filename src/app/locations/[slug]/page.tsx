@@ -32,7 +32,7 @@ const LOCATIONS: Record<string, {
       { q: 'Can you clean our hood after midnight?', a: 'Absolutely. Many Pacific Beach bars and late-night restaurants need service after 11 PM or midnight. We schedule around your operating hours.' },
       { q: 'Does salt air affect our exhaust system?', a: 'Yes, significantly. Beachfront locations experience accelerated corrosion on exhaust fans, access panels, and ductwork. We inspect for salt damage on every visit.' },
     ],
-    heroImage: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1400&q=80',
+    heroImage: '/images/hero-commercial-kitchen.jpg',
   },
   'la-jolla': {
     name: 'La Jolla',
@@ -52,7 +52,7 @@ const LOCATIONS: Record<string, {
       { q: 'Do you work with luxury hotel brand standards?', a: 'Yes. We have experience with five-star hotel operations, documentation requirements, and coordination protocols with executive chefs and property management.' },
       { q: 'What areas of La Jolla do you serve?', a: 'All of La Jolla including La Jolla Village, La Jolla Shores, La Jolla Cove, Bird Rock, Windansea, UTC, Torrey Pines, and surrounding areas.' },
     ],
-    heroImage: 'https://images.unsplash.com/photo-1590846406792-0d543e3f60c9?w=1400&q=80',
+    heroImage: '/images/tech-hood-interior.jpg',
   },
   'downtown-san-diego': {
     name: 'Downtown San Diego',
@@ -72,7 +72,7 @@ const LOCATIONS: Record<string, {
       { q: 'Do you handle historic buildings with unusual ductwork?', a: 'Yes. Many downtown kitchens are in historic buildings with aging ductwork requiring specialized cleaning. Our team has extensive experience with these systems.' },
       { q: 'What if I get red-tagged by the health department?', a: 'Call us immediately at (858) 361-2570. We offer same-day emergency service in downtown San Diego and have helped dozens of restaurants resolve red tag violations within 24 hours.' },
     ],
-    heroImage: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1400&q=80',
+    heroImage: '/images/tech-rooftop-palms.jpg',
   },
 }
 
@@ -104,7 +104,7 @@ function getLocationData(slug: string) {
       { q: 'What documentation do you provide?', a: 'Every service includes before and after photos, a detailed service report, and an NFPA 96 compliance certificate accepted by San Diego County health departments, fire marshals, and insurance carriers.' },
       { q: 'Do you clean the full exhaust system?', a: 'Yes every service covers the complete exhaust path from hood canopy through ductwork to the rooftop exhaust fan. No partial cleanings.' },
     ],
-    heroImage: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1400&q=80',
+    heroImage: '/images/tech-kitchen-cleaning.jpg',
   }
 }
 

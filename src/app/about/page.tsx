@@ -51,13 +51,11 @@ export default function AboutPage() {
               <p style={{fontSize:'0.95rem', color:'var(--gray-text)', lineHeight:'1.8', marginBottom:'20px'}}>
                 Core Services is built on four values: blue-collar work ethic, family, honesty, and 
                 professionalism. These aren&apos;t marketing words they&apos;re the reason we document every job 
-                with before and after photos, why we show up on time, and why we don&apos;t upsell services 
-                you don&apos;t need.
+                with before and after photos, why we show up on time, and why we do the job right every single time.
               </p>
               <p style={{fontSize:'0.95rem', color:'var(--gray-text)', lineHeight:'1.8', marginBottom:'40px'}}>
                 Today, Core Hood Cleaning serves 200+ restaurants, hotels, schools, and commercial facilities 
-                across San Diego County. Every technician on Team 360 is NFPA 96 certified and wears 
-                the Core Services jacket with pride.
+                across San Diego County. Every technician is NFPA 96 certified and wears the Core Services jacket with pride.
               </p>
 
               <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap:'16px', marginBottom:'40px'}}>
@@ -77,29 +75,50 @@ export default function AboutPage() {
 
       <section style={{padding:'80px 0', background:'var(--true-blue)'}}>
         <div className="container">
-          <div style={{textAlign:'center', marginBottom:'56px'}}>
-            <p className="section-label">The Crew</p>
-            <h2 className="section-title light">Team 360</h2>
-            <p style={{color:'rgba(238,239,226,0.55)', marginTop:'16px', fontSize:'1rem'}}>San Diego County&apos;s NFPA 96 certified exhaust cleaning team</p>
+          <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap:'64px', alignItems:'center'}}>
+            <div style={{borderRadius:'8px', overflow:'hidden'}}>
+              <Image src="/images/team-rooftop.jpg" alt="Core Hood Cleaning crew on San Diego rooftop" width={600} height={420} style={{width:'100%', objectFit:'cover', objectPosition:'center 30%'}} />
+            </div>
+            <div>
+              <p className="section-label">The Crew</p>
+              <h2 className="section-title light" style={{marginBottom:'28px'}}>Built Around<br/>Compliance and Trust</h2>
+              <p style={{color:'rgba(238,239,226,0.7)', lineHeight:'1.85', marginBottom:'20px'}}>
+                Every technician on the Core Hood Cleaning crew is NFPA 96 certified, uniformed, and fully trained before they step foot in any kitchen. We do not cut corners, and we do not send unqualified techs to your property.
+              </p>
+              <p style={{color:'rgba(238,239,226,0.7)', lineHeight:'1.85', marginBottom:'32px'}}>
+                We are fully licensed and insured throughout San Diego County. Our crews operate with the same level of professionalism you expect from any contractor working in your facility.
+              </p>
+              <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap:'12px'}}>
+                {[
+                  { t:'NFPA 96 Certified', d:'Every tech trained and certified to the national fire code standard.' },
+                  { t:'Fully Licensed', d:'California licensed contractor operating throughout San Diego County.' },
+                  { t:'Fully Insured', d:'General liability and workers comp coverage on every job.' },
+                  { t:'Uniformed Crew', d:'Identifiable, professional, and respectful of your operation.' },
+                ].map(item => (
+                  <div key={item.t} style={{background:'rgba(0,0,0,0.2)', border:'1px solid rgba(238,239,226,0.1)', borderRadius:'8px', padding:'18px'}}>
+                    <div style={{display:'flex', alignItems:'center', gap:'8px', marginBottom:'8px'}}>
+                      <span style={{width:'8px', height:'8px', borderRadius:'50%', background:'var(--rust)', flexShrink:0}} />
+                      <h3 style={{fontFamily:'var(--font-display)', fontSize:'0.95rem', fontWeight:800, textTransform:'uppercase', letterSpacing:'0.05em', color:'var(--off-white)'}}>{item.t}</h3>
+                    </div>
+                    <p style={{fontSize:'0.82rem', color:'rgba(238,239,226,0.5)', lineHeight:'1.6'}}>{item.d}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-          <div style={{borderRadius:'8px', overflow:'hidden', maxWidth:'800px', margin:'0 auto'}}>
-            <Image src="/images/team-rooftop.jpg" alt="Core Hood Cleaning Team 360 on San Diego rooftop" width={800} height={500} style={{width:'100%', objectFit:'cover'}} />
-          </div>
-          <p style={{textAlign:'center', color:'rgba(238,239,226,0.45)', marginTop:'20px', fontSize:'0.85rem', fontFamily:'var(--font-display)', fontWeight:700, letterSpacing:'0.1em', textTransform:'uppercase'}}>+ At the Core of Every Job +</p>
         </div>
       </section>
 
       <section style={{padding:'80px 0', background:'var(--rust)'}}>
         <div className="cta-inner">
           <h2>Work With Our Team</h2>
-          <p>Free quotes · Same-day response · San Diego County</p>
+          <p>Free quotes. Same-day response. San Diego County.</p>
           <div className="cta-actions">
-            <a href="https://api.leadconnectorhq.com/widget/bookings/corehoodcleaning" className="btn-white">📅 Book a Quote</a>
-            <a href="tel:8583612570" className="btn-secondary">📞 (858) 361-2570</a>
+            <a href="https://api.leadconnectorhq.com/widget/bookings/corehoodcleaning" className="btn-white">Book a Quote</a>
+            <a href="tel:8583612570" className="btn-secondary">(858) 361-2570</a>
           </div>
         </div>
       </section>
-
       <Footer />
     </>
   )
