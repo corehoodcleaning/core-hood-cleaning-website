@@ -1,415 +1,299 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 
-const LOCATION_DATA: Record<string, {
+const LOCATIONS: Record<string, {
   name: string
-  county: string
-  description: string
-  neighborhoods: string[]
-  restaurants: string
-  blurb: string
+  title: string
+  heroDesc: string
+  intro: string
+  whyUs: string
+  neighborhoods: { name: string; desc: string }[]
+  faqs: { q: string; a: string }[]
+  heroImage: string
 }> = {
-  'la-jolla': {
-    name: 'La Jolla',
-    county: 'San Diego County',
-    description: "La Jolla's upscale dining scene demands the best — Core Hood Cleaning provides NFPA 96 certified hood cleaning for La Jolla's finest restaurants and commercial kitchens.",
-    neighborhoods: ['Bird Rock', 'The Village', 'La Jolla Shores', 'Windansea'],
-    restaurants: 'fine dining restaurants, seafood spots, hotel restaurants, and upscale cafes',
-    blurb: "La Jolla's competitive restaurant scene means your kitchen has to be fire-safe and fully compliant at all times. From intimate bistros in The Village to large hotel kitchens on the shore, Core Hood Cleaning keeps every commercial kitchen in La Jolla meeting NFPA 96 standards."
-  },
   'pacific-beach': {
     name: 'Pacific Beach',
-    county: 'San Diego County',
-    description: "Pacific Beach restaurants trust Core Hood Cleaning for fast, reliable NFPA 96 certified hood cleaning. Serving PB's bars, restaurants, and commercial kitchens.",
-    neighborhoods: ['Mission Beach', 'Crown Point', 'Garnet Avenue', 'Boardwalk'],
-    restaurants: 'beachside bars, casual restaurants, breweries, and food trucks',
-    blurb: "Pacific Beach runs hot — literally. High-volume beach bars and restaurants need frequent hood cleaning to stay compliant and avoid fire hazards. Core Hood Cleaning serves PB's entire commercial kitchen community with fast turnaround and 24/7 emergency availability."
+    title: 'Hood Cleaning Pacific Beach',
+    heroDesc: 'Professional commercial kitchen hood cleaning serving Pacific Beach, Mission Beach, and surrounding coastal areas. NFPA 96 certified, same-day emergency service available.',
+    intro: "Core Hood Cleaning is Pacific Beach's trusted commercial kitchen exhaust cleaning company. We serve restaurants, bars, breweries, and beachfront kitchens throughout PB with full-system NFPA 96 certified hood cleaning. From the bustling Garnet Avenue restaurant row to beachfront establishments on Ocean Front Walk, PB restaurants rely on us to stay compliant and fire-safe year-round.",
+    whyUs: "Pacific Beach's vibrant dining and nightlife scene demands reliable, professional hood cleaning. High cooking volumes during peak summer season, extended operating hours, and strict San Diego fire code enforcement in this dense commercial area make consistent maintenance critical. We offer late-night scheduling, same-day emergency service, and full photo documentation on every job.",
+    neighborhoods: [
+      { name: 'Garnet Avenue Restaurant District', desc: 'The heart of Pacific Beach dining. We serve the entire Garnet corridor — all the restaurants, bars, breweries, and nightlife establishments that make this strip one of San Diego\'s busiest.' },
+      { name: 'Ocean Front Walk & Boardwalk', desc: 'Beachfront restaurants, bars, and cafes with ocean views. We handle the unique challenges of salt air exposure, difficult rooftop access, and seasonal volume spikes.' },
+      { name: 'Mission Beach', desc: 'Mission Boulevard restaurants, boardwalk concessions, and local kitchen operations. We navigate the access challenges and parking restrictions in this dense beachfront area.' },
+      { name: 'North Pacific Beach', desc: 'Cass Street, Tourmaline Street, and residential neighborhood restaurants. Family-friendly dining spots, cafes, and local favorites throughout north PB.' },
+    ],
+    faqs: [
+      { q: 'Do you offer same-day hood cleaning in Pacific Beach?', a: 'Yes. If you\'ve been red-tagged or have an urgent inspection, we offer same-day emergency service throughout Pacific Beach. Call (858) 361-2570.' },
+      { q: 'How often do Pacific Beach restaurants need hood cleaning?', a: 'High-volume PB bars and restaurants typically need monthly cleaning. Most full-service restaurants need quarterly service. We\'ll assess your volume and recommend the right frequency.' },
+      { q: 'Can you clean our hood after midnight?', a: 'Absolutely. Many Pacific Beach bars and late-night restaurants need service after 11 PM or midnight. We schedule around your operating hours.' },
+      { q: 'Does salt air affect our exhaust system?', a: 'Yes, significantly. Beachfront locations experience accelerated corrosion on exhaust fans, access panels, and ductwork. We inspect for salt damage on every visit.' },
+    ],
+    heroImage: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1400&q=80',
   },
-  'mission-valley': {
-    name: 'Mission Valley',
-    county: 'San Diego County',
-    description: "Mission Valley's restaurants and commercial kitchens trust Core Hood Cleaning for NFPA 96 certified exhaust hood cleaning. Serving hotels, chain restaurants, and local spots.",
-    neighborhoods: ['Fashion Valley', 'Hotel Circle', 'Hazard Center', 'Stadium District'],
-    restaurants: 'hotel restaurants, chain dining, food courts, and local eateries',
-    blurb: "Mission Valley's high density of hotels, shopping centers, and restaurants makes it one of San Diego's most active commercial kitchen zones. Core Hood Cleaning serves every commercial kitchen in Mission Valley with certified technicians and fast scheduling."
+  'la-jolla': {
+    name: 'La Jolla',
+    title: 'Hood Cleaning La Jolla',
+    heroDesc: 'Professional commercial kitchen hood cleaning serving La Jolla Village, La Jolla Shores, UTC, and surrounding areas. NFPA 96 certified service for fine dining, hotels, and resorts.',
+    intro: "Core Hood Cleaning is La Jolla's premier commercial kitchen exhaust cleaning company. We serve upscale restaurants, luxury hotels, resort kitchens, and fine dining establishments throughout La Jolla with full-system NFPA 96 certified hood cleaning. From intimate bistros on Girard Avenue to spectacular oceanfront venues at La Jolla Cove, we provide the professional service La Jolla's dining scene demands.",
+    whyUs: "La Jolla restaurants serve discerning clientele with high expectations. Hood cleaning must be professional, discreet, and completed without disrupting guest experience. We schedule service during closed hours, arrive in uniform, and treat every kitchen with the same care we'd want for our own. Every job includes full photo documentation and a compliance certificate valid for fire marshals, health departments, and insurance carriers.",
+    neighborhoods: [
+      { name: 'La Jolla Village & Downtown La Jolla', desc: 'The heart of La Jolla dining on Girard Avenue, Prospect Street, and surrounding streets. Fine dining establishments, bistros, wine bars, cafes, and upscale casual restaurants.' },
+      { name: 'La Jolla Shores & Coastal', desc: 'Oceanfront dining along Avenida de la Playa and beachfront properties. We handle salt air exposure, coastal commission requirements, and difficult beach access.' },
+      { name: 'University City (UTC)', desc: 'Westfield UTC mall restaurants, The Shops at La Jolla Village, and surrounding commercial dining. Experience with mall property management and chain restaurant standards.' },
+      { name: 'Luxury Hotels & Resorts', desc: 'Lodge at Torrey Pines, Estancia La Jolla, La Valencia, and other luxury properties. We coordinate directly with executive chefs and engineering teams.' },
+    ],
+    faqs: [
+      { q: 'Do you work overnight to avoid disrupting dinner service?', a: 'Yes. Most La Jolla fine dining establishments require service after 10 PM. We routinely schedule overnight service, completing before morning prep begins.' },
+      { q: 'How do you handle oceanfront salt air corrosion?', a: 'We perform detailed corrosion inspections during every service, checking fans, hinges, access panels, and ductwork. We lubricate moving parts and document any issues found.' },
+      { q: 'Do you work with luxury hotel brand standards?', a: 'Yes. We have experience with five-star hotel operations, documentation requirements, and coordination protocols with executive chefs and property management.' },
+      { q: 'What areas of La Jolla do you serve?', a: 'All of La Jolla including La Jolla Village, La Jolla Shores, La Jolla Cove, Bird Rock, Windansea, UTC, Torrey Pines, and surrounding areas.' },
+    ],
+    heroImage: 'https://images.unsplash.com/photo-1590846406792-0d543e3f60c9?w=1400&q=80',
   },
   'downtown-san-diego': {
     name: 'Downtown San Diego',
-    county: 'San Diego County',
-    description: "Downtown San Diego restaurants and commercial kitchens trust Core Hood Cleaning for NFPA 96 certified hood cleaning. Serving the Gaslamp Quarter, Little Italy, and surrounding areas.",
-    neighborhoods: ['Gaslamp Quarter', 'Little Italy', 'East Village', 'Marina District'],
-    restaurants: 'upscale restaurants, bars, event venues, hotel kitchens, and food halls',
-    blurb: "Downtown San Diego's restaurant scene is one of the most vibrant in Southern California. From Gaslamp Quarter bars to Little Italy trattorias, every commercial kitchen needs regular hood cleaning to stay compliant with NFPA 96 and San Diego Fire Department requirements."
-  },
-  'chula-vista': {
-    name: 'Chula Vista',
-    county: 'San Diego County',
-    description: "Chula Vista restaurants and commercial kitchens trust Core Hood Cleaning for affordable, NFPA 96 certified hood cleaning services throughout South San Diego.",
-    neighborhoods: ['Eastlake', 'Otay Ranch', 'Downtown Chula Vista', 'Bonita'],
-    restaurants: 'family restaurants, Mexican food establishments, fast casual, and commercial kitchens',
-    blurb: "Chula Vista's growing restaurant community deserves professional hood cleaning service at competitive rates. Core Hood Cleaning brings the same NFPA 96 certified quality to South San Diego that we deliver throughout the county — with fast response times and transparent pricing."
-  },
-  'oceanside': {
-    name: 'Oceanside',
-    county: 'San Diego County',
-    description: "Oceanside restaurants and commercial kitchens trust Core Hood Cleaning for NFPA 96 certified hood cleaning. Serving North San Diego County's growing dining scene.",
-    neighborhoods: ['Oceanside Pier', 'Downtown Oceanside', 'Fire Mountain', 'South Oceanside'],
-    restaurants: 'beachfront restaurants, breweries, cafes, and military community dining',
-    blurb: "Oceanside's booming food and brewery scene has made it one of North County's top dining destinations. Core Hood Cleaning provides reliable, certified hood cleaning to Oceanside's commercial kitchens — from beachfront establishments to the growing downtown dining corridor."
-  },
-  'carlsbad': {
-    name: 'Carlsbad',
-    county: 'San Diego County',
-    description: "Carlsbad restaurants and hotels trust Core Hood Cleaning for NFPA 96 certified commercial kitchen exhaust cleaning. Serving Carlsbad Village, Bressi Ranch, and the entire Carlsbad area.",
-    neighborhoods: ['Carlsbad Village', 'Bressi Ranch', 'La Costa', 'Carlsbad Highlands'],
-    restaurants: 'resort restaurants, hotel kitchens, breweries, and family dining',
-    blurb: "Carlsbad's resort hotels, premium restaurants, and thriving local dining scene require consistent, professional hood cleaning. Core Hood Cleaning serves all of Carlsbad with NFPA 96 compliance, same-day availability, and the documentation your fire marshal requires."
-  },
-  'escondido': {
-    name: 'Escondido',
-    county: 'San Diego County',
-    description: "Escondido restaurants and commercial kitchens trust Core Hood Cleaning for NFPA 96 certified hood cleaning. Serving downtown Escondido and all of North County Inland.",
-    neighborhoods: ['Downtown Escondido', 'Hidden Valley', 'Del Dios', 'Felicita'],
-    restaurants: 'family restaurants, Mexican cuisine, breweries, and commercial facilities',
-    blurb: "Escondido's diverse restaurant community — from traditional Mexican eateries to modern craft breweries — deserves professional hood cleaning service. Core Hood Cleaning brings certified technicians and full NFPA 96 compliance to every commercial kitchen in Escondido."
-  },
-  'el-cajon': {
-    name: 'El Cajon',
-    county: 'San Diego County',
-    description: "El Cajon restaurants and commercial kitchens trust Core Hood Cleaning for reliable, NFPA 96 certified hood cleaning services in East San Diego County.",
-    neighborhoods: ['Downtown El Cajon', 'Rancho San Diego', 'Fletcher Hills', 'Bostonia'],
-    restaurants: 'Middle Eastern cuisine, family restaurants, fast food, and commercial kitchens',
-    blurb: "El Cajon's diverse culinary scene — with strong Middle Eastern, Mexican, and American dining — generates high-volume grease that demands regular hood cleaning. Core Hood Cleaning serves El Cajon's commercial kitchens with certified technicians and responsive service."
-  },
-  'vista': {
-    name: 'Vista',
-    county: 'San Diego County',
-    description: "Vista restaurants and commercial kitchens trust Core Hood Cleaning for NFPA 96 certified hood cleaning. Serving North County's breweries, restaurants, and food businesses.",
-    neighborhoods: ['Downtown Vista', 'Shadowridge', 'Buena Vista', 'Gopher Canyon'],
-    restaurants: 'breweries, casual dining, Mexican cuisine, and food manufacturing',
-    blurb: "Vista has established itself as one of North County's craft brewery capitals, alongside a diverse restaurant scene. Core Hood Cleaning keeps Vista's commercial kitchens compliant and safe with NFPA 96 certified service and flexible scheduling."
-  },
-  'san-marcos': {
-    name: 'San Marcos',
-    county: 'San Diego County',
-    description: "San Marcos restaurants and commercial kitchens trust Core Hood Cleaning for NFPA 96 certified hood cleaning. Serving Twin Oaks Valley, Palomar College area, and all of San Marcos.",
-    neighborhoods: ['Twin Oaks Valley', 'San Elijo Hills', 'Palomar College', 'Old California Restaurant Row'],
-    restaurants: 'California Restaurant Row dining, university area eateries, and family restaurants',
-    blurb: "San Marcos is home to famous California Restaurant Row and a growing dining scene around Cal State San Marcos. Core Hood Cleaning serves every commercial kitchen in San Marcos with professional NFPA 96 certified hood cleaning and same-day availability."
-  },
-  'national-city': {
-    name: 'National City',
-    county: 'San Diego County',
-    description: "National City restaurants and commercial kitchens trust Core Hood Cleaning for affordable, NFPA 96 certified hood cleaning. Serving Mile of Cars corridor and all of National City.",
-    neighborhoods: ['Downtown National City', 'Paradise Hills', 'Sweetwater', 'Mile of Cars'],
-    restaurants: 'Mexican and Filipino cuisine, family restaurants, and commercial facilities',
-    blurb: "National City's rich culinary culture — especially its Mexican and Filipino dining — requires frequent, reliable hood cleaning to stay compliant. Core Hood Cleaning delivers certified service to all National City commercial kitchens with competitive pricing and fast response."
-  },
-  'la-mesa': {
-    name: 'La Mesa',
-    county: 'San Diego County',
-    description: "La Mesa restaurants and commercial kitchens trust Core Hood Cleaning for NFPA 96 certified hood cleaning. Serving the Village of La Mesa and all of East San Diego County.",
-    neighborhoods: ['La Mesa Village', 'Mount Helix', 'Grossmont', 'Casa de Oro'],
-    restaurants: 'village restaurants, bistros, breweries, and family dining',
-    blurb: "La Mesa Village's walkable restaurant scene and growing dining community need professional hood cleaning they can count on. Core Hood Cleaning serves La Mesa with certified technicians, full documentation, and the responsive service that local restaurants deserve."
-  },
-  'coronado': {
-    name: 'Coronado',
-    county: 'San Diego County',
-    description: "Coronado restaurants and hotel kitchens trust Core Hood Cleaning for premium NFPA 96 certified hood cleaning. Serving Hotel del Coronado, Coronado Village, and the entire island.",
-    neighborhoods: ['Coronado Village', 'Hotel del Coronado', 'Coronado Cays', 'Naval Air Station'],
-    restaurants: 'luxury hotel kitchens, fine dining, beach restaurants, and resort facilities',
-    blurb: "Coronado's world-class hotels, including the iconic Hotel del Coronado, demand the highest standard of commercial kitchen maintenance. Core Hood Cleaning provides premium NFPA 96 certified hood cleaning to Coronado's luxury hospitality establishments and restaurants."
-  },
-  'encinitas': {
-    name: 'Encinitas',
-    county: 'San Diego County',
-    description: "Encinitas restaurants and commercial kitchens trust Core Hood Cleaning for NFPA 96 certified hood cleaning. Serving Cardiff, Leucadia, and all of Encinitas.",
-    neighborhoods: ['Downtown Encinitas', 'Cardiff-by-the-Sea', 'Leucadia', 'Olivenhain'],
-    restaurants: 'health-conscious cafes, coastal restaurants, breweries, and yoga retreat kitchens',
-    blurb: "Encinitas's vibrant coastal dining scene — from Cardiff's surf spots to Leucadia's eclectic eateries — requires dependable hood cleaning service. Core Hood Cleaning keeps every Encinitas commercial kitchen NFPA 96 compliant with certified service and full documentation."
-  },
-  'del-mar': {
-    name: 'Del Mar',
-    county: 'San Diego County',
-    description: "Del Mar restaurants and event venues trust Core Hood Cleaning for premium NFPA 96 certified hood cleaning. Serving Del Mar Village, Del Mar Racetrack, and Torrey Pines area.",
-    neighborhoods: ['Del Mar Village', 'Torrey Pines', 'Del Mar Heights', 'Fairgrounds Area'],
-    restaurants: 'fine dining, wine bars, event venue kitchens, and upscale casual dining',
-    blurb: "Del Mar's upscale dining scene and high-profile event venues require impeccable kitchen maintenance. Core Hood Cleaning provides premium NFPA 96 certified hood cleaning to Del Mar's finest restaurants and commercial kitchens with full documentation and reliable scheduling."
-  },
-  'miramar': {
-    name: 'Miramar',
-    county: 'San Diego County',
-    description: "Miramar restaurants and commercial facilities trust Core Hood Cleaning for NFPA 96 certified hood cleaning. Serving the Miramar industrial corridor and surrounding areas.",
-    neighborhoods: ['Miramar Industrial', 'Scripps Ranch', 'Mira Mesa', 'Carroll Canyon'],
-    restaurants: 'industrial commissaries, food manufacturing, breweries, and corporate cafeterias',
-    blurb: "Miramar's industrial zone is home to many of San Diego's food manufacturers, commissary kitchens, and craft breweries. Core Hood Cleaning specializes in large-scale commercial kitchen exhaust cleaning for Miramar's high-volume food production facilities."
-  },
-  'rancho-bernardo': {
-    name: 'Rancho Bernardo',
-    county: 'San Diego County',
-    description: "Rancho Bernardo restaurants and hotels trust Core Hood Cleaning for NFPA 96 certified hood cleaning. Serving RB's upscale dining corridor and resort properties.",
-    neighborhoods: ['Rancho Bernardo Village', 'The Vineyard', 'Bernardo Heights', 'West Bernardo'],
-    restaurants: 'resort restaurants, upscale dining, chain restaurants, and hotel kitchens',
-    blurb: "Rancho Bernardo's resort hotels and upscale dining corridor demand professional, reliable hood cleaning service. Core Hood Cleaning serves RB's commercial kitchens with NFPA 96 certified technicians and the comprehensive documentation required by fire marshals and insurance providers."
-  },
-  'poway': {
-    name: 'Poway',
-    county: 'San Diego County',
-    description: "Poway restaurants and commercial kitchens trust Core Hood Cleaning for NFPA 96 certified hood cleaning. Serving 'The City in the Country' and all surrounding areas.",
-    neighborhoods: ['Old Poway', 'Poway Road Corridor', 'South Poway', 'Twin Peaks'],
-    restaurants: 'family restaurants, BBQ spots, breweries, and commercial facilities',
-    blurb: "Poway's family-friendly restaurant scene and growing commercial district need professional hood cleaning they can count on. Core Hood Cleaning delivers NFPA 96 certified service to every commercial kitchen in Poway with competitive pricing and fast turnaround."
-  },
-  'santee': {
-    name: 'Santee',
-    county: 'San Diego County',
-    description: "Santee restaurants and commercial kitchens trust Core Hood Cleaning for NFPA 96 certified hood cleaning. Serving East San Diego County's growing dining community.",
-    neighborhoods: ['Santee Town Center', 'Fanita Ranch', 'Carlton Hills', 'Riverview'],
-    restaurants: 'family dining, fast casual, breweries, and commercial kitchens',
-    blurb: "Santee's growing restaurant community deserves the same professional hood cleaning service as downtown San Diego. Core Hood Cleaning brings NFPA 96 certified technicians to Santee with responsive scheduling and the full documentation package every commercial kitchen needs."
+    title: 'Hood Cleaning Downtown San Diego',
+    heroDesc: 'Professional commercial kitchen exhaust cleaning serving Downtown San Diego, Gaslamp Quarter, Little Italy, East Village, and Marina District. NFPA 96 certified.',
+    intro: "Core Hood Cleaning provides comprehensive commercial kitchen exhaust system cleaning throughout Downtown San Diego. We serve restaurants, hotels, bars, and commercial kitchens in the Gaslamp Quarter, Little Italy, East Village, Marina District, and all of downtown SD. Downtown restaurants operate on razor-thin margins with back-to-back service — we schedule around your hours and work efficiently to keep your kitchen running.",
+    whyUs: "Downtown San Diego's restaurant scene is one of the most competitive in California. High-volume operations, older historic buildings with complex ductwork, and frequent health inspections make consistent professional maintenance essential. We offer late-night and overnight scheduling, same-day emergency response, and full NFPA 96 documentation on every service.",
+    neighborhoods: [
+      { name: 'Gaslamp Quarter', desc: 'High-volume bars, nightclubs with kitchens, and late-night restaurants. We know the Gaslamp schedule and work around it.' },
+      { name: 'Little Italy', desc: 'Upscale Italian restaurants, bistros, and wine bars. Experience with narrow streets, historic buildings, and limited access.' },
+      { name: 'East Village', desc: 'Breweries, craft cocktail bars, and Petco Park area restaurants. Coordinating with event schedules and high-volume game day operations.' },
+      { name: 'Marina District', desc: 'Waterfront restaurants, hotel kitchens, and convention center catering. Experience with large commercial kitchen systems and hotel brand requirements.' },
+    ],
+    faqs: [
+      { q: 'Do you work late nights in the Gaslamp?', a: 'Yes — we schedule most downtown cleanings between 11 PM and 6 AM to avoid disrupting your service. We can also coordinate with building management for freight elevator access.' },
+      { q: 'How often should Gaslamp and Little Italy restaurants clean their hoods?', a: 'Most Gaslamp and Little Italy restaurants need monthly service due to cooking volume. We\'ll assess your specific operation and recommend the right frequency for full compliance.' },
+      { q: 'Do you handle historic buildings with unusual ductwork?', a: 'Yes. Many downtown kitchens are in historic buildings with aging ductwork requiring specialized cleaning. Our team has extensive experience with these systems.' },
+      { q: 'What if I get red-tagged by the health department?', a: 'Call us immediately at (858) 361-2570. We offer same-day emergency service in downtown San Diego and have helped dozens of restaurants resolve red tag violations within 24 hours.' },
+    ],
+    heroImage: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1400&q=80',
   },
 }
 
-type Props = {
-  params: { slug: string }
+// Generate remaining locations with standard template
+const STANDARD_LOCATIONS = [
+  'mission-valley', 'chula-vista', 'oceanside', 'carlsbad', 'escondido',
+  'el-cajon', 'vista', 'san-marcos', 'national-city', 'la-mesa',
+  'coronado', 'encinitas', 'del-mar', 'miramar', 'rancho-bernardo', 'poway', 'santee'
+]
+
+function getLocationData(slug: string) {
+  if (LOCATIONS[slug]) return LOCATIONS[slug]
+  const name = slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
+  return {
+    name,
+    title: `Hood Cleaning ${name}`,
+    heroDesc: `Professional commercial kitchen hood cleaning serving ${name} and surrounding San Diego County areas. NFPA 96 certified, same-day emergency service available.`,
+    intro: `Core Hood Cleaning provides full-system NFPA 96 certified commercial kitchen exhaust cleaning throughout ${name}. We serve restaurants, hotels, schools, bars, and commercial kitchens with professional hood cleaning, filter exchange programs, and compliance inspections. Every service includes before and after photo documentation and a compliance certificate accepted by San Diego County health departments, fire marshals, and insurance carriers.`,
+    whyUs: `${name} restaurants trust Core Hood Cleaning because we show up on time, do the complete job — from hood canopy to rooftop fan — and give you the documentation you need to stay compliant. We're NFPA 96 certified, fully insured, and available for same-day emergency service when you need us most.`,
+    neighborhoods: [
+      { name: `${name} Restaurants`, desc: `Full-service restaurants, fast casual operations, and cafes throughout ${name}. We serve all sizes and cuisine types.` },
+      { name: 'Bars & Breweries', desc: `Craft breweries, sports bars, and cocktail lounges in ${name} requiring compliant kitchen exhaust maintenance.` },
+      { name: 'Hotels & Institutions', desc: `Hotel kitchens, school cafeterias, and institutional food service operations in the ${name} area.` },
+      { name: 'Commercial Kitchens', desc: `Commissaries, catering operations, and commercial food production facilities serving ${name} and surrounding areas.` },
+    ],
+    faqs: [
+      { q: `Do you offer same-day service in ${name}?`, a: `Yes. We offer same-day emergency hood cleaning throughout ${name}. Call (858) 361-2570 and we\'ll get a technician dispatched.` },
+      { q: `How often do ${name} restaurants need hood cleaning?`, a: 'Cleaning frequency depends on cooking volume and equipment type. Most full-service restaurants need quarterly service. High-volume operations may need monthly cleaning. We\'ll assess your kitchen and recommend the right schedule.' },
+      { q: 'What documentation do you provide?', a: 'Every service includes before and after photos, a detailed service report, and an NFPA 96 compliance certificate accepted by San Diego County health departments, fire marshals, and insurance carriers.' },
+      { q: 'Do you clean the full exhaust system?', a: 'Yes — every service covers the complete exhaust path from hood canopy through ductwork to the rooftop exhaust fan. No partial cleanings.' },
+    ],
+    heroImage: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1400&q=80',
+  }
 }
 
 export async function generateStaticParams() {
-  return Object.keys(LOCATION_DATA).map((slug) => ({ slug }))
+  const allSlugs = [
+    ...Object.keys(LOCATIONS),
+    ...STANDARD_LOCATIONS
+  ]
+  return allSlugs.map(slug => ({ slug }))
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const loc = LOCATION_DATA[params.slug]
-  if (!loc) return { title: 'Location Not Found' }
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const loc = getLocationData(params.slug)
   return {
-    title: `Hood Cleaning ${loc.name} | NFPA 96 Certified | Core Hood Cleaning`,
-    description: loc.description,
+    title: `${loc.title} | NFPA 96 Certified | Core Hood Cleaning`,
+    description: loc.heroDesc,
     alternates: { canonical: `https://www.corehoodcleaning.com/locations/${params.slug}` }
   }
 }
 
-export default function LocationPage({ params }: Props) {
-  const loc = LOCATION_DATA[params.slug]
-  if (!loc) return <div>Location not found</div>
-
-  const locationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": `Hood Cleaning ${loc.name}`,
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "Core Hood Cleaning",
-      "telephone": "+18583612570",
-      "url": "https://www.corehoodcleaning.com"
-    },
-    "areaServed": {
-      "@type": "City",
-      "name": loc.name,
-      "containedIn": loc.county
-    },
-    "description": loc.description
-  }
+export default function LocationPage({ params }: { params: { slug: string } }) {
+  const loc = getLocationData(params.slug)
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(locationSchema) }}
-      />
-
       <nav>
         <div className="nav-inner">
-          <Link href="/" className="nav-logo">CORE <span>HOOD</span> CLEANING</Link>
+          <Link href="/" className="nav-logo">
+            <Image src="/images/core-logo.png" alt="Core Services" width={110} height={110} className="nav-logo-img" style={{width:'44px', height:'auto'}} />
+            <div className="nav-logo-text">Core Hood Cleaning<span className="nav-logo-sub">San Diego, CA · NFPA 96 Certified</span></div>
+          </Link>
           <ul className="nav-links">
-            <li><Link href="/#services">Services</Link></li>
-            <li><Link href="/#why-core">Why Core</Link></li>
-            <li><Link href="/#locations">Locations</Link></li>
+            <li className="nav-dropdown">
+              <span className="nav-dropdown-trigger">Services</span>
+              <div className="nav-dropdown-menu">
+                <Link href="/services/hood-cleaning">Hood Cleaning</Link>
+                <Link href="/services/filter-exchange">Filter Exchange</Link>
+                <Link href="/services/nfpa-inspection">NFPA 96 Inspections</Link>
+              </div>
+            </li>
+            <li><Link href="/about">About</Link></li>
+            <li><Link href="/blog">Blog</Link></li>
           </ul>
           <div className="nav-cta">
-            <a href="tel:8583612570" className="nav-phone">📞 (858) 361-2570</a>
-            <a href="https://api.leadconnectorhq.com/widget/bookings/corehoodcleaning" className="btn-primary" style={{padding:'10px 20px', fontSize:'0.85rem'}}>Book Now</a>
+            <a href="tel:8583612570" className="nav-phone">(858) 361-2570</a>
+            <a href="https://api.leadconnectorhq.com/widget/bookings/corehoodcleaning" className="btn-primary nav-btn">Book Now</a>
           </div>
         </div>
       </nav>
 
       {/* HERO */}
-      <section style={{
-        paddingTop:'140px', paddingBottom:'80px',
-        background:'var(--black)',
-        position:'relative', overflow:'hidden'
-      }}>
-        <div style={{
-          position:'absolute', inset:0,
-          background:'radial-gradient(ellipse 50% 60% at 80% 50%, rgba(249,115,22,0.07) 0%, transparent 70%)'
-        }} />
-        <div className="container" style={{position:'relative'}}>
-          <div style={{maxWidth:'700px'}}>
-            <div style={{marginBottom:'16px'}}>
-              <Link href="/" style={{color:'rgba(255,255,255,0.5)', fontSize:'0.85rem'}}>Home</Link>
-              <span style={{color:'rgba(255,255,255,0.3)', margin:'0 8px'}}>/</span>
-              <span style={{color:'rgba(255,255,255,0.5)', fontSize:'0.85rem'}}>Locations</span>
-              <span style={{color:'rgba(255,255,255,0.3)', margin:'0 8px'}}>/</span>
-              <span style={{color:'var(--orange)', fontSize:'0.85rem'}}>{loc.name}</span>
+      <section style={{paddingTop:'0', minHeight:'55vh', background:'var(--black)', position:'relative', overflow:'hidden', display:'flex', alignItems:'center'}}>
+        <div style={{position:'absolute', inset:0}}>
+          <img src={loc.heroImage} alt={`Hood cleaning ${loc.name}`} style={{width:'100%', height:'100%', objectFit:'cover', opacity:0.35}} />
+          <div style={{position:'absolute', inset:0, background:'linear-gradient(to right, rgba(0,0,0,0.92) 45%, rgba(0,0,0,0.55) 100%)'}} />
+        </div>
+        <div className="container" style={{position:'relative', zIndex:2, paddingTop:'140px', paddingBottom:'80px', maxWidth:'800px'}}>
+          <Link href="/locations" style={{color:'rgba(238,239,226,0.45)', fontSize:'0.8rem', display:'inline-block', marginBottom:'20px', letterSpacing:'0.06em', textTransform:'uppercase', fontFamily:'var(--font-display)', fontWeight:700}}>All Locations</Link>
+          <p className="section-label">{loc.name}, San Diego County</p>
+          <h1 className="section-title light" style={{fontSize:'clamp(2rem,5vw,4rem)', marginBottom:'24px'}}>{loc.title}</h1>
+          <p style={{color:'rgba(238,239,226,0.65)', fontSize:'1.05rem', lineHeight:'1.8', marginBottom:'40px', maxWidth:'600px'}}>{loc.heroDesc}</p>
+          <div style={{display:'flex', gap:'16px', flexWrap:'wrap'}}>
+            <a href="https://api.leadconnectorhq.com/widget/bookings/corehoodcleaning" className="btn-primary">Book a Free Quote</a>
+            <a href="tel:8583612570" className="btn-secondary">(858) 361-2570</a>
+          </div>
+        </div>
+      </section>
+
+      {/* TRUST BAR */}
+      <div className="trust-bar">
+        <div className="trust-bar-inner">
+          {['NFPA 96 Certified','Photo Documentation Included','Same-Day Emergency Service','Fully Licensed & Insured','40+ Five-Star Reviews'].map(t => (
+            <div key={t} className="trust-pill"><span className="dot" />{t}</div>
+          ))}
+        </div>
+      </div>
+
+      {/* INTRO */}
+      <section style={{padding:'80px 0', background:'var(--white)'}}>
+        <div className="container">
+          <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap:'64px', alignItems:'start'}}>
+            <div>
+              <p className="section-label">About Our Service</p>
+              <h2 className="section-title" style={{marginBottom:'24px'}}>NFPA 96 Certified Hood Cleaning in {loc.name}</h2>
+              <p style={{fontSize:'0.95rem', color:'var(--gray-text)', lineHeight:'1.8', marginBottom:'20px'}}>{loc.intro}</p>
+              <p style={{fontSize:'0.95rem', color:'var(--gray-text)', lineHeight:'1.8'}}>{loc.whyUs}</p>
+              <div style={{marginTop:'32px', display:'flex', gap:'16px', flexWrap:'wrap'}}>
+                <a href="https://api.leadconnectorhq.com/widget/bookings/corehoodcleaning" className="btn-primary">Get a Free Quote</a>
+                <a href="tel:8583612570" className="btn-secondary">Call Now</a>
+              </div>
             </div>
-            <div className="section-label">Hood Cleaning {loc.name}</div>
-            <h1 style={{
-              fontFamily:'var(--font-display)', fontSize:'clamp(2.5rem, 5vw, 4rem)',
-              fontWeight:900, color:'var(--white)', textTransform:'uppercase',
-              lineHeight:1, marginBottom:'20px'
-            }}>
-              Commercial Hood Cleaning<br />
-              <span style={{color:'var(--orange)'}}>{loc.name}</span>, CA
-            </h1>
-            <p style={{color:'rgba(255,255,255,0.65)', fontSize:'1.1rem', marginBottom:'36px', lineHeight:1.7}}>
-              {loc.description}
-            </p>
-            <div style={{display:'flex', gap:'16px', flexWrap:'wrap'}}>
-              <a href="https://api.leadconnectorhq.com/widget/bookings/corehoodcleaning" className="btn-primary">
-                🗓 Book Free Quote in {loc.name}
-              </a>
-              <a href="tel:8583612570" className="btn-secondary">
-                📞 (858) 361-2570
-              </a>
+            <div>
+              <p className="section-label">What's Included</p>
+              <h2 className="section-title" style={{marginBottom:'24px'}}>Full System Service on Every Visit</h2>
+              {[
+                'Hood canopy, baffles, and plenum chamber',
+                'Grease filters — removed, cleaned, and reinstalled',
+                'Full ductwork run from plenum to rooftop',
+                'Exhaust fan blades, housing, and curb',
+                'Grease containment and proper disposal',
+                'Before and after photo documentation',
+                'NFPA 96 compliance certificate',
+                'Written service report',
+              ].map(item => (
+                <div key={item} style={{display:'flex', gap:'12px', alignItems:'center', padding:'10px 0', borderBottom:'1px solid var(--gray-light)'}}>
+                  <div style={{width:'8px', height:'8px', borderRadius:'50%', background:'var(--rust)', flexShrink:0}} />
+                  <span style={{fontSize:'0.9rem', color:'var(--gray-text)'}}>{item}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* CONTENT */}
+      {/* NEIGHBORHOODS */}
       <section style={{padding:'80px 0', background:'var(--off-white)'}}>
         <div className="container">
-          <div style={{display:'grid', gridTemplateColumns:'1fr 360px', gap:'64px', alignItems:'start'}}>
-            <div>
-              <h2 style={{
-                fontFamily:'var(--font-display)', fontSize:'1.8rem', fontWeight:900,
-                textTransform:'uppercase', marginBottom:'20px'
-              }}>
-                Hood Cleaning Services in {loc.name}
-              </h2>
-              <p style={{color:'var(--gray-text)', lineHeight:1.8, marginBottom:'20px'}}>
-                {loc.blurb}
-              </p>
-              <p style={{color:'var(--gray-text)', lineHeight:1.8, marginBottom:'32px'}}>
-                We serve {loc.restaurants} throughout {loc.name} and the surrounding {loc.county} area. All services are performed by NFPA 96 certified technicians with full before/after photo documentation and compliance certificates.
-              </p>
-
-              <h3 style={{
-                fontFamily:'var(--font-display)', fontSize:'1.2rem', fontWeight:900,
-                textTransform:'uppercase', marginBottom:'16px'
-              }}>
-                Neighborhoods We Serve in {loc.name}
-              </h3>
-              <div style={{display:'flex', flexWrap:'wrap', gap:'8px', marginBottom:'32px'}}>
-                {loc.neighborhoods.map(n => (
-                  <span key={n} style={{
-                    padding:'6px 14px', background:'var(--white)', border:'1px solid var(--gray-light)',
-                    borderRadius:'100px', fontSize:'0.875rem', fontWeight:600
-                  }}>{n}</span>
-                ))}
+          <div style={{textAlign:'center', marginBottom:'48px'}}>
+            <p className="section-label">Service Coverage</p>
+            <h2 className="section-title">Areas We Serve in {loc.name}</h2>
+          </div>
+          <div style={{display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(280px, 1fr))', gap:'20px'}}>
+            {loc.neighborhoods.map(n => (
+              <div key={n.name} style={{background:'var(--white)', border:'1px solid var(--gray-light)', borderTop:'4px solid var(--rust)', borderRadius:'8px', padding:'28px'}}>
+                <h3 style={{fontFamily:'var(--font-display)', fontSize:'1.05rem', fontWeight:900, textTransform:'uppercase', color:'var(--black)', marginBottom:'10px'}}>{n.name}</h3>
+                <p style={{fontSize:'0.875rem', color:'var(--gray-text)', lineHeight:'1.7'}}>{n.desc}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-              <h3 style={{
-                fontFamily:'var(--font-display)', fontSize:'1.2rem', fontWeight:900,
-                textTransform:'uppercase', marginBottom:'16px'
-              }}>
-                What&apos;s Included with Every {loc.name} Hood Cleaning
-              </h3>
-              <ul style={{listStyle:'none', display:'grid', gridTemplateColumns:'1fr 1fr', gap:'8px', marginBottom:'32px'}}>
-                {[
-                  'Hood Interior & Exterior Cleaning',
-                  'Grease Duct Cleaning',
-                  'Exhaust Fan Service',
-                  'Filter Degreasing',
-                  'Before & After Photos',
-                  'NFPA 96 Compliance Certificate',
-                  'Service Report',
-                  'Free Re-Service if Needed'
-                ].map(item => (
-                  <li key={item} style={{
-                    padding:'10px 14px', background:'var(--white)', borderRadius:'4px',
-                    fontSize:'0.875rem', display:'flex', alignItems:'center', gap:'8px',
-                    border:'1px solid var(--gray-light)'
-                  }}>
-                    <span style={{color:'var(--orange)', fontWeight:700}}>✓</span>{item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* SIDEBAR */}
-            <div style={{position:'sticky', top:'90px'}}>
-              <div style={{
-                background:'var(--white)', borderRadius:'8px', padding:'36px',
-                border:'1px solid var(--gray-light)', boxShadow:'var(--shadow)'
-              }}>
-                <h3 style={{
-                  fontFamily:'var(--font-display)', fontSize:'1.3rem', fontWeight:900,
-                  textTransform:'uppercase', marginBottom:'8px'
-                }}>
-                  Get a Free Quote in {loc.name}
-                </h3>
-                <p style={{fontSize:'0.875rem', color:'var(--gray-text)', marginBottom:'20px'}}>
-                  Same-day estimates. NFPA 96 certified.
-                </p>
-                <a href="https://api.leadconnectorhq.com/widget/bookings/corehoodcleaning"
-                  className="btn-primary" style={{width:'100%', justifyContent:'center', marginBottom:'12px', display:'flex'}}>
-                  📅 Book Online
-                </a>
-                <a href="tel:8583612570" style={{
-                  display:'flex', alignItems:'center', justifyContent:'center', gap:'8px',
-                  padding:'14px', border:'2px solid var(--gray-light)', borderRadius:'4px',
-                  fontFamily:'var(--font-display)', fontWeight:800, fontSize:'1.1rem',
-                  color:'var(--charcoal)', marginBottom:'20px', transition:'all 0.2s'
-                }}>
-                  📞 (858) 361-2570
-                </a>
-                <div style={{
-                  paddingTop:'20px', borderTop:'1px solid var(--gray-light)',
-                  display:'flex', flexDirection:'column', gap:'8px'
-                }}>
-                  {['⭐ 40+ Five-Star Google Reviews', '✅ NFPA 96 Certified Technicians', '🛡️ Licensed & Fully Insured', '📸 Before & After Photos', '⚡ 24/7 Emergency Service'].map(item => (
-                    <div key={item} style={{fontSize:'0.8rem', color:'var(--gray-text)', fontWeight:600}}>{item}</div>
-                  ))}
-                </div>
+      {/* WHY CORE */}
+      <section style={{padding:'80px 0', background:'var(--true-blue)'}}>
+        <div className="container">
+          <div style={{textAlign:'center', marginBottom:'48px'}}>
+            <p className="section-label">Why Core</p>
+            <h2 className="section-title light">Why {loc.name} Kitchens Choose Core</h2>
+          </div>
+          <div style={{display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(260px, 1fr))', gap:'20px'}}>
+            {[
+              { title:'NFPA 96 Certified', desc:'Every technician is certified to NFPA 96 standards. Your compliance certificate is valid for fire marshals, health departments, and insurance carriers.' },
+              { title:'Photo Documentation', desc:'Before and after photos on every job — no exceptions. You have visual proof of every service we perform.' },
+              { title:'Night & Weekend Service', desc:'We work when your kitchen is closed. No disruption to your service, no lost revenue.' },
+              { title:'Same-Day Emergency', desc:'Red-tagged? Urgent inspection? Call (858) 361-2570. We\'ll dispatch to your location as fast as possible.' },
+            ].map(d => (
+              <div key={d.title} style={{background:'rgba(0,0,0,0.2)', border:'1px solid rgba(238,239,226,0.08)', borderRadius:'8px', padding:'28px'}}>
+                <div style={{width:'10px', height:'10px', borderRadius:'50%', background:'var(--rust)', marginBottom:'14px'}} />
+                <h3 style={{fontFamily:'var(--font-display)', fontSize:'1.05rem', fontWeight:800, textTransform:'uppercase', color:'var(--off-white)', marginBottom:'8px'}}>{d.title}</h3>
+                <p style={{fontSize:'0.875rem', color:'rgba(238,239,226,0.55)', lineHeight:'1.6'}}>{d.desc}</p>
               </div>
-            </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section style={{padding:'80px 0', background:'var(--white)'}}>
+        <div className="container" style={{maxWidth:'760px'}}>
+          <div style={{textAlign:'center', marginBottom:'48px'}}>
+            <p className="section-label">FAQ</p>
+            <h2 className="section-title">Common Questions from {loc.name} Restaurants</h2>
+          </div>
+          <div style={{display:'flex', flexDirection:'column', gap:'16px'}}>
+            {loc.faqs.map(f => (
+              <div key={f.q} style={{background:'var(--off-white)', border:'1px solid var(--gray-light)', borderRadius:'8px', padding:'28px'}}>
+                <h3 style={{fontFamily:'var(--font-display)', fontSize:'1.05rem', fontWeight:800, textTransform:'uppercase', color:'var(--black)', marginBottom:'10px'}}>{f.q}</h3>
+                <p style={{fontSize:'0.9rem', color:'var(--gray-text)', lineHeight:'1.7'}}>{f.a}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="cta-section">
+      <section style={{padding:'80px 0', background:'var(--rust)'}}>
         <div className="cta-inner">
-          <h2>Need Hood Cleaning in {loc.name}?</h2>
-          <p>NFPA 96 certified service with same-day availability. Join 200+ San Diego County restaurants that trust Core.</p>
+          <h2>Schedule Hood Cleaning in {loc.name}</h2>
+          <p>Free quote, same-day response, NFPA 96 certified — serving all of San Diego County.</p>
           <div className="cta-actions">
-            <a href="https://api.leadconnectorhq.com/widget/bookings/corehoodcleaning" className="btn-white">
-              📅 Book Free Quote
-            </a>
-            <a href="tel:8583612570" className="btn-secondary">
-              📞 (858) 361-2570
-            </a>
+            <a href="https://api.leadconnectorhq.com/widget/bookings/corehoodcleaning" className="btn-white">Book Online</a>
+            <a href="tel:8583612570" className="btn-secondary">(858) 361-2570</a>
           </div>
         </div>
       </section>
 
       <footer>
         <div className="container">
-          <div style={{
-            paddingBottom:'32px', borderBottom:'1px solid rgba(255,255,255,0.06)',
-            display:'flex', justifyContent:'space-between', alignItems:'center', flexWrap:'wrap', gap:'16px'
-          }}>
-            <Link href="/" className="nav-logo">CORE <span style={{color:'var(--orange)'}}>HOOD</span> CLEANING</Link>
-            <a href="tel:8583612570" style={{color:'var(--orange)', fontFamily:'var(--font-display)', fontWeight:800, fontSize:'1.2rem'}}>
-              (858) 361-2570
-            </a>
-          </div>
-          <div style={{paddingTop:'32px', display:'flex', justifyContent:'space-between', flexWrap:'wrap', gap:'16px'}}>
-            <p style={{fontSize:'0.8rem', color:'rgba(255,255,255,0.3)'}}>
-              © {new Date().getFullYear()} Core Hood Cleaning | Hood Cleaning {loc.name}, CA
-            </p>
-            <Link href="/" style={{fontSize:'0.8rem', color:'rgba(255,255,255,0.3)'}}>← Back to Home</Link>
+          <div className="footer-bottom" style={{paddingTop:'24px', justifyContent:'space-between'}}>
+            <p>&copy; 2025 Core Hood Cleaning. All rights reserved.</p>
+            <Link href="/" style={{color:'rgba(238,239,226,0.4)', fontSize:'0.85rem'}}>Back to Home</Link>
           </div>
         </div>
       </footer>

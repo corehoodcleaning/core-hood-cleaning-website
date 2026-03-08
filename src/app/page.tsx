@@ -27,12 +27,12 @@ const FAQS = [
 ]
 
 const SERVE = [
-  { title: 'Restaurants', desc: 'From downtown to Oceanside — all sizes, all cuisines across San Diego County.', img: 'https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800&q=80' },
-  { title: 'Bars & Breweries', desc: 'Craft breweries and bars throughout San Diego that need compliant kitchen exhaust.', img: 'https://images.unsplash.com/photo-1514190051997-0f6f39ca5cde?w=800&q=80' },
-  { title: 'Schools & Hospitals', desc: 'Institutional kitchens that require certified, documented compliance services.', img: 'https://images.unsplash.com/photo-1567521464027-f127ff144326?w=800&q=80' },
-  { title: 'Hotels & Resorts', desc: "San Diego's hospitality industry trusts Core for reliable kitchen maintenance.", img: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800&q=80' },
-  { title: 'Commercial Commissaries', desc: 'Large-scale food production facilities across San Diego County.', img: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80' },
-  { title: 'Food Trucks', desc: 'Mobile food vendors operating throughout San Diego — we keep you compliant.', img: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=800&q=80' },
+  { title: 'Restaurants', desc: 'From downtown to Oceanside — all sizes, all cuisines across San Diego County.', img: '/images/serve-restaurants.jpg' },
+  { title: 'Bars & Breweries', desc: 'Craft breweries and bars throughout San Diego that need compliant kitchen exhaust.', img: '/images/serve-bars.jpg' },
+  { title: 'Schools & Hospitals', desc: 'Institutional kitchens that require certified, documented compliance services.', img: '/images/serve-schools.jpg' },
+  { title: 'Hotels & Resorts', desc: "San Diego's hospitality industry trusts Core for reliable kitchen maintenance.", img: '/images/serve-hotels.jpg' },
+  { title: 'Commercial Commissaries', desc: 'Large-scale food production facilities across San Diego County.', img: '/images/serve-commissaries.jpg' },
+  { title: 'Stadiums & Sports Venues', desc: 'High-volume concession and catering kitchens at sports and entertainment venues.', img: '/images/serve-stadiums.jpg' },
 ]
 
 export default function HomePage() {
@@ -73,7 +73,7 @@ export default function HomePage() {
       <section className="hero">
         <div className="hero-bg-photo">
           <img
-            src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1800&q=85"
+            src="/images/hero-commercial-kitchen.jpg"
             alt="Stainless steel commercial kitchen with hood"
           />
         </div>
@@ -140,9 +140,9 @@ export default function HomePage() {
           </div>
           <div className="services-grid">
             {[
-              { href:'/services/hood-cleaning', img:'/images/tech-pressure-wash.jpg', imgAlt:'Hood cleaning technician', title:'Hood Cleaning', desc:'Full system pressure washing from hood to rooftop fan. NFPA 96 compliant with photo documentation and compliance certificate on every service.', items:['Hood canopy, filters & plenum','Ductwork — full run to rooftop','Exhaust fan housing & blades','Grease containment & disposal','Before/after photos + certificate'] },
-              { href:'/services/filter-exchange', img:'/images/tech-hood-interior.jpg', imgAlt:'Filter exchange service', title:'Filter Exchange', desc:'Weekly or bi-weekly clean filter swap programs. Your kitchen always has clean, compliant filters without managing the cleaning yourself.', items:['Clean filters every service visit','Weekly or bi-weekly schedules','Multiple filter types stocked','No downtime — swap and go','Flat monthly program'] },
-              { href:'/services/nfpa-inspection', img:'/images/tech-rooftop-palms.jpg', imgAlt:'NFPA 96 inspection San Diego', title:'NFPA 96 Inspections', desc:'Certified compliance inspections to ensure your kitchen meets fire code. Essential for health departments, insurance, and fire marshal visits.', items:['Full NFPA 96 system inspection','Written compliance report','Deficiency documentation','Inspection sticker & certificate','Re-inspection if needed'] },
+              { href:'/services/hood-cleaning', img:'/images/tech-kitchen-cleaning.jpg', imgAlt:'Hood cleaning technician at work', title:'Hood Cleaning', desc:'Full system pressure washing from hood to rooftop fan. NFPA 96 compliant with photo documentation and compliance certificate on every service.', items:['Hood canopy, filters & plenum','Ductwork — full run to rooftop','Exhaust fan housing & blades','Grease containment & disposal','Before/after photos + certificate'] },
+              { href:'/services/filter-exchange', img:'/images/filter-exchange.webp', imgAlt:'Clean commercial hood filters', title:'Filter Exchange', desc:'Weekly or bi-weekly clean filter swap programs. Your kitchen always has clean, compliant filters without managing the cleaning yourself.', items:['Clean filters every service visit','Weekly or bi-weekly schedules','Multiple filter types stocked','No downtime — swap and go','Flat monthly program'] },
+              { href:'/services/nfpa-inspection', img:'/images/NFPA-96-2.jpg', imgAlt:'NFPA 96 certified inspection', title:'NFPA 96 Inspections', desc:'Certified compliance inspections to ensure your kitchen meets fire code. Essential for health departments, insurance, and fire marshal visits.', items:['Full NFPA 96 system inspection','Written compliance report','Deficiency documentation','Inspection sticker & certificate','Re-inspection if needed'] },
             ].map(s => (
               <div key={s.href} className="service-card">
                 <div className="service-card-img">
@@ -215,7 +215,7 @@ export default function HomePage() {
                 { title:'Photo Documentation', desc:'Before and after photos on every single job. We hand you proof, not promises.' },
                 { title:'NFPA 96 Certified', desc:'Fully certified technicians. Your compliance certificate is valid for insurance, fire marshal, and health inspections.' },
                 { title:'Night & Weekend Service', desc:'We work when your kitchen is closed — no disruption to service, no lost revenue.' },
-                { title:'No Upsells', desc:'We assess your system and recommend only what you actually need. Honest service every time.' },
+                { title:'Transparent Pricing', desc:'We assess your system and give you a clear, straightforward quote — no surprises, no hidden fees, no pressure.' },
                 { title:'Full Compliance Reports', desc:'Detailed service reports you can file with your insurance and show any inspector.' },
               ].map(d => (
                 <div key={d.title} className="diff-item">
@@ -319,7 +319,7 @@ export default function HomePage() {
         <div className="container">
           <div className="footer-grid">
             <div className="footer-brand">
-              <Image src="/images/core-logo.png" alt="Core Services" width={100} height={34} style={{filter:'brightness(0) invert(0.85)'}} />
+              <Image src="/images/core-logo.png" alt="Core Services" width={100} height={100} style={{width:'100px', height:'auto'}} />
               <p>San Diego&apos;s NFPA 96 certified commercial hood cleaning company. Serving restaurants, hotels, schools, and commercial kitchens throughout San Diego County.</p>
               <span className="footer-tagline">+ At the Core of Every Job +</span>
               <a href="https://www.instagram.com/coreservicesofficial" target="_blank" rel="noopener noreferrer" className="footer-instagram">

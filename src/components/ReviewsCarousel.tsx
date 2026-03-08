@@ -6,9 +6,9 @@ const REVIEWS = [
   { name: 'Dream P.', role: 'Multi-Unit Operator', text: "We hired Core to clean our kitchen hood and couldn't be happier. Professional, punctual, and thorough. Before-and-after photos showed the incredible difference. Chase is the best — 100/10." },
   { name: 'Chris T.', role: 'Head Chef', text: "Been dealing with many companies over the years and Core Hood has it done right. Very friendly, professional, and did a great job. We look forward to a long working relationship. Highly recommend if you're in San Diego." },
   { name: 'Crystal R.', role: 'Restaurant Owner', text: 'Genuine guys who know their business really well. They were very clear and concise and answered all our questions. Great communication from start to finish.' },
-  { name: 'Sergio B.', role: 'General Manager', text: 'I manage a small restaurant in Coronado. We switched from a bigger company and the difference is night and day. Core cares about their clients and shows it in every service.' },
-  { name: 'Marcus T.', role: 'Executive Chef', text: 'Core Hood Cleaning is the only company I trust for our kitchen. They show up on time, do a thorough job, and the documentation they provide makes health inspections a breeze.' },
-  { name: 'Angela R.', role: 'Restaurant Owner', text: 'After a failed health inspection with our previous cleaning company, we switched to Core. They identified issues the other company had been missing for months. Incredible attention to detail.' },
+  { name: 'Sergio B.', role: 'General Manager', text: "I manage a small restaurant in Coronado. We switched from a bigger company and the difference is night and day. Core cares about their clients and shows it in every service." },
+  { name: 'Cammy Mattia', role: 'Multi-Location Owner', text: "Chase is the man!!! I've been dealing with him for almost 3 years!! I now use him across 4 different locations! Fast and efficient work every single time. Definitely give him a call!!!" },
+  { name: 'D.', role: 'Local Head Chef', text: "These guys are pros, top to bottom. The work speaks for itself, well done lads, highly recommend. Very professional and organized." },
 ]
 
 export default function ReviewsCarousel() {
@@ -45,6 +45,18 @@ export default function ReviewsCarousel() {
             <button className="carousel-btn" onClick={() => scroll(-1)}>&#8592;</button>
             <button className="carousel-btn" onClick={() => scroll(1)}>&#8594;</button>
           </div>
+        </div>
+        <div style={{textAlign:'center', marginTop:'36px'}}>
+          <a
+            href="https://www.google.com/maps/place/Core+Hood+Cleaning"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-outline-dark"
+            style={{display:'inline-flex', alignItems:'center', gap:'8px', padding:'14px 28px', border:'2px solid var(--rust)', color:'var(--rust)', borderRadius:'4px', fontFamily:'var(--font-display)', fontWeight:800, fontSize:'0.85rem', letterSpacing:'0.06em', textTransform:'uppercase', transition:'all 0.2s'}}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            View All 40+ Google Reviews
+          </a>
         </div>
       </div>
     </section>
