@@ -430,7 +430,7 @@ footer { background: var(--black); padding: 64px 0 32px; border-top: 1px solid r
   transition: all 0.3s;
 }
 @media (max-width: 768px) {
-  .nav-hamburger { display: flex; }
+  .nav-hamburger { display: flex !important; }
   .nav-phone { font-size: 0.85rem !important; }
   .nav-cta .btn-primary { font-size: 0.78rem !important; padding: 8px 14px !important; }
 }
@@ -702,7 +702,7 @@ footer { background: var(--black); padding: 64px 0 32px; border-top: 1px solid r
   transition: all 0.2s;
 }
 @media (max-width: 768px) {
-  .nav-hamburger { display: flex; }
+  .nav-hamburger { display: flex !important; }
 }
 
 .nav-mobile-menu {
