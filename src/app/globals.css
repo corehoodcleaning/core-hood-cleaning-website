@@ -310,7 +310,7 @@ footer { background: var(--black); padding: 64px 0 32px; border-top: 1px solid r
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  padding-bottom: 8px;
+  padding-bottom: 0;
 }
 .carousel::-webkit-scrollbar { display: none; }
 .carousel-slide {
@@ -431,7 +431,7 @@ footer { background: var(--black); padding: 64px 0 32px; border-top: 1px solid r
 }
 @media (max-width: 768px) {
   .nav-hamburger { display: flex; }
-  .nav-phone { display: none; }
+  .nav-phone { font-size: 0.85rem !important; }
   .nav-cta .btn-primary { font-size: 0.78rem !important; padding: 8px 14px !important; }
 }
 
@@ -550,7 +550,7 @@ footer { background: var(--black); padding: 64px 0 32px; border-top: 1px solid r
   .nav-logo-text { font-size: 0.95rem; }
   .nav-logo-sub { display: none; }
   .nav-links { display: none; }
-  .nav-phone { display: none; }
+  .nav-phone { font-size: 0.85rem !important; }
   .nav-btn { font-size: 0.8rem !important; padding: 8px 14px !important; }
 }
 
