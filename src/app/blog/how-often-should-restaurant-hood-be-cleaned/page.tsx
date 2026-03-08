@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import Nav from '@/components/Nav'
+import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'How Often Should a Restaurant Hood Be Cleaned? NFPA 96 Guide | Core Hood Cleaning',
@@ -11,25 +13,8 @@ export const metadata: Metadata = {
 export default function BlogPost1() {
   return (
     <>
-      <nav>
-        <div className="nav-inner">
-          <Link href="/" className="nav-logo">
-            <Image src="/images/core-logo.png" alt="Core Services" width={120} height={40} className="nav-logo-img" />
-            <div className="nav-logo-text">Core Hood Cleaning<span className="nav-logo-sub">San Diego, CA · NFPA 96 Certified</span></div>
-          </Link>
-          <ul className="nav-links">
-            <li><Link href="/#services">Services</Link></li>
-            <li><Link href="/blog">Blog</Link></li>
-            <li><Link href="/about">About</Link></li>
-          </ul>
-          <div className="nav-cta">
-            <a href="tel:8583612570" className="nav-phone">📞 (858) 361-2570</a>
-            <a href="https://api.leadconnectorhq.com/widget/bookings/corehoodcleaning" className="btn-primary" style={{padding:'10px 20px', fontSize:'0.85rem'}}>Book Now</a>
-          </div>
-        </div>
-      </nav>
-
-      <article style={{paddingTop:'100px'}}>
+      <Nav />
+<article style={{paddingTop:'100px'}}>
         <div style={{background:'var(--true-blue)', padding:'60px 0 48px'}}>
           <div className="container" style={{maxWidth:'760px'}}>
             <Link href="/blog" style={{color:'rgba(238,239,226,0.5)', fontSize:'0.85rem', display:'inline-block', marginBottom:'24px'}}>← Blog</Link>
@@ -38,7 +23,7 @@ export default function BlogPost1() {
               <span style={{fontSize:'0.78rem', color:'rgba(238,239,226,0.5)'}}>February 2025</span>
             </div>
             <h1 style={{fontFamily:'var(--font-display)', fontSize:'clamp(1.8rem,4vw,2.8rem)', fontWeight:900, textTransform:'uppercase', color:'var(--off-white)', lineHeight:'1.1', marginBottom:'20px'}}>How Often Should a Restaurant Hood Be Cleaned? (NFPA 96 Guide)</h1>
-            <p style={{color:'rgba(238,239,226,0.6)', fontSize:'1rem', lineHeight:'1.7'}}>The short answer: it depends on how and what you cook. NFPA 96 sets the minimum required frequency — and ignoring it puts your license, insurance, and safety at risk.</p>
+            <p style={{color:'rgba(238,239,226,0.6)', fontSize:'1rem', lineHeight:'1.7'}}>The short answer: it depends on how and what you cook. NFPA 96 sets the minimum required frequency   and ignoring it puts your license, insurance, and safety at risk.</p>
           </div>
         </div>
 
@@ -54,8 +39,8 @@ export default function BlogPost1() {
             </div>
 
             <h2 style={{fontFamily:'var(--font-display)', fontSize:'1.5rem', fontWeight:900, textTransform:'uppercase', color:'var(--black)', marginBottom:'16px'}}>What NFPA 96 Actually Says</h2>
-            <p style={{fontSize:'0.95rem', color:'var(--gray-text)', lineHeight:'1.8', marginBottom:'20px'}}>NFPA 96 — the Standard for Ventilation Control and Fire Protection of Commercial Cooking Operations — is the national standard adopted by fire marshals and health departments across California, including San Diego County.</p>
-            <p style={{fontSize:'0.95rem', color:'var(--gray-text)', lineHeight:'1.8', marginBottom:'32px'}}>The code specifies minimum cleaning frequencies based on the type and volume of cooking being performed. These aren&apos;t suggestions — they&apos;re requirements that affect your fire suppression system validity and insurance coverage.</p>
+            <p style={{fontSize:'0.95rem', color:'var(--gray-text)', lineHeight:'1.8', marginBottom:'20px'}}>NFPA 96   the Standard for Ventilation Control and Fire Protection of Commercial Cooking Operations   is the national standard adopted by fire marshals and health departments across California, including San Diego County.</p>
+            <p style={{fontSize:'0.95rem', color:'var(--gray-text)', lineHeight:'1.8', marginBottom:'32px'}}>The code specifies minimum cleaning frequencies based on the type and volume of cooking being performed. These aren&apos;t suggestions   they&apos;re requirements that affect your fire suppression system validity and insurance coverage.</p>
 
             <h2 style={{fontFamily:'var(--font-display)', fontSize:'1.5rem', fontWeight:900, textTransform:'uppercase', color:'var(--black)', marginBottom:'16px'}}>Monthly Cleaning Required</h2>
             <p style={{fontSize:'0.95rem', color:'var(--gray-text)', lineHeight:'1.8', marginBottom:'20px'}}>Your kitchen requires monthly hood cleaning if you use any of the following:</p>
@@ -66,13 +51,13 @@ export default function BlogPost1() {
             </ul>
 
             <h2 style={{fontFamily:'var(--font-display)', fontSize:'1.5rem', fontWeight:900, textTransform:'uppercase', color:'var(--black)', marginBottom:'16px'}}>Quarterly Cleaning Required</h2>
-            <p style={{fontSize:'0.95rem', color:'var(--gray-text)', lineHeight:'1.8', marginBottom:'32px'}}>Most San Diego restaurants fall into this category. Moderate cooking operations — full-service restaurants, fast casual operations, school cafeterias during the academic year — require cleaning every three months.</p>
+            <p style={{fontSize:'0.95rem', color:'var(--gray-text)', lineHeight:'1.8', marginBottom:'32px'}}>Most San Diego restaurants fall into this category. Moderate cooking operations   full-service restaurants, fast casual operations, school cafeterias during the academic year   require cleaning every three months.</p>
 
             <h2 style={{fontFamily:'var(--font-display)', fontSize:'1.5rem', fontWeight:900, textTransform:'uppercase', color:'var(--black)', marginBottom:'16px'}}>Semi-Annual or Annual Cleaning</h2>
-            <p style={{fontSize:'0.95rem', color:'var(--gray-text)', lineHeight:'1.8', marginBottom:'32px'}}>Low-volume cooking operations — like churches, senior centers, or facilities that only cook a few hours per day — may qualify for semi-annual (every 6 months) or even annual cleaning. A certified inspection will determine the right frequency.</p>
+            <p style={{fontSize:'0.95rem', color:'var(--gray-text)', lineHeight:'1.8', marginBottom:'32px'}}>Low-volume cooking operations   like churches, senior centers, or facilities that only cook a few hours per day   may qualify for semi-annual (every 6 months) or even annual cleaning. A certified inspection will determine the right frequency.</p>
 
             <div style={{background:'var(--off-white)', border:'1px solid var(--gray-light)', borderLeft:'4px solid var(--rust)', borderRadius:'8px', padding:'28px', marginBottom:'40px'}}>
-              <p style={{fontFamily:'var(--font-display)', fontSize:'1rem', fontWeight:800, textTransform:'uppercase', color:'var(--black)', marginBottom:'8px'}}>Don&apos;t Guess — Get a Professional Assessment</p>
+              <p style={{fontFamily:'var(--font-display)', fontSize:'1rem', fontWeight:800, textTransform:'uppercase', color:'var(--black)', marginBottom:'8px'}}>Don&apos;t Guess   Get a Professional Assessment</p>
               <p style={{fontSize:'0.9rem', color:'var(--gray-text)', lineHeight:'1.7'}}>Cleaning frequency should be determined by a certified technician who can assess your cooking volume, equipment type, and grease output. Over-cleaning wastes money; under-cleaning creates liability.</p>
             </div>
 
@@ -84,14 +69,7 @@ export default function BlogPost1() {
         </div>
       </article>
 
-      <footer>
-        <div className="container">
-          <div className="footer-bottom" style={{paddingTop:'24px', justifyContent:'center', flexDirection:'column', gap:'8px', textAlign:'center'}}>
-            <Link href="/blog" style={{color:'rgba(238,239,226,0.4)', fontSize:'0.85rem'}}>← Back to Blog</Link>
-            <p>© 2025 Core Hood Cleaning. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </>
   )
 }

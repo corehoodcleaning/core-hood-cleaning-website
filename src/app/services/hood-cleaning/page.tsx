@@ -1,39 +1,14 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import Nav from '@/components/Nav'
+import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Commercial Hood Cleaning San Diego | NFPA 96 Certified | Core Hood Cleaning',
   description: 'Professional commercial kitchen exhaust hood cleaning in San Diego. NFPA 96 certified, photo documentation included. Serving restaurants, hotels & schools. Call (858) 361-2570.',
   alternates: { canonical: 'https://www.corehoodcleaning.com/services/hood-cleaning' }
 }
-
-const Nav = () => (
-  <nav>
-    <div className="nav-inner">
-      <Link href="/" className="nav-logo">
-        <Image src="/images/core-logo.png" alt="Core Services" width={110} height={38} className="nav-logo-img" />
-        <div className="nav-logo-text">Core Hood Cleaning<span className="nav-logo-sub">San Diego, CA · NFPA 96 Certified</span></div>
-      </Link>
-      <ul className="nav-links">
-        <li className="nav-dropdown">
-          <span className="nav-dropdown-trigger">Services</span>
-          <div className="nav-dropdown-menu">
-            <Link href="/services/hood-cleaning">Hood Cleaning</Link>
-            <Link href="/services/filter-exchange">Filter Exchange</Link>
-            <Link href="/services/nfpa-inspection">NFPA 96 Inspections</Link>
-          </div>
-        </li>
-        <li><Link href="/about">About</Link></li>
-        <li><Link href="/blog">Blog</Link></li>
-      </ul>
-      <div className="nav-cta">
-        <a href="tel:8583612570" className="nav-phone">(858) 361-2570</a>
-        <a href="https://api.leadconnectorhq.com/widget/bookings/corehoodcleaning" className="btn-primary nav-btn">Book Now</a>
-      </div>
-    </div>
-  </nav>
-)
 
 export default function HoodCleaningPage() {
   return (
@@ -51,7 +26,7 @@ export default function HoodCleaningPage() {
           <h1 className="section-title light" style={{fontSize:'clamp(2.5rem,5vw,4.5rem)', marginBottom:'24px'}}>Commercial Hood<br/>Cleaning San Diego</h1>
           <p style={{color:'rgba(238,239,226,0.65)', fontSize:'1.1rem', lineHeight:'1.8', marginBottom:'40px', maxWidth:'600px'}}>
             Full-system NFPA 96 certified exhaust cleaning from hood canopy to rooftop fan.
-            Every job includes before and after photos and a compliance certificate — accepted by
+            Every job includes before and after photos and a compliance certificate accepted by
             fire marshals, health departments, and insurance carriers.
           </p>
           <div style={{display:'flex', gap:'16px', flexWrap:'wrap'}}>
@@ -79,13 +54,13 @@ export default function HoodCleaningPage() {
               <h2 className="section-title" style={{marginBottom:'24px'}}>More Than Just<br/>Cleaning the Hood</h2>
               <p style={{fontSize:'0.95rem', color:'var(--gray-text)', lineHeight:'1.8', marginBottom:'20px'}}>
                 Most people think hood cleaning means wiping down the visible hood surface. In reality,
-                NFPA 96 compliant hood cleaning covers the entire exhaust pathway — from the cooking
+                NFPA 96 compliant hood cleaning covers the entire exhaust pathway from the cooking
                 surface all the way to the exhaust fan on your rooftop.
               </p>
               <p style={{fontSize:'0.95rem', color:'var(--gray-text)', lineHeight:'1.8', marginBottom:'20px'}}>
                 Grease doesn't stop at the hood. It travels up through the ductwork and accumulates
                 throughout the system. A cleaning that only addresses the visible hood leaves the most
-                dangerous grease buildup untouched — inside the duct and around the rooftop fan.
+                dangerous grease buildup untouched inside the duct and around the rooftop fan.
               </p>
               <p style={{fontSize:'0.95rem', color:'var(--gray-text)', lineHeight:'1.8'}}>
                 Core Hood Cleaning services the complete system on every visit, exactly as NFPA 96
@@ -112,11 +87,11 @@ export default function HoodCleaningPage() {
               {title:'Hood Canopy & Baffles', desc:'The visible hood and all baffle filters are degreased and pressure washed. Every grease-contact surface is cleaned to bare metal.'},
               {title:'Plenum Chamber', desc:'The chamber directly above your filters is one of the highest grease accumulation points. We clean the plenum thoroughly on every visit.'},
               {title:'Grease Filters', desc:'All filters are removed, soaked, pressure washed, and reinstalled. We document filter condition and flag any that need replacement.'},
-              {title:'Full Ductwork', desc:'We clean the complete duct run from the plenum to the rooftop — not just the accessible sections. This is what separates a compliant cleaning from a partial one.'},
+              {title:'Full Ductwork', desc:'We clean the complete duct run from the plenum to the rooftop. Not just the accessible sections. This is what separates a compliant cleaning from a partial one.'},
               {title:'Exhaust Fan & Housing', desc:'The rooftop exhaust fan is hinged open, and the fan blades, housing, and surrounding curb are cleaned and inspected. Fan condition is documented.'},
               {title:'Grease Containment', desc:'All grease and wash water is collected and properly disposed of. We never leave grease residue on your roof or drain it into the building.'},
               {title:'Before & After Photos', desc:'Photos are taken of every area before and after cleaning. You receive a full photo set with your service report as proof of work performed.'},
-              {title:'Compliance Certificate', desc:'An NFPA 96 compliance sticker is applied to your hood, and a signed compliance certificate is issued — valid for fire marshals, health inspectors, and insurance.'},
+              {title:'Compliance Certificate', desc:'An NFPA 96 compliance sticker is applied to your hood, and a signed compliance certificate is issued, valid for fire marshals, health inspectors, and insurance.'},
             ].map(item => (
               <div key={item.title} style={{background:'var(--white)', border:'1px solid var(--gray-light)', borderTop:'4px solid var(--rust)', borderRadius:'8px', padding:'28px'}}>
                 <h3 style={{fontFamily:'var(--font-display)', fontSize:'1.1rem', fontWeight:900, textTransform:'uppercase', color:'var(--black)', marginBottom:'10px'}}>{item.title}</h3>
@@ -137,9 +112,9 @@ export default function HoodCleaningPage() {
           <div style={{display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(280px, 1fr))', gap:'20px'}}>
             {[
               {n:'01', t:'Protection First', d:'All cooking equipment and surfaces near the hood are covered with heavy-duty poly plastic before any cleaning begins. Your kitchen is protected.'},
-              {n:'02', t:'Before Photos', d:'We document the condition of every area before we start — hood interior, duct access points, and rooftop fan. This is your baseline.'},
+              {n:'02', t:'Before Photos', d:'We document the condition of every area before we start including the hood interior, duct access points, and rooftop fan. This is your baseline.'},
               {n:'03', t:'Degrease & Soak', d:'Commercial-grade alkaline degreaser is applied to all surfaces. We let it dwell to break down grease before washing, which means a more thorough clean.'},
-              {n:'04', t:'Pressure Wash', d:'High-pressure hot water blasts every surface clean — from the hood canopy through the duct to the rooftop fan. All grease is pushed to collection points.'},
+              {n:'04', t:'Pressure Wash', d:'High-pressure hot water blasts every surface clean from the hood canopy through the duct to the rooftop fan. All grease is pushed to collection points.'},
               {n:'05', t:'Rooftop Service', d:'We access the roof, open the exhaust fan, and clean the blades, housing, and surrounding curb. All rooftop grease and water is collected and removed.'},
               {n:'06', t:'Documentation', d:'After photos are taken. Your compliance certificate is issued. The service report is delivered. Your kitchen is ready for any inspection.'},
             ].map(s => (
@@ -161,7 +136,7 @@ export default function HoodCleaningPage() {
               <p className="section-label">Who Needs It</p>
               <h2 className="section-title" style={{marginBottom:'24px'}}>Required for Any<br/>Commercial Kitchen</h2>
               <p style={{fontSize:'0.95rem', color:'var(--gray-text)', lineHeight:'1.8', marginBottom:'20px'}}>
-                If your kitchen has a commercial cooking appliance with an exhaust hood — it requires
+                If your kitchen has a commercial cooking appliance with an exhaust hood requires
                 regular professional cleaning under NFPA 96. This applies to restaurants, hotels,
                 schools, hospitals, commissaries, food trucks, and any other commercial food
                 service operation.
@@ -226,14 +201,7 @@ export default function HoodCleaningPage() {
         </div>
       </section>
 
-      <footer>
-        <div className="container">
-          <div className="footer-bottom" style={{paddingTop:'24px', justifyContent:'center', flexDirection:'column', gap:'8px', textAlign:'center'}}>
-            <Link href="/" style={{color:'rgba(238,239,226,0.4)', fontSize:'0.85rem'}}>Back to Home</Link>
-            <p>&copy; 2025 Core Hood Cleaning. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </>
   )
 }

@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import Nav from '@/components/Nav'
+import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Hood Cleaning Blog | San Diego Kitchen Compliance Tips | Core Hood Cleaning',
@@ -9,12 +11,12 @@ export const metadata: Metadata = {
 }
 
 const POSTS = [
-  { slug: 'how-often-should-restaurant-hood-be-cleaned', title: 'How Often Should a Restaurant Hood Be Cleaned? (NFPA 96 Guide)', date: 'February 2025', excerpt: 'NFPA 96 sets the cleaning frequency based on your cooking type and volume. Here\'s exactly what the code requires — and what it means for your San Diego restaurant.', img: '/images/before-after-1.jpg', category: 'Compliance' },
+  { slug: 'how-often-should-restaurant-hood-be-cleaned', title: 'How Often Should a Restaurant Hood Be Cleaned? (NFPA 96 Guide)', date: 'February 2025', excerpt: 'NFPA 96 sets the cleaning frequency based on your cooking type and volume. Here\'s exactly what the code requires and what it means for your San Diego restaurant.', img: '/images/before-after-1.jpg', category: 'Compliance' },
   { slug: 'what-is-nfpa-96', title: 'What Is NFPA 96? A Restaurant Owner\'s Plain-English Guide', date: 'January 2025', excerpt: 'NFPA 96 is the fire code standard every commercial kitchen must follow. This guide breaks down what it covers, why it matters, and what happens if you\'re not compliant.', img: '/images/tech-rooftop-palms.jpg', category: 'Compliance' },
   { slug: 'restaurant-fire-prevention-san-diego', title: 'Restaurant Fire Prevention in San Diego: What Every Owner Needs to Know', date: 'January 2025', excerpt: 'Grease fires are the #1 cause of restaurant fires in California. Here\'s how to protect your San Diego restaurant with proper exhaust maintenance and fire prevention.', img: '/images/before-after-2.jpg', category: 'Fire Safety' },
-  { slug: 'what-happens-during-hood-cleaning', title: 'What Actually Happens During a Commercial Hood Cleaning?', date: 'March 2025', excerpt: 'A step-by-step look at what a professional hood cleaning service includes — from protective plastic sheeting to the rooftop fan and the final compliance certificate.', img: '/images/tech-kitchen-cleaning.jpg', category: 'Education' },
-  { slug: 'health-inspection-checklist-san-diego', title: 'San Diego Restaurant Health Inspection Checklist: Kitchen Exhaust Edition', date: 'March 2025', excerpt: 'What San Diego health inspectors look for in your kitchen exhaust system — and how to make sure you\'re ready every time they walk through the door.', img: '/images/tech-hood-interior.jpg', category: 'Compliance' },
-  { slug: 'grease-trap-vs-hood-cleaning', title: 'Grease Trap Cleaning vs. Hood Cleaning: What\'s the Difference?', date: 'February 2025', excerpt: 'Two essential services that restaurant owners often confuse. Here\'s what each one does, why both matter, and how they work together to keep your kitchen compliant.', img: '/images/before-after-3.jpg', category: 'Education' },
+  { slug: 'what-happens-during-hood-cleaning', title: 'What Actually Happens During a Commercial Hood Cleaning?', date: 'March 2025', excerpt: 'A step-by-step look at what a professional hood cleaning service includes from protective plastic sheeting to the rooftop fan and the final compliance certificate.', img: '/images/tech-kitchen-cleaning.jpg', category: 'Education' },
+  { slug: 'health-inspection-checklist-san-diego', title: 'San Diego Restaurant Health Inspection Checklist: Kitchen Exhaust Edition', date: 'March 2025', excerpt: 'What San Diego health inspectors look for in your kitchen exhaust system and how to make sure you\'re ready every time they walk through the door.', img: '/images/tech-hood-interior.jpg', category: 'Compliance' },
+  { slug: 'grease-trap-vs-hood-cleaning', title: "Grease Trap Cleaning vs. Hood Cleaning: What's the Difference?", date: 'February 2025', excerpt: "Two essential services that restaurant owners often confuse. Here's what each one does, why both matter, and how they work together to keep your kitchen compliant.", img: '/images/tech-pressure-wash.jpg', category: 'Education' },
   { slug: 'commercial-kitchen-fire-suppression', title: 'How Your Hood Cleaning Affects Your Fire Suppression System', date: 'April 2025', excerpt: 'A dirty exhaust system can void your Ansul fire suppression system warranty and create serious liability. Here\'s the connection every restaurant owner should understand.', img: '/images/before-after-4.png', category: 'Fire Safety' },
   { slug: 'choosing-hood-cleaning-company-san-diego', title: 'How to Choose a Hood Cleaning Company in San Diego', date: 'April 2025', excerpt: 'Not all hood cleaning companies are equal. Here are the key questions to ask and red flags to avoid when hiring a commercial kitchen exhaust service in San Diego.', img: '/images/team-rooftop.jpg', category: 'Tips' },
   { slug: 'restaurant-compliance-san-diego-guide', title: 'The Complete Guide to Restaurant Compliance in San Diego County', date: 'May 2025', excerpt: 'A comprehensive overview of the permits, inspections, and maintenance requirements that San Diego County restaurants must meet to stay operational.', img: '/images/tech-core-jacket-rooftop.jpg', category: 'Compliance' },
@@ -24,33 +26,8 @@ const POSTS = [
 export default function BlogPage() {
   return (
     <>
-      <nav>
-        <div className="nav-inner">
-          <Link href="/" className="nav-logo">
-            <Image src="/images/core-logo.png" alt="Core Services" width={110} height={38} className="nav-logo-img" />
-            <div className="nav-logo-text">Core Hood Cleaning<span className="nav-logo-sub">San Diego, CA · NFPA 96 Certified</span></div>
-          </Link>
-          <ul className="nav-links">
-            <li className="nav-dropdown">
-              <span className="nav-dropdown-trigger">Services</span>
-              <div className="nav-dropdown-menu">
-                <Link href="/services/hood-cleaning">Hood Cleaning</Link>
-                <Link href="/services/filter-exchange">Filter Exchange</Link>
-                <Link href="/services/nfpa-inspection">NFPA 96 Inspections</Link>
-              </div>
-            </li>
-            <li><Link href="/#gallery">Our Work</Link></li>
-            <li><Link href="/about">About</Link></li>
-            <li><Link href="/blog">Blog</Link></li>
-          </ul>
-          <div className="nav-cta">
-            <a href="tel:8583612570" className="nav-phone">(858) 361-2570</a>
-            <a href="https://api.leadconnectorhq.com/widget/bookings/corehoodcleaning" className="btn-primary nav-btn">Book Now</a>
-          </div>
-        </div>
-      </nav>
-
-      <section style={{paddingTop:'120px', paddingBottom:'64px', background:'var(--true-blue)'}}>
+      <Nav />
+<section style={{paddingTop:'120px', paddingBottom:'64px', background:'var(--true-blue)'}}>
         <div className="container" style={{maxWidth:'800px'}}>
           <p className="section-label">Resources</p>
           <h1 className="section-title light" style={{marginBottom:'16px'}}>Hood Cleaning Blog</h1>
@@ -84,7 +61,7 @@ export default function BlogPage() {
       <section style={{padding:'80px 0', background:'var(--rust)'}}>
         <div className="cta-inner">
           <h2>Need Hood Cleaning?</h2>
-          <p>San Diego&apos;s NFPA 96 certified team — free quotes, same-day response.</p>
+          <p>San Diego&apos;s NFPA 96 certified team free quotes, same-day response.</p>
           <div className="cta-actions">
             <a href="https://api.leadconnectorhq.com/widget/bookings/corehoodcleaning" className="btn-white">Book a Quote</a>
             <a href="tel:8583612570" className="btn-secondary">(858) 361-2570</a>
@@ -92,14 +69,7 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <footer>
-        <div className="container">
-          <div className="footer-bottom" style={{paddingTop:'24px', justifyContent:'center', flexDirection:'column', gap:'8px', textAlign:'center'}}>
-            <Link href="/" style={{color:'rgba(238,239,226,0.4)', fontSize:'0.85rem'}}>Back to Home</Link>
-            <p>&copy; 2025 Core Hood Cleaning. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </>
   )
 }

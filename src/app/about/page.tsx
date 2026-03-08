@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import Nav from '@/components/Nav'
+import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'About Core Hood Cleaning | San Diego NFPA 96 Certified Team',
@@ -11,26 +13,8 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <nav>
-        <div className="nav-inner">
-          <Link href="/" className="nav-logo">
-            <Image src="/images/core-logo.png" alt="Core Services" width={120} height={40} className="nav-logo-img" />
-            <div className="nav-logo-text">Core Hood Cleaning<span className="nav-logo-sub">San Diego, CA · NFPA 96 Certified</span></div>
-          </Link>
-          <ul className="nav-links">
-            <li><Link href="/#services">Services</Link></li>
-            <li><Link href="/#gallery">Work</Link></li>
-            <li><Link href="/about">About</Link></li>
-            <li><Link href="/blog">Blog</Link></li>
-          </ul>
-          <div className="nav-cta">
-            <a href="tel:8583612570" className="nav-phone">📞 (858) 361-2570</a>
-            <a href="https://api.leadconnectorhq.com/widget/bookings/corehoodcleaning" className="btn-primary" style={{padding:'10px 20px', fontSize:'0.85rem'}}>Book Now</a>
-          </div>
-        </div>
-      </nav>
-
-      <section style={{paddingTop:'130px', paddingBottom:'80px', background:'var(--black)', position:'relative', overflow:'hidden'}}>
+      <Nav />
+<section style={{paddingTop:'130px', paddingBottom:'80px', background:'var(--black)', position:'relative', overflow:'hidden'}}>
         <div style={{position:'absolute', inset:0}}>
           <Image src="/images/team-rooftop.jpg" alt="Core Hood Cleaning team" fill style={{objectFit:'cover', opacity:0.2, objectPosition:'center 40%'}} />
           <div style={{position:'absolute', inset:0, background:'linear-gradient(to right, rgba(0,0,0,0.95) 40%, rgba(0,0,0,0.6) 100%)'}} />
@@ -62,11 +46,11 @@ export default function AboutPage() {
               <p style={{fontSize:'0.95rem', color:'var(--gray-text)', lineHeight:'1.8', marginBottom:'20px'}}>
                 Core Hood Cleaning was founded by Chase Mangini, who grew up in the restaurant industry. 
                 After spending years watching how commercial kitchen maintenance was treated as an afterthought 
-                — or worse, outsourced to companies that cut corners — Chase built a different kind of company.
+                or worse, outsourced to companies that cut corners Chase built a different kind of company.
               </p>
               <p style={{fontSize:'0.95rem', color:'var(--gray-text)', lineHeight:'1.8', marginBottom:'20px'}}>
                 Core Services is built on four values: blue-collar work ethic, family, honesty, and 
-                professionalism. These aren&apos;t marketing words — they&apos;re the reason we document every job 
+                professionalism. These aren&apos;t marketing words they&apos;re the reason we document every job 
                 with before and after photos, why we show up on time, and why we don&apos;t upsell services 
                 you don&apos;t need.
               </p>
@@ -116,14 +100,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <footer>
-        <div className="container">
-          <div className="footer-bottom" style={{paddingTop:'24px', justifyContent:'center', flexDirection:'column', gap:'8px', textAlign:'center'}}>
-            <Link href="/" style={{color:'rgba(238,239,226,0.4)', fontSize:'0.85rem'}}>← Back to Home</Link>
-            <p>© 2025 Core Hood Cleaning. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </>
   )
 }

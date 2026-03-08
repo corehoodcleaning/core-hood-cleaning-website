@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import Nav from '@/components/Nav'
+import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Grease Filter Exchange Program San Diego | Core Hood Cleaning',
@@ -11,30 +13,15 @@ export const metadata: Metadata = {
 export default function FilterExchangePage() {
   return (
     <>
-      <nav>
-        <div className="nav-inner">
-          <Link href="/" className="nav-logo">
-            <Image src="/images/core-logo.png" alt="Core Services" width={110} height={38} className="nav-logo-img" />
-            <div className="nav-logo-text">Core Hood Cleaning<span className="nav-logo-sub">San Diego, CA · NFPA 96 Certified</span></div>
-          </Link>
-          <ul className="nav-links">
-            <li className="nav-dropdown"><span className="nav-dropdown-trigger">Services</span><div className="nav-dropdown-menu"><Link href="/services/hood-cleaning">Hood Cleaning</Link><Link href="/services/filter-exchange">Filter Exchange</Link><Link href="/services/nfpa-inspection">NFPA 96 Inspections</Link></div></li>
-            <li><Link href="/about">About</Link></li><li><Link href="/blog">Blog</Link></li>
-          </ul>
-          <div className="nav-cta">
-            <a href="tel:8583612570" className="nav-phone">(858) 361-2570</a>
-            <a href="https://api.leadconnectorhq.com/widget/bookings/corehoodcleaning" className="btn-primary nav-btn">Book Now</a>
-          </div>
-        </div>
-      </nav>
-
+      <Nav />
       <section style={{paddingTop:'0', minHeight:'55vh', background:'var(--true-blue)', position:'relative', overflow:'hidden', display:'flex', alignItems:'center'}}>
-        <div style={{position:'absolute', inset:0, background:'radial-gradient(ellipse at 70% 50%, rgba(137,29,27,0.15) 0%, transparent 70%)'}} />
+        <div style={{position:'absolute', inset:0, backgroundImage:'url(/images/filter-exchange.webp)', backgroundSize:'cover', backgroundPosition:'center', opacity:0.18, filter:'blur(3px)', transform:'scale(1.05)'}} />
+        <div style={{position:'absolute', inset:0, background:'linear-gradient(105deg, rgba(51,54,87,0.95) 0%, rgba(51,54,87,0.75) 100%)'}} />
         <div className="container" style={{position:'relative', zIndex:2, paddingTop:'140px', paddingBottom:'80px', maxWidth:'800px'}}>
           <p className="section-label">Our Services</p>
           <h1 className="section-title light" style={{fontSize:'clamp(2.5rem,5vw,4.5rem)', marginBottom:'24px'}}>Grease Filter<br/>Exchange Program</h1>
           <p style={{color:'rgba(238,239,226,0.65)', fontSize:'1.1rem', lineHeight:'1.8', marginBottom:'40px', maxWidth:'600px'}}>
-            Always-clean filters on a scheduled basis. We pull dirty filters, install clean ones, and handle all the washing ourselves — so your kitchen never has to deal with it.
+            Always-clean filters on a scheduled basis. We pull dirty filters, install clean ones, and handle all the washing ourselves so your kitchen never has to deal with it.
           </p>
           <div style={{display:'flex', gap:'16px', flexWrap:'wrap'}}>
             <a href="https://api.leadconnectorhq.com/widget/bookings/corehoodcleaning" className="btn-primary">Get a Quote</a>
@@ -53,7 +40,7 @@ export default function FilterExchangePage() {
               <h2 className="section-title" style={{marginBottom:'24px'}}>Clean Filters Are<br/>Not Optional</h2>
               <p style={{fontSize:'0.95rem', color:'var(--gray-text)', lineHeight:'1.8', marginBottom:'20px'}}>
                 Grease filters are the first line of defense in your exhaust system. When they become
-                saturated, they stop capturing grease-laden air effectively — which means more grease
+                saturated, they stop capturing grease-laden air effectively which means more grease
                 travels into your ductwork, increasing fire risk and reducing your exhaust system's
                 performance.
               </p>
@@ -63,7 +50,7 @@ export default function FilterExchangePage() {
                 frequent changes.
               </p>
               <p style={{fontSize:'0.95rem', color:'var(--gray-text)', lineHeight:'1.8', marginBottom:'20px'}}>
-                Most restaurants rely on kitchen staff to clean filters in-house — a task that frequently
+                Most restaurants rely on kitchen staff to clean filters in-house a task that frequently
                 gets delayed, done inconsistently, or skipped entirely during busy periods. Our
                 exchange program removes that responsibility entirely.
               </p>
@@ -73,8 +60,8 @@ export default function FilterExchangePage() {
               <h2 className="section-title" style={{marginBottom:'24px'}}>Simple Swap,<br/>Every Visit</h2>
               {[
                 {n:'01', t:'We Assess Your Kitchen', d:'We evaluate your cooking equipment, volume, and filter types to determine the right exchange frequency and filter specifications for your operation.'},
-                {n:'02', t:'We Stock Clean Filters', d:'A full set of clean, compliant filters sized for your hood is kept ready. On each visit, we bring clean replacements — no waiting, no delays.'},
-                {n:'03', t:'We Swap on Schedule', d:'On your chosen schedule — weekly or bi-weekly — we pull the dirty filters and install the clean set. The swap takes minutes, not hours.'},
+                {n:'02', t:'We Stock Clean Filters', d:'A full set of clean, compliant filters sized for your hood is kept ready. On each visit, we bring clean replacements no waiting, no delays.'},
+                {n:'03', t:'We Swap on Schedule', d:'On your chosen schedule weekly or bi-weekly we pull the dirty filters and install the clean set. The swap takes minutes, not hours.'},
                 {n:'04', t:'We Handle the Cleaning', d:'Dirty filters come with us to be professionally cleaned at our facility. You never have to manage filter cleaning, disposal, or replacement sourcing.'},
               ].map(s => (
                 <div key={s.n} style={{display:'flex', gap:'16px', padding:'16px 0', borderBottom:'1px solid var(--gray-light)'}}>
@@ -99,11 +86,11 @@ export default function FilterExchangePage() {
           <div style={{display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(280px, 1fr))', gap:'20px'}}>
             {[
               {title:'Consistent Compliance', desc:'Clean filters on a fixed schedule means you\'re never caught with saturated filters during a health inspection or fire marshal visit.'},
-              {title:'Reduced Duct Buildup', desc:'Clean filters capture more grease before it enters the duct system — reducing buildup between hood cleanings and extending time between deep cleans.'},
+              {title:'Reduced Duct Buildup', desc:'Clean filters capture more grease before it enters the duct system reducing buildup between hood cleanings and extending time between deep cleans.'},
               {title:'Staff Time Saved', desc:'Your kitchen team never has to soak, scrub, or deal with filters again. It\'s handled, every time, by trained professionals.'},
               {title:'Consistent Filter Quality', desc:'We use commercial-grade filters that meet or exceed NFPA 96 requirements. No mismatched replacements, no filters that don\'t fit properly.'},
               {title:'Documentation', desc:'Every exchange visit is logged. You have a record of filter service dates if ever needed for a compliance review or insurance claim.'},
-              {title:'Flexible Scheduling', desc:'We schedule exchanges around your kitchen\'s hours — early morning or late night, on days that work for your operation.'},
+              {title:'Flexible Scheduling', desc:'We schedule exchanges around your kitchen\'s hours early morning or late night, on days that work for your operation.'},
             ].map(b => (
               <div key={b.title} style={{background:'var(--white)', border:'1px solid var(--gray-light)', borderRadius:'8px', padding:'28px'}}>
                 <div style={{width:'10px', height:'10px', borderRadius:'50%', background:'var(--rust)', marginBottom:'16px'}} />
@@ -126,7 +113,7 @@ export default function FilterExchangePage() {
         </div>
       </section>
 
-      <footer><div className="container"><div className="footer-bottom" style={{paddingTop:'24px', justifyContent:'center', flexDirection:'column', gap:'8px', textAlign:'center'}}><Link href="/" style={{color:'rgba(238,239,226,0.4)', fontSize:'0.85rem'}}>Back to Home</Link><p>&copy; 2025 Core Hood Cleaning.</p></div></div></footer>
+      <Footer />
     </>
   )
 }

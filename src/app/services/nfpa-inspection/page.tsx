@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import Nav from '@/components/Nav'
+import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'NFPA 96 Inspection San Diego | Commercial Kitchen Compliance | Core Hood Cleaning',
@@ -11,23 +13,7 @@ export const metadata: Metadata = {
 export default function NFPAPage() {
   return (
     <>
-      <nav>
-        <div className="nav-inner">
-          <Link href="/" className="nav-logo">
-            <Image src="/images/core-logo.png" alt="Core Services" width={110} height={38} className="nav-logo-img" />
-            <div className="nav-logo-text">Core Hood Cleaning<span className="nav-logo-sub">San Diego, CA · NFPA 96 Certified</span></div>
-          </Link>
-          <ul className="nav-links">
-            <li className="nav-dropdown"><span className="nav-dropdown-trigger">Services</span><div className="nav-dropdown-menu"><Link href="/services/hood-cleaning">Hood Cleaning</Link><Link href="/services/filter-exchange">Filter Exchange</Link><Link href="/services/nfpa-inspection">NFPA 96 Inspections</Link></div></li>
-            <li><Link href="/about">About</Link></li><li><Link href="/blog">Blog</Link></li>
-          </ul>
-          <div className="nav-cta">
-            <a href="tel:8583612570" className="nav-phone">(858) 361-2570</a>
-            <a href="https://api.leadconnectorhq.com/widget/bookings/corehoodcleaning" className="btn-primary nav-btn">Book Now</a>
-          </div>
-        </div>
-      </nav>
-
+      <Nav />
       <section style={{paddingTop:'0', minHeight:'55vh', background:'var(--black)', position:'relative', overflow:'hidden', display:'flex', alignItems:'center'}}>
         <div style={{position:'absolute', inset:0}}>
           <Image src="/images/tech-rooftop-palms.jpg" alt="NFPA inspection San Diego" fill style={{objectFit:'cover', opacity:0.3, objectPosition:'center 30%'}} />
@@ -56,14 +42,14 @@ export default function NFPAPage() {
               <p className="section-label">What Is NFPA 96</p>
               <h2 className="section-title" style={{marginBottom:'24px'}}>The Fire Code Standard<br/>Every Kitchen Must Meet</h2>
               <p style={{fontSize:'0.95rem', color:'var(--gray-text)', lineHeight:'1.8', marginBottom:'20px'}}>
-                NFPA 96 — the Standard for Ventilation Control and Fire Protection of Commercial
-                Cooking Operations — is the primary fire code governing commercial kitchen exhaust
+                NFPA 96 the Standard for Ventilation Control and Fire Protection of Commercial
+                Cooking Operations is the primary fire code governing commercial kitchen exhaust
                 systems in the United States. In San Diego, fire marshals and health departments
                 reference NFPA 96 directly when inspecting your kitchen.
               </p>
               <p style={{fontSize:'0.95rem', color:'var(--gray-text)', lineHeight:'1.8', marginBottom:'20px'}}>
                 The standard covers the design, installation, operation, and maintenance of commercial
-                cooking exhaust systems — including required cleaning frequencies, access panel
+                cooking exhaust systems including required cleaning frequencies, access panel
                 placement, fire suppression system compatibility, and grease containment.
               </p>
               <p style={{fontSize:'0.95rem', color:'var(--gray-text)', lineHeight:'1.8', marginBottom:'20px'}}>
@@ -76,7 +62,7 @@ export default function NFPAPage() {
               <p className="section-label">What We Inspect</p>
               <h2 className="section-title" style={{marginBottom:'24px'}}>Full System<br/>Review</h2>
               <ul className="service-list">
-                {['Hood canopy structure and mounting integrity','Grease filter type, condition, and installation','Plenum chamber condition and access','Ductwork interior — full run inspection','Exhaust fan operation, condition, and clearances','Make-up air system (where applicable)','Fire suppression nozzle placement and coverage','Grease drip trays and containment system','Access panel locations and code compliance','Clearances from combustible materials','Documentation of all deficiencies found'].map(i => (
+                {['Hood canopy structure and mounting integrity','Grease filter type, condition, and installation','Plenum chamber condition and access','Ductwork interior full run inspection','Exhaust fan operation, condition, and clearances','Make-up air system (where applicable)','Fire suppression nozzle placement and coverage','Grease drip trays and containment system','Access panel locations and code compliance','Clearances from combustible materials','Documentation of all deficiencies found'].map(i => (
                   <li key={i} style={{padding:'10px 0'}}>{i}</li>
                 ))}
               </ul>
@@ -96,7 +82,7 @@ export default function NFPAPage() {
               {title:'Written Inspection Report', desc:'A detailed written report documenting every component inspected, its condition, and any deficiencies found. This is your official record of the inspection.'},
               {title:'NFPA 96 Compliance Certificate', desc:'A signed compliance certificate issued by a certified technician. Accepted by San Diego fire marshals, health departments, and commercial insurance carriers.'},
               {title:'Photo Documentation', desc:'Photographs of all areas inspected are included with your report. Visual documentation of system condition for your records and any regulatory review.'},
-              {title:'Deficiency Report', desc:'If any issues are found, they are clearly documented with description, location, and recommended corrective action — so you know exactly what needs to be addressed.'},
+              {title:'Deficiency Report', desc:'If any issues are found, they are clearly documented with description, location, and recommended corrective action so you know exactly what needs to be addressed.'},
               {title:'NFPA 96 Sticker', desc:'An inspection sticker is applied to your hood noting the date of inspection and the next required service. Required by code and visible to inspectors.'},
               {title:'Re-Inspection Available', desc:'If deficiencies are identified, we can quote the corrective work and return for a follow-up inspection to bring your system into full compliance.'},
             ].map(item => (
@@ -154,7 +140,7 @@ export default function NFPAPage() {
         </div>
       </section>
 
-      <footer><div className="container"><div className="footer-bottom" style={{paddingTop:'24px', justifyContent:'center', flexDirection:'column', gap:'8px', textAlign:'center'}}><Link href="/" style={{color:'rgba(238,239,226,0.4)', fontSize:'0.85rem'}}>Back to Home</Link><p>&copy; 2025 Core Hood Cleaning.</p></div></div></footer>
+      <Footer />
     </>
   )
 }
