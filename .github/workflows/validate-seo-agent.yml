@@ -1,0 +1,51 @@
+name: Validate SEO Agent Branch
+
+on:
+  push:
+    branches:
+      - 'seo-agent/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate seo-config.json
+        run: |
+          python3 -c "
+          import json, sys
+          with open('src/seo-config.json') as f:
+              config = json.load(f)
+          required = ['homepage','about','blog','hood-cleaning','filter-exchange','nfpa-inspection','locations']
+          for key in required:
+              assert key in config, f'Missing key: {key}'
+              assert 'title' in config[key], f'Missing title in {key}'
+              assert 'description' in config[key], f'Missing description in {key}'
+              assert 10 <= len(config[key]['title']) <= 70, f'Title length out of range in {key}'
+              assert 50 <= len(config[key]['description']) <= 170, f'Description length out of range in {key}'
+          print('✅ seo-config.json is valid')
+          "
+
+      - name: Build
+        run: npm run build
+
+      - name: Auto-merge to main if build passes
+        if: success()
+        run: |
+          git config user.email "seo-agent@corehoodcleaning.com"
+          git config user.name "SEO Agent"
+          git fetch origin main
+          git checkout main
+          git merge --no-ff ${{ github.ref_name }} -m "auto-merge: ${{ github.ref_name }}"
+          git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
