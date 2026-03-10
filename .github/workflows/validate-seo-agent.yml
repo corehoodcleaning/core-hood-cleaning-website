@@ -21,19 +21,32 @@ jobs:
 
       - name: Validate seo-config.json
         run: |
-          python3 -c "
+          python3 << 'PYEOF'
           import json, sys
           with open('src/seo-config.json') as f:
               config = json.load(f)
           required = ['homepage','about','blog','hood-cleaning','filter-exchange','nfpa-inspection','locations']
+          errors = []
           for key in required:
-              assert key in config, f'Missing key: {key}'
-              assert 'title' in config[key], f'Missing title in {key}'
-              assert 'description' in config[key], f'Missing description in {key}'
-              assert 10 <= len(config[key]['title']) <= 70, f'Title length out of range in {key}'
-              assert 50 <= len(config[key]['description']) <= 170, f'Description length out of range in {key}'
-          print('✅ seo-config.json is valid')
-          "
+              if key not in config:
+                  errors.append('Missing key: ' + key)
+                  continue
+              if 'title' not in config[key]:
+                  errors.append('Missing title in ' + key)
+              if 'description' not in config[key]:
+                  errors.append('Missing description in ' + key)
+              t = config[key].get('title', '')
+              d = config[key].get('description', '')
+              if not (10 <= len(t) <= 70):
+                  errors.append(key + ' title length ' + str(len(t)) + ' out of range 10-70: ' + t)
+              if not (50 <= len(d) <= 170):
+                  errors.append(key + ' description length ' + str(len(d)) + ' out of range 50-170: ' + d)
+          if errors:
+              for e in errors:
+                  print('ERROR: ' + e)
+              sys.exit(1)
+          print('seo-config.json is valid')
+          PYEOF
 
       - name: Build
         run: npm run build
