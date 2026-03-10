@@ -1,0 +1,30 @@
+{
+  "homepage": {
+    "title": "Commercial Hood Cleaning San Diego | NFPA 96 Certified | Core Hood Cleaning",
+    "description": "San Diego's #1 commercial hood cleaning company. NFPA 96 certified, 40+ 5-star reviews, same-day emergency service. Free estimates. Call (858) 361-2570."
+  },
+  "about": {
+    "title": "About Core Hood Cleaning | San Diego Commercial Hood Cleaning",
+    "description": "Learn about Core Hood Cleaning, San Diego NFPA 96 certified commercial hood cleaning company. 200+ restaurants served, 40+ 5-star reviews."
+  },
+  "blog": {
+    "title": "Hood Cleaning Blog | San Diego Restaurant Tips | Core Hood",
+    "description": "Expert hood cleaning advice for San Diego restaurants. NFPA 96 compliance tips, fire safety guides, and commercial kitchen maintenance."
+  },
+  "hood-cleaning": {
+    "title": "Hood Cleaning San Diego | NFPA 96 Certified | Core Hood Cleaning",
+    "description": "Professional commercial hood cleaning in San Diego. NFPA 96 certified, same-day service, 40+ 5-star reviews. Call (858) 361-2570."
+  },
+  "filter-exchange": {
+    "title": "Grease Filter Exchange San Diego | Weekly Service | Core Hood",
+    "description": "Commercial grease filter exchange service in San Diego. Weekly and bi-weekly programs. Always compliant, zero downtime. Call (858) 361-2570."
+  },
+  "nfpa-inspection": {
+    "title": "NFPA 96 Inspection San Diego | Fire Code Compliance | Core Hood",
+    "description": "Certified NFPA 96 kitchen exhaust inspections in San Diego. Fire marshal approved, insurance compliant. Call (858) 361-2570."
+  },
+  "locations": {
+    "title": "Hood Cleaning {city} | San Diego NFPA 96 Certified | Core Hood",
+    "description": "Professional commercial hood cleaning in {city}, San Diego. NFPA 96 certified, same-day service available. Call (858) 361-2570."
+  }
+}
