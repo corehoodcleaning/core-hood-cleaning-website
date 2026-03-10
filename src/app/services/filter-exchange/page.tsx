@@ -1,13 +1,11 @@
 import type { Metadata } from 'next'
+import seoConfig from '../../../seo-config.json'
 import Image from 'next/image'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
-export const metadata: Metadata = {
-  title: 'Grease Filter Exchange Program San Diego | Core Hood Cleaning',
-  description: 'Weekly & bi-weekly grease filter exchange programs for San Diego restaurants. Always-clean filters, no hassle. Call (858) 361-2570.',
-  alternates: { canonical: 'https://www.corehoodcleaning.com/services/filter-exchange' }
+export const metadata: Metadata = seoConfig["filter-exchange"]
 }
 
 export default function FilterExchangePage() {

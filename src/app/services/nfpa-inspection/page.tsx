@@ -1,13 +1,11 @@
 import type { Metadata } from 'next'
+import seoConfig from '../../../seo-config.json'
 import Image from 'next/image'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
-export const metadata: Metadata = {
-  title: 'NFPA 96 Inspection San Diego | Commercial Kitchen Compliance | Core Hood Cleaning',
-  description: 'Certified NFPA 96 commercial kitchen exhaust inspections in San Diego. Compliance certificates, written reports, fire marshal ready. Call (858) 361-2570.',
-  alternates: { canonical: 'https://www.corehoodcleaning.com/services/nfpa-inspection' }
+export const metadata: Metadata = seoConfig["nfpa-inspection"]
 }
 
 export default function NFPAPage() {

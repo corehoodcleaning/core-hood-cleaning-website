@@ -1,13 +1,11 @@
 import type { Metadata } from 'next'
+import seoConfig from '../../../seo-config.json'
 import Image from 'next/image'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
-export const metadata: Metadata = {
-  title: 'Commercial Hood Cleaning San Diego | NFPA 96 Certified | Core Hood Cleaning',
-  description: 'Professional commercial kitchen exhaust hood cleaning in San Diego. NFPA 96 certified, photo documentation included. Serving restaurants, hotels & schools. Call (858) 361-2570.',
-  alternates: { canonical: 'https://www.corehoodcleaning.com/services/hood-cleaning' }
+export const metadata: Metadata = seoConfig["hood-cleaning"]
 }
 
 export default function HoodCleaningPage() {

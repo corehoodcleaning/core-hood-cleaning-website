@@ -1,13 +1,11 @@
 import type { Metadata } from 'next'
+import seoConfig from '../../seo-config.json'
 import Image from 'next/image'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
-export const metadata: Metadata = {
-  title: 'Hood Cleaning Blog | San Diego Kitchen Compliance Tips | Core Hood Cleaning',
-  description: 'Expert advice on commercial kitchen hood cleaning, NFPA 96 compliance, grease fire prevention, and restaurant maintenance in San Diego.',
-  alternates: { canonical: 'https://www.corehoodcleaning.com/blog' }
+export const metadata: Metadata = seoConfig.blog
 }
 
 const POSTS = [

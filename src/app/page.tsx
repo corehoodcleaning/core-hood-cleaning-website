@@ -1,15 +1,12 @@
 import type { Metadata } from 'next'
+import seoConfig from '../../seo-config.json'
 import Image from 'next/image'
 import Link from 'next/link'
 import ReviewsCarousel from '@/components/ReviewsCarousel'
 import GalleryCarousel from '@/components/GalleryCarousel'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
-export const metadata: Metadata = {
-  title: '#1 Hood Cleaning San Diego | NFPA 96 Certified | Core Hood Cleaning',
-  description: "San Diego's top-rated commercial hood cleaning company. NFPA 96 certified, 40+ 5-star reviews, same-day emergency service. Serving all of San Diego County. Free estimates. Call (858) 361-2570.",
-  alternates: { canonical: 'https://www.corehoodcleaning.com' }
-}
+export const metadata: Metadata = seoConfig.homepage
 
 const LOCATIONS = [
   'Pacific Beach','La Jolla','Mission Valley','Downtown San Diego',

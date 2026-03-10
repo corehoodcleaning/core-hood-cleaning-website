@@ -1,13 +1,11 @@
 import type { Metadata } from 'next'
+import seoConfig from '../../seo-config.json'
 import Image from 'next/image'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
-export const metadata: Metadata = {
-  title: 'About Core Hood Cleaning | San Diego NFPA 96 Certified Team',
-  description: 'Core Hood Cleaning is San Diego\'s locally-owned, NFPA 96 certified commercial hood cleaning company. Meet the team behind 200+ restaurant clients and 40+ five-star reviews.',
-  alternates: { canonical: 'https://www.corehoodcleaning.com/about' }
+export const metadata: Metadata = seoConfig.about
 }
 
 export default function AboutPage() {
