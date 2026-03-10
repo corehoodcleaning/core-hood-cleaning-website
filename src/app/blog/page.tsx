@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import seoConfig from '../../seo-config.json'
+import seoConfig from '../seo-config.json'
 import Image from 'next/image'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
