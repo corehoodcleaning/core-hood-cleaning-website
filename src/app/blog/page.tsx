@@ -6,7 +6,6 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = seoConfig.blog
-}
 
 const POSTS = [
   { slug: 'how-often-should-restaurant-hood-be-cleaned', title: 'How Often Should a Restaurant Hood Be Cleaned? (NFPA 96 Guide)', date: 'February 2025', excerpt: 'NFPA 96 sets the cleaning frequency based on your cooking type and volume. Here\'s exactly what the code requires and what it means for your San Diego restaurant.', img: '/images/before-after-1.jpg', category: 'Compliance' },

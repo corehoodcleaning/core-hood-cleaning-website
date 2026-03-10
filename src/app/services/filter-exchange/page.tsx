@@ -6,7 +6,6 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = seoConfig["filter-exchange"]
-}
 
 export default function FilterExchangePage() {
   return (

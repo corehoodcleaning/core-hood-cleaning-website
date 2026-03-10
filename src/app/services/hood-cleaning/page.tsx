@@ -6,7 +6,6 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = seoConfig["hood-cleaning"]
-}
 
 export default function HoodCleaningPage() {
   return (

@@ -6,7 +6,6 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = seoConfig.about
-}
 
 export default function AboutPage() {
   return (
