@@ -14,6 +14,27 @@ const LOCATIONS: Record<string, {
   faqs: { q: string; a: string }[]
   heroImage: string
 }> = {
+  'downtown-san-diego': {
+  name: 'Downtown San Diego',
+  title: 'Hood Cleaning Downtown San Diego',
+  heroDesc: 'Professional commercial kitchen hood cleaning serving Downtown San Diego, Gaslamp Quarter, Little Italy, and East Village. NFPA 96 certified with high-rise building expertise and urban access solutions.',
+  intro: "Core Hood Cleaning is Downtown San Diego's premier commercial kitchen exhaust cleaning company. We serve the city's most demanding restaurant scene from the Gaslamp Quarter's fine dining establishments to Little Italy's authentic Italian kitchens and East Village's innovative culinary hotspots. Our NFPA 96 certified technicians specialize in high-rise building access, complex rooftop systems, and the unique challenges of urban restaurant operations in America's Finest City.",
+  whyUs: "Downtown San Diego's concentrated restaurant district presents unique challenges: high-rise buildings with complex roof access, strict urban fire codes, heavy cooking volumes, and demanding health department inspections. The Port of San Diego Authority and City of San Diego enforce rigorous fire safety standards in this dense commercial core. We provide specialized urban access solutions, coordinate with building management, and deliver detailed compliance documentation that satisfies the most stringent downtown inspection requirements.",
+  neighborhoods: [
+    { name: 'Gaslamp Quarter', desc: 'San Diego\'s historic entertainment district with over 100 restaurants, bars, and nightclubs. We serve Fifth Avenue\'s fine dining establishments, craft cocktail bars, and the high-volume kitchens that fuel the Gaslamp\'s legendary nightlife scene.' },
+    { name: 'Little Italy', desc: 'Authentic Italian restaurants, modern eateries, and the famous Little Italy Mercato. From traditional family-owned trattorias on India Street to contemporary farm-to-table concepts, we handle every kitchen type in this vibrant neighborhood.' },
+    { name: 'East Village', desc: 'The epicenter of San Diego\'s culinary innovation. Home to PETCO Park concessions, craft breweries, farm-to-table restaurants, and cutting-edge kitchens that define San Diego\'s modern food scene.' },
+    { name: 'Marina District & Seaport Village', desc: 'Waterfront dining with harbor views and tourist destinations. We navigate marina access challenges, coordinate with harbor authorities, and serve the restaurants that showcase San Diego Bay\'s stunning scenery.' },
+  ],
+  faqs: [
+    { q: 'Can you access our downtown high-rise restaurant for hood cleaning?', a: 'Yes. We specialize in downtown San Diego high-rise access. Our team coordinates with building management, uses freight elevators, and has all necessary insurance and certifications for commercial high-rise work.' },
+    { q: 'Do you work with Gaslamp Quarter restaurants during busy nightlife hours?', a: 'Absolutely. We schedule around your peak service times and can perform cleaning during off-hours or early morning. Many Gaslamp establishments prefer early morning service before the weekend rush. Call (858) 361-2570 to coordinate.' },
+    { q: 'How do you handle parking and access in dense downtown areas?', a: 'We obtain necessary permits, coordinate with building security, and use compact equipment designed for urban environments. Our team is experienced with downtown parking restrictions, loading zones, and building access protocols.' },
+    { q: 'Are you familiar with City of San Diego downtown fire inspection requirements?', a: 'Yes. We work regularly with downtown San Diego fire marshals and understand the specific requirements for high-density commercial districts. Our detailed reports and photo documentation meet all city compliance standards.' },
+  ],
+  heroImage: '/images/hero-commercial-kitchen.jpg'
+},
+
   'pacific-beach': {
     name: 'Pacific Beach',
     title: 'Hood Cleaning Pacific Beach',

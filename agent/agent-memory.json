@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_updated": "",
-    "last_run": "",
-    "total_runs": 0,
+    "last_updated": "2026-03-12T04:04:07.088Z",
+    "last_run": "2026-03-12",
+    "total_runs": 1,
     "agent_version": "1.0",
     "site_url": "https://www.corehoodcleaning.com"
   },
@@ -65,9 +65,9 @@
       },
       {
         "slug": "/blog/what-is-nfpa-96",
-        "refreshed": false,
-        "refresh_date": "",
-        "needs_refresh": true
+        "refreshed": true,
+        "refresh_date": "2026-03-12",
+        "needs_refresh": false
       }
     ],
     "created_by_agent": []
@@ -77,7 +77,14 @@
       "pacific-beach",
       "la-jolla"
     ],
-    "created_by_agent": []
+    "created_by_agent": [
+      {
+        "slug": "downtown-san-diego",
+        "city": "Downtown San Diego",
+        "date_created": "2026-03-12",
+        "status": "pending_approval"
+      }
+    ]
   },
   "industry_pages": {
     "existing": [
@@ -119,18 +126,54 @@
     "weekly_snapshots": []
   },
   "seasonal_content": {
-    "january": { "created": false, "topics": [] },
-    "february": { "created": false, "topics": [] },
-    "march": { "created": false, "topics": [] },
-    "april": { "created": false, "topics": [] },
-    "may": { "created": false, "topics": [] },
-    "june": { "created": false, "topics": [] },
-    "july": { "created": false, "topics": [] },
-    "august": { "created": false, "topics": [] },
-    "september": { "created": false, "topics": [] },
-    "october": { "created": false, "topics": [] },
-    "november": { "created": false, "topics": [] },
-    "december": { "created": false, "topics": [] }
+    "january": {
+      "created": false,
+      "topics": []
+    },
+    "february": {
+      "created": false,
+      "topics": []
+    },
+    "march": {
+      "created": false,
+      "topics": []
+    },
+    "april": {
+      "created": false,
+      "topics": []
+    },
+    "may": {
+      "created": false,
+      "topics": []
+    },
+    "june": {
+      "created": false,
+      "topics": []
+    },
+    "july": {
+      "created": false,
+      "topics": []
+    },
+    "august": {
+      "created": false,
+      "topics": []
+    },
+    "september": {
+      "created": false,
+      "topics": []
+    },
+    "october": {
+      "created": false,
+      "topics": []
+    },
+    "november": {
+      "created": false,
+      "topics": []
+    },
+    "december": {
+      "created": false,
+      "topics": []
+    }
   },
   "competitors": {
     "identified": [],
@@ -143,7 +186,15 @@
     "fulfilled": []
   },
   "technical_issues": {
-    "open": [],
+    "open": [
+      {
+        "issue": "Search Console and GA4 data connections not working",
+        "page": "Site-wide analytics",
+        "priority": "Critical",
+        "needs_chase_approval": true,
+        "date_flagged": "2026-03-12"
+      }
+    ],
     "resolved": [],
     "approved_for_fix": []
   },
@@ -153,7 +204,13 @@
     "pages_on_freeze": []
   },
   "content_refreshes": {
-    "completed": [],
+    "completed": [
+      {
+        "slug": "/blog/what-is-nfpa-96",
+        "date_refreshed": "2026-03-12",
+        "reason": "High-value compliance topic that needs updating to current E-E-A-T standards and local San Diego optimization"
+      }
+    ],
     "scheduled": [],
     "next_refresh_due": ""
   },
