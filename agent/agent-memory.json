@@ -119,18 +119,54 @@
     "weekly_snapshots": []
   },
   "seasonal_content": {
-    "january": { "created": false, "topics": [] },
-    "february": { "created": false, "topics": [] },
-    "march": { "created": false, "topics": [] },
-    "april": { "created": false, "topics": [] },
-    "may": { "created": false, "topics": [] },
-    "june": { "created": false, "topics": [] },
-    "july": { "created": false, "topics": [] },
-    "august": { "created": false, "topics": [] },
-    "september": { "created": false, "topics": [] },
-    "october": { "created": false, "topics": [] },
-    "november": { "created": false, "topics": [] },
-    "december": { "created": false, "topics": [] }
+    "january": {
+      "created": false,
+      "topics": []
+    },
+    "february": {
+      "created": false,
+      "topics": []
+    },
+    "march": {
+      "created": false,
+      "topics": []
+    },
+    "april": {
+      "created": false,
+      "topics": []
+    },
+    "may": {
+      "created": false,
+      "topics": []
+    },
+    "june": {
+      "created": false,
+      "topics": []
+    },
+    "july": {
+      "created": false,
+      "topics": []
+    },
+    "august": {
+      "created": false,
+      "topics": []
+    },
+    "september": {
+      "created": false,
+      "topics": []
+    },
+    "october": {
+      "created": false,
+      "topics": []
+    },
+    "november": {
+      "created": false,
+      "topics": []
+    },
+    "december": {
+      "created": false,
+      "topics": []
+    }
   },
   "competitors": {
     "identified": [],

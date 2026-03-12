@@ -10,33 +10,50 @@ oauth2Client.setCredentials({
   refresh_token: process.env.GOOGLE_REFRESH_TOKEN
 })
 
-async function fetchSearchData() {
+async function fetchSearchConsoleData() {
   const searchconsole = google.searchconsole({ version: 'v1', auth: oauth2Client })
-  
+
   try {
+    const today = new Date()
+    const endDate = today.toISOString().split('T')[0]
+    const startDate = new Date(today.setDate(today.getDate() - 90)).toISOString().split('T')[0]
+
     const response = await searchconsole.searchanalytics.query({
       siteUrl: 'sc-domain:corehoodcleaning.com',
       requestBody: {
-        startDate: '2026-01-01',
-        endDate: '2026-03-10',
+        startDate,
+        endDate,
         dimensions: ['query', 'page'],
-        rowLimit: 25
+        rowLimit: 50
       }
     })
 
+    const rows = response.data.rows || []
+
     console.log('\n✅ TOP SEARCH QUERIES:\n')
-    response.data.rows?.forEach(row => {
-      console.log(`Keyword: ${row.keys[0]}`)
-      console.log(`Page: ${row.keys[1]}`)
-      console.log(`Clicks: ${row.clicks} | Impressions: ${row.impressions} | Position: ${Math.round(row.position)}`)
+    rows.forEach(row => {
+      console.log('Keyword: ' + row.keys[0])
+      console.log('Page: ' + row.keys[1])
+      console.log('Clicks: ' + row.clicks + ' | Impressions: ' + row.impressions + ' | Position: ' + Math.round(row.position))
       console.log('---')
     })
 
+    return rows.map(row => ({
+      keyword: row.keys[0],
+      page: row.keys[1],
+      clicks: row.clicks,
+      impressions: row.impressions,
+      position: Math.round(row.position)
+    }))
+
   } catch (err) {
-    console.error('Error:', err.message)
+    console.error('Search Console fetch error:', err.message)
+    return []
   }
 }
 
-fetchSearchData()
+if (require.main === module) {
+  fetchSearchConsoleData()
+}
 
 module.exports = { fetchSearchConsoleData }
