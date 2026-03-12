@@ -1,19 +1,19 @@
 {
   "redirects": [
-    { "source": "/hood-cleaning-san-diego", "destination": "/", "permanent": true },
-    { "source": "/hood-cleaning-service", "destination": "/services/hood-cleaning/", "permanent": true },
-    { "source": "/filter-exchange-program", "destination": "/services/filter-exchange/", "permanent": true },
-    { "source": "/nfpa-96-inspection", "destination": "/services/nfpa-inspection/", "permanent": true },
-    { "source": "/hood-cleaning-chula-vista", "destination": "/locations/chula-vista/", "permanent": true },
-    { "source": "/hood-cleaning-oceanside", "destination": "/locations/oceanside/", "permanent": true },
-    { "source": "/hood-cleaning-escondido", "destination": "/locations/escondido/", "permanent": true },
-    { "source": "/hood-cleaning-carlsbad", "destination": "/locations/carlsbad/", "permanent": true },
-    { "source": "/hood-cleaning-el-cajon", "destination": "/locations/el-cajon/", "permanent": true },
-    { "source": "/hood-cleaning-vista", "destination": "/locations/vista/", "permanent": true },
-    { "source": "/hood-cleaning-san-marcos", "destination": "/locations/san-marcos/", "permanent": true },
-    { "source": "/hood-cleaning-national-city", "destination": "/locations/national-city/", "permanent": true },
-    { "source": "/hood-cleaning-la-mesa", "destination": "/locations/la-mesa/", "permanent": true },
-    { "source": "/hood-cleaning-coronado", "destination": "/locations/coronado/", "permanent": true },
-    { "source": "/contact-us", "destination": "/", "permanent": true }
+    { "source": "/hood-cleaning-san-diego", "destination": "/", "statusCode": 301 },
+    { "source": "/hood-cleaning-service", "destination": "/services/hood-cleaning/", "statusCode": 301 },
+    { "source": "/filter-exchange-program", "destination": "/services/filter-exchange/", "statusCode": 301 },
+    { "source": "/nfpa-96-inspection", "destination": "/services/nfpa-inspection/", "statusCode": 301 },
+    { "source": "/hood-cleaning-chula-vista", "destination": "/locations/chula-vista/", "statusCode": 301 },
+    { "source": "/hood-cleaning-oceanside", "destination": "/locations/oceanside/", "statusCode": 301 },
+    { "source": "/hood-cleaning-escondido", "destination": "/locations/escondido/", "statusCode": 301 },
+    { "source": "/hood-cleaning-carlsbad", "destination": "/locations/carlsbad/", "statusCode": 301 },
+    { "source": "/hood-cleaning-el-cajon", "destination": "/locations/el-cajon/", "statusCode": 301 },
+    { "source": "/hood-cleaning-vista", "destination": "/locations/vista/", "statusCode": 301 },
+    { "source": "/hood-cleaning-san-marcos", "destination": "/locations/san-marcos/", "statusCode": 301 },
+    { "source": "/hood-cleaning-national-city", "destination": "/locations/national-city/", "statusCode": 301 },
+    { "source": "/hood-cleaning-la-mesa", "destination": "/locations/la-mesa/", "statusCode": 301 },
+    { "source": "/hood-cleaning-coronado", "destination": "/locations/coronado/", "statusCode": 301 },
+    { "source": "/contact-us", "destination": "/", "statusCode": 301 }
   ]
 }
