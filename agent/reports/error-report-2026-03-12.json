@@ -1,6 +1,6 @@
 {
   "run_date": "2026-03-12",
-  "error": "SAFETY STOP: Failed to create agent branch: Command failed: git checkout -b seo-agent/week-2026-03-12\nfatal: a branch named 'seo-agent/week-2026-03-12' already exists\n",
+  "error": "SAFETY STOP: Failed to create agent branch: Command failed: git fetch origin\nfatal: bad object refs/heads/seo-agent/week-2026-03-12 2\nerror: https://github.com/corehoodcleaning/core-hood-cleaning-website.git did not send all necessary objects\n\n",
   "branch": null,
   "partial_results": {
     "plan": "failed",

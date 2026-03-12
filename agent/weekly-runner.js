@@ -145,13 +145,145 @@ function isFirstWeekOfMonth() {
 // GIT FUNCTIONS
 // ============================================================
 
+function cleanCorruptedRefs() {
+  // Self-heal 1: Clean any corrupted git refs before doing anything
+  try {
+    const refsPath = path.join(ROOT_PATH, '.git', 'refs', 'heads', AGENT_BRANCH_PREFIX);
+    if (fs.existsSync(refsPath)) {
+      const files = fs.readdirSync(refsPath);
+      files.forEach(file => {
+        if (file.includes(' ')) {
+          const corruptedPath = path.join(refsPath, file);
+          fs.unlinkSync(corruptedPath);
+          console.log('Cleaned corrupted ref:', file);
+        }
+      });
+    }
+    const logsPath = path.join(ROOT_PATH, '.git', 'logs', 'refs', 'heads', AGENT_BRANCH_PREFIX);
+    if (fs.existsSync(logsPath)) {
+      const files = fs.readdirSync(logsPath);
+      files.forEach(file => {
+        if (file.includes(' ')) {
+          const corruptedPath = path.join(logsPath, file);
+          fs.unlinkSync(corruptedPath);
+          console.log('Cleaned corrupted log ref:', file);
+        }
+      });
+    }
+  } catch (err) {
+    console.warn('Warning: Could not clean corrupted refs:', err.message);
+  }
+}
+
+function cleanOldAgentBranches() {
+  // Self-heal 3: Delete agent branches older than 30 days from remote
+  try {
+    const branches = execSync('git branch -r', { cwd: ROOT_PATH }).toString();
+    const agentBranches = branches.split('\n')
+      .map(b => b.trim())
+      .filter(b => b.startsWith(`origin/${AGENT_BRANCH_PREFIX}/week-`));
+
+    const thirtyDaysAgo = new Date();
+    thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+
+    agentBranches.forEach(branch => {
+      const dateMatch = branch.match(/week-(\d{4}-\d{2}-\d{2})/);
+      if (dateMatch) {
+        const branchDate = new Date(dateMatch[1]);
+        if (branchDate < thirtyDaysAgo) {
+          const remoteBranch = branch.replace('origin/', '');
+          try {
+            execSync(`git push origin --delete ${remoteBranch}`, { cwd: ROOT_PATH });
+            console.log('Cleaned up old branch:', remoteBranch);
+          } catch (err) {
+            console.warn('Warning: Could not delete old branch:', remoteBranch);
+          }
+        }
+      }
+    });
+  } catch (err) {
+    console.warn('Warning: Could not clean old branches:', err.message);
+  }
+}
+
+function verifyNpmPackages() {
+  // Self-heal 5: Verify node_modules exists and install if missing
+  const nodeModulesPath = path.join(ROOT_PATH, 'node_modules');
+  if (!fs.existsSync(nodeModulesPath)) {
+    console.log('node_modules missing - running npm install...');
+    try {
+      execSync('npm install', { cwd: ROOT_PATH });
+      console.log('npm install completed successfully');
+    } catch (err) {
+      throw new Error(`SAFETY STOP: npm install failed: ${err.message}`);
+    }
+  } else {
+    console.log('npm packages check passed');
+  }
+}
+
+function verifyGHLAuthenticated() {
+  // Self-heal 7: Verify GitHub CLI is authenticated before attempting PR
+  try {
+    execSync('gh auth status', { cwd: ROOT_PATH });
+    console.log('GitHub CLI authentication check passed');
+    return true;
+  } catch (err) {
+    console.warn('Warning: GitHub CLI not authenticated. PR will be saved locally.');
+    return false;
+  }
+}
+
+function autoStashUncommittedChanges() {
+  // Self-heal 6: Auto stash any uncommitted changes before branch creation
+  try {
+    const status = execSync('git status --porcelain', { cwd: ROOT_PATH }).toString().trim();
+    if (status) {
+      execSync('git stash', { cwd: ROOT_PATH });
+      console.log('Auto-stashed uncommitted changes before branch creation');
+    }
+  } catch (err) {
+    console.warn('Warning: Could not stash uncommitted changes:', err.message);
+  }
+}
+
 function createAgentBranch() {
   const today = new Date().toISOString().split('T')[0];
   const branchName = `${AGENT_BRANCH_PREFIX}/week-${today}`;
 
   try {
+    // Self-heal 1: Clean corrupted refs first
+    cleanCorruptedRefs();
+
+    // Self-heal 6: Auto stash any uncommitted changes
+    autoStashUncommittedChanges();
+
     // Fetch latest from remote first
     execSync('git fetch origin', { cwd: ROOT_PATH });
+
+    // Self-heal 3: Clean up old branches
+    cleanOldAgentBranches();
+
+    // Self-heal 2: Delete existing same-day branch if it exists instead of hard stopping
+    try {
+      const localBranches = execSync('git branch', { cwd: ROOT_PATH }).toString();
+      if (localBranches.includes(branchName)) {
+        execSync(`git branch -D ${branchName}`, { cwd: ROOT_PATH });
+        console.log('Deleted existing local branch:', branchName);
+      }
+    } catch (err) {
+      console.warn('Warning: Could not delete existing local branch:', err.message);
+    }
+
+    try {
+      const remoteBranches = execSync('git branch -r', { cwd: ROOT_PATH }).toString();
+      if (remoteBranches.includes(branchName)) {
+        execSync(`git push origin --delete ${branchName}`, { cwd: ROOT_PATH });
+        console.log('Deleted existing remote branch:', branchName);
+      }
+    } catch (err) {
+      console.warn('Warning: Could not delete existing remote branch:', err.message);
+    }
 
     // Reset to latest main
     execSync(`git reset --hard origin/${MAIN_BRANCH}`, { cwd: ROOT_PATH });
