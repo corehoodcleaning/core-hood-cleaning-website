@@ -13,6 +13,8 @@ const SRC_PATH = path.join(__dirname, '..', 'src');
 // ============================================================
 
 function validateSlug(slug) {
+  // Strip any path prefixes Claude may include
+  slug = slug.replace(/^\/blog\//, "").replace(/^\//, "").trim();
   // Slug must be lowercase, hyphens only, no special characters
   const slugPattern = /^[a-z0-9-]+$/;
   if (!slugPattern.test(slug)) {

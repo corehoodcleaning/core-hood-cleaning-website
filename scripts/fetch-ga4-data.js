@@ -43,3 +43,5 @@ async function fetchGA4Data() {
 }
 
 fetchGA4Data()
+
+module.exports = { fetchGA4Data }

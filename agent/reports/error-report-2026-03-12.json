@@ -1,0 +1,10 @@
+{
+  "run_date": "2026-03-12",
+  "error": "SAFETY STOP: Failed to create agent branch: Command failed: git checkout -b seo-agent/week-2026-03-12\nfatal: a branch named 'seo-agent/week-2026-03-12' already exists\n",
+  "branch": null,
+  "partial_results": {
+    "plan": "failed",
+    "content": "not started",
+    "gbp": "not started"
+  }
+}

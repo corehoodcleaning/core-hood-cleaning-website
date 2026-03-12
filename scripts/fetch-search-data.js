@@ -38,3 +38,5 @@ async function fetchSearchData() {
 }
 
 fetchSearchData()
+
+module.exports = { fetchSearchConsoleData }

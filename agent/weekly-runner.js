@@ -221,7 +221,9 @@ function pushBranch(branchName) {
 
 function returnToMain() {
   try {
+    execSync('git stash', { cwd: ROOT_PATH });
     execSync(`git checkout ${MAIN_BRANCH}`, { cwd: ROOT_PATH });
+    try { execSync('git stash drop', { cwd: ROOT_PATH }); } catch(e) {}
     console.log('Returned to main branch');
   } catch (err) {
     console.error('Warning: Failed to return to main branch:', err.message);
