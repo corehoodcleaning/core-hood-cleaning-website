@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_updated": "",
-    "last_run": "",
-    "total_runs": 0,
+    "last_updated": "2026-05-12T04:11:08.448Z",
+    "last_run": "2026-05-12",
+    "total_runs": 1,
     "agent_version": "1.0",
     "site_url": "https://www.corehoodcleaning.com"
   },
@@ -70,7 +70,16 @@
         "needs_refresh": true
       }
     ],
-    "created_by_agent": []
+    "created_by_agent": [
+      {
+        "slug": "/blog/commercial-kitchen-hood-cleaning-san-diego-guide",
+        "title": "Commercial Kitchen Hood Cleaning: Complete Guide for San Diego Restaurants",
+        "target_keyword": "commercial kitchen hood cleaning",
+        "date_created": "2026-05-12",
+        "word_count": 1200,
+        "status": "pending_approval"
+      }
+    ]
   },
   "location_pages": {
     "existing": [
@@ -109,14 +118,376 @@
     "posts_this_month": []
   },
   "keywords": {
-    "active_targets": {},
+    "active_targets": {
+      "commercial kitchen hood cleaning": {
+        "page": "/blog/commercial-kitchen-hood-cleaning-san-diego-guide",
+        "date_targeted": "2026-05-12",
+        "do_not_change_until": "2026-08-10"
+      }
+    },
     "retired_targets": [],
     "cannibalization_flags": [],
     "do_not_target": []
   },
   "rankings": {
     "baseline_snapshot": {},
-    "weekly_snapshots": []
+    "weekly_snapshots": [
+      {
+        "date": "2026-05-12",
+        "data": [
+          {
+            "keyword": "hood cleaning san diego",
+            "page": "https://www.corehoodcleaning.com/",
+            "clicks": 4,
+            "impressions": 116,
+            "position": 2
+          },
+          {
+            "keyword": "kitchen hood cleaning",
+            "page": "https://www.corehoodcleaning.com/",
+            "clicks": 4,
+            "impressions": 46,
+            "position": 4
+          },
+          {
+            "keyword": "commercial kitchen cleaning services",
+            "page": "https://www.corehoodcleaning.com/",
+            "clicks": 2,
+            "impressions": 22,
+            "position": 5
+          },
+          {
+            "keyword": "core services",
+            "page": "https://www.corehoodcleaning.com/",
+            "clicks": 2,
+            "impressions": 48,
+            "position": 14
+          },
+          {
+            "keyword": "industrial kitchen hood cleaning",
+            "page": "https://www.corehoodcleaning.com/",
+            "clicks": 2,
+            "impressions": 7,
+            "position": 15
+          },
+          {
+            "keyword": "commercial kitchen hood cleaners",
+            "page": "https://www.corehoodcleaning.com/",
+            "clicks": 1,
+            "impressions": 9,
+            "position": 23
+          },
+          {
+            "keyword": "commercial kitchen hood cleaning",
+            "page": "https://www.corehoodcleaning.com/",
+            "clicks": 1,
+            "impressions": 63,
+            "position": 36
+          },
+          {
+            "keyword": "commercial vent hood cleaning near me",
+            "page": "https://www.corehoodcleaning.com/locations/santee/",
+            "clicks": 1,
+            "impressions": 1,
+            "position": 2
+          },
+          {
+            "keyword": "core services",
+            "page": "https://corehoodcleaning.com/",
+            "clicks": 1,
+            "impressions": 5,
+            "position": 4
+          },
+          {
+            "keyword": "filter exchange service",
+            "page": "https://www.corehoodcleaning.com/services/filter-exchange/",
+            "clicks": 1,
+            "impressions": 4,
+            "position": 13
+          },
+          {
+            "keyword": "hood cleaning",
+            "page": "https://corehoodcleaning.com/",
+            "clicks": 1,
+            "impressions": 44,
+            "position": 1
+          },
+          {
+            "keyword": "hood cleaning",
+            "page": "https://www.corehoodcleaning.com/",
+            "clicks": 1,
+            "impressions": 90,
+            "position": 3
+          },
+          {
+            "keyword": "hood cleaning companies",
+            "page": "https://www.corehoodcleaning.com/",
+            "clicks": 1,
+            "impressions": 17,
+            "position": 15
+          },
+          {
+            "keyword": "hood cleaning near me",
+            "page": "https://www.corehoodcleaning.com/",
+            "clicks": 1,
+            "impressions": 64,
+            "position": 11
+          },
+          {
+            "keyword": "hood cleaning san diego",
+            "page": "https://corehoodcleaning.com/",
+            "clicks": 1,
+            "impressions": 38,
+            "position": 1
+          },
+          {
+            "keyword": "hood cleaning service",
+            "page": "https://www.corehoodcleaning.com/",
+            "clicks": 1,
+            "impressions": 126,
+            "position": 7
+          },
+          {
+            "keyword": "hood cleaning service near me",
+            "page": "https://www.corehoodcleaning.com/",
+            "clicks": 1,
+            "impressions": 52,
+            "position": 4
+          },
+          {
+            "keyword": "kitchen hood cleaning",
+            "page": "https://www.corehoodcleaning.com/services/hood-cleaning/",
+            "clicks": 1,
+            "impressions": 3,
+            "position": 4
+          },
+          {
+            "keyword": "kitchen hood cleaning service near me",
+            "page": "https://www.corehoodcleaning.com/hood-cleaning-san-marcos",
+            "clicks": 1,
+            "impressions": 1,
+            "position": 3
+          },
+          {
+            "keyword": "kitchen hood cleaning services",
+            "page": "https://www.corehoodcleaning.com/",
+            "clicks": 1,
+            "impressions": 4,
+            "position": 2
+          },
+          {
+            "keyword": "residential hood cleaning",
+            "page": "https://www.corehoodcleaning.com/",
+            "clicks": 1,
+            "impressions": 2,
+            "position": 1
+          },
+          {
+            "keyword": "residential hood vent cleaning",
+            "page": "https://corehoodcleaning.com/",
+            "clicks": 1,
+            "impressions": 1,
+            "position": 1
+          },
+          {
+            "keyword": "restaurant kitchen hood cleaning near me",
+            "page": "https://corehoodcleaning.com/",
+            "clicks": 1,
+            "impressions": 7,
+            "position": 2
+          },
+          {
+            "keyword": "restaurant vent hood cleaning",
+            "page": "https://www.corehoodcleaning.com/",
+            "clicks": 1,
+            "impressions": 5,
+            "position": 29
+          },
+          {
+            "keyword": "vent hood service",
+            "page": "https://www.corehoodcleaning.com/",
+            "clicks": 1,
+            "impressions": 1,
+            "position": 1
+          },
+          {
+            "keyword": "\"hood cleaning service\"",
+            "page": "https://www.corehoodcleaning.com/",
+            "clicks": 0,
+            "impressions": 29,
+            "position": 20
+          },
+          {
+            "keyword": "\"nfpa\" fire or electrical or code or 70e or nec or prevention or standards or codes -paralegal -fluid -power",
+            "page": "https://www.corehoodcleaning.com/locations/encinitas/",
+            "clicks": 0,
+            "impressions": 1,
+            "position": 86
+          },
+          {
+            "keyword": "24/7 emergency hood cleaning",
+            "page": "https://www.corehoodcleaning.com/",
+            "clicks": 0,
+            "impressions": 1,
+            "position": 65
+          },
+          {
+            "keyword": "24/7 emergency hood cleaning",
+            "page": "https://www.corehoodcleaning.com/locations/el-cajon/",
+            "clicks": 0,
+            "impressions": 1,
+            "position": 69
+          },
+          {
+            "keyword": "24/7 emergency hood cleaning",
+            "page": "https://www.corehoodcleaning.com/locations/encinitas/",
+            "clicks": 0,
+            "impressions": 1,
+            "position": 47
+          },
+          {
+            "keyword": "24/7 emergency hood cleaning",
+            "page": "https://www.corehoodcleaning.com/locations/escondido/",
+            "clicks": 0,
+            "impressions": 7,
+            "position": 62
+          },
+          {
+            "keyword": "24/7 emergency hood cleaning",
+            "page": "https://www.corehoodcleaning.com/services/hood-cleaning/",
+            "clicks": 0,
+            "impressions": 3,
+            "position": 69
+          },
+          {
+            "keyword": "24/7 kitchen exhaust service",
+            "page": "https://www.corehoodcleaning.com/",
+            "clicks": 0,
+            "impressions": 13,
+            "position": 34
+          },
+          {
+            "keyword": "24/7 kitchen exhaust service",
+            "page": "https://www.corehoodcleaning.com/locations/downtown-san-diego/",
+            "clicks": 0,
+            "impressions": 1,
+            "position": 22
+          },
+          {
+            "keyword": "abc hood cleaning",
+            "page": "https://www.corehoodcleaning.com/",
+            "clicks": 0,
+            "impressions": 3,
+            "position": 32
+          },
+          {
+            "keyword": "after-hours hood cleaning services",
+            "page": "https://www.corehoodcleaning.com/",
+            "clicks": 0,
+            "impressions": 17,
+            "position": 10
+          },
+          {
+            "keyword": "after-hours hood cleaning services",
+            "page": "https://www.corehoodcleaning.com/#gallery",
+            "clicks": 0,
+            "impressions": 6,
+            "position": 11
+          },
+          {
+            "keyword": "after-hours hood cleaning services",
+            "page": "https://www.corehoodcleaning.com/#locations",
+            "clicks": 0,
+            "impressions": 6,
+            "position": 11
+          },
+          {
+            "keyword": "after-hours hood cleaning services",
+            "page": "https://www.corehoodcleaning.com/about/",
+            "clicks": 0,
+            "impressions": 6,
+            "position": 11
+          },
+          {
+            "keyword": "after-hours hood cleaning services",
+            "page": "https://www.corehoodcleaning.com/hood-cleaning-chula-vista",
+            "clicks": 0,
+            "impressions": 2,
+            "position": 18
+          },
+          {
+            "keyword": "after-hours hood cleaning services",
+            "page": "https://www.corehoodcleaning.com/hood-cleaning-el-cajon",
+            "clicks": 0,
+            "impressions": 1,
+            "position": 20
+          },
+          {
+            "keyword": "after-hours hood cleaning services",
+            "page": "https://www.corehoodcleaning.com/hood-cleaning-la-mesa",
+            "clicks": 0,
+            "impressions": 1,
+            "position": 48
+          },
+          {
+            "keyword": "after-hours hood cleaning services",
+            "page": "https://www.corehoodcleaning.com/locations/downtown-san-diego/",
+            "clicks": 0,
+            "impressions": 2,
+            "position": 7
+          },
+          {
+            "keyword": "after-hours hood cleaning services",
+            "page": "https://www.corehoodcleaning.com/services/hood-cleaning/",
+            "clicks": 0,
+            "impressions": 6,
+            "position": 11
+          },
+          {
+            "keyword": "air duct cleaning",
+            "page": "https://www.corehoodcleaning.com/",
+            "clicks": 0,
+            "impressions": 1,
+            "position": 1
+          },
+          {
+            "keyword": "air duct cleaning border town",
+            "page": "https://www.corehoodcleaning.com/",
+            "clicks": 0,
+            "impressions": 1,
+            "position": 61
+          },
+          {
+            "keyword": "air duct cleaning coronado",
+            "page": "https://www.corehoodcleaning.com/hood-cleaning-coronado",
+            "clicks": 0,
+            "impressions": 1,
+            "position": 100
+          },
+          {
+            "keyword": "air duct cleaning mission valley",
+            "page": "https://www.corehoodcleaning.com/",
+            "clicks": 0,
+            "impressions": 6,
+            "position": 71
+          },
+          {
+            "keyword": "air duct cleaning san diego",
+            "page": "https://corehoodcleaning.com/",
+            "clicks": 0,
+            "impressions": 1,
+            "position": 21
+          },
+          {
+            "keyword": "air duct cleaning san diego north county",
+            "page": "https://www.corehoodcleaning.com/",
+            "clicks": 0,
+            "impressions": 4,
+            "position": 37
+          }
+        ]
+      }
+    ]
   },
   "seasonal_content": {
     "january": {
@@ -179,7 +550,15 @@
     "fulfilled": []
   },
   "technical_issues": {
-    "open": [],
+    "open": [
+      {
+        "issue": "Multiple URL versions showing in Search Console (www vs non-www)",
+        "page": "Homepage appearing as both corehoodcleaning.com and www.corehoodcleaning.com",
+        "priority": "medium",
+        "needs_chase_approval": true,
+        "date_flagged": "2026-05-12"
+      }
+    ],
     "resolved": [],
     "approved_for_fix": []
   },
