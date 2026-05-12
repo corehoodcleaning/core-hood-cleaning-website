@@ -742,7 +742,7 @@ Every blog post file must include:
 1. export const metadata:
    - title: keyword first, under 60 characters
    - description: 140-160 characters with keyword
-   - canonical: full URL of this page
+   - alternates: { canonical: full URL of this page }
    - openGraph title, description, image, url
    - twitter card, title, description, image
 

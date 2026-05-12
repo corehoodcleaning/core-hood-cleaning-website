@@ -25,6 +25,7 @@ function validateSlug(slug) {
     throw new Error(`Invalid slug length: ${slug}. Must be between 3 and 60 characters.`);
   }
   console.log('Slug validation passed:', slug);
+  return slug;
 }
 
 function checkSlugNotExists(slug, memory) {
@@ -205,11 +206,11 @@ async function writeBlogPost(plan) {
 
   const memory = readMemory();
   const today = new Date().toISOString().split('T')[0];
-  const slug = plan.blog_post.slug || generateSlug(plan.blog_post.title);
+  let slug = plan.blog_post.slug || generateSlug(plan.blog_post.title);
 
   // Run all hard coded safety checks before writing anything
   console.log('Running blog post safety checks...');
-  validateSlug(slug);
+  slug = validateSlug(slug);
   checkSlugNotExists(slug, memory);
   checkKeywordNotFrozen(plan.blog_post.target_keyword, memory);
   checkKeywordNotCannibalized(plan.blog_post.target_keyword, memory);
