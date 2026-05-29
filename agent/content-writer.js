@@ -534,8 +534,8 @@ No explanation, no markdown code blocks, just the raw code.
   checkWordCount(refreshedCode, 1000);
 
   // Verify canonical URL was not changed
-  const originalCanonical = existingCode.match(/canonical:\s*['"]([^'"]+)['"]/)?.[1];
-  const refreshedCanonical = refreshedCode.match(/canonical:\s*['"]([^'"]+)['"]/)?.[1];
+  const originalCanonical = existingCode.match(/alternates[\s\S]*?canonical:\s*['"]([^'"]+)['"]/)?.[1] || existingCode.match(/canonical:\s*['"]([^'"]+)['"]/)?.[1];
+  const refreshedCanonical = refreshedCode.match(/alternates[\s\S]*?canonical:\s*['"]([^'"]+)['"]/)?.[1] || refreshedCode.match(/canonical:\s*['"]([^'"]+)['"]/)?.[1];
   if (originalCanonical && refreshedCanonical && originalCanonical !== refreshedCanonical) {
     throw new Error(`SAFETY STOP: Canonical URL was changed during refresh. Original: ${originalCanonical} New: ${refreshedCanonical}`);
   }
