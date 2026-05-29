@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_updated": "",
-    "last_run": "",
-    "total_runs": 0,
+    "last_updated": "2026-05-29T03:45:42.552Z",
+    "last_run": "2026-05-29",
+    "total_runs": 1,
     "agent_version": "1.0",
     "site_url": "https://www.corehoodcleaning.com"
   },
@@ -116,109 +116,65 @@
   },
   "rankings": {
     "baseline_snapshot": {},
-    "weekly_snapshots": []
-  },
-  "seasonal_content": {
-    "january": {
-      "created": false,
-      "topics": []
-    },
-    "february": {
-      "created": false,
-      "topics": []
-    },
-    "march": {
-      "created": false,
-      "topics": []
-    },
-    "april": {
-      "created": false,
-      "topics": []
-    },
-    "may": {
-      "created": false,
-      "topics": []
-    },
-    "june": {
-      "created": false,
-      "topics": []
-    },
-    "july": {
-      "created": false,
-      "topics": []
-    },
-    "august": {
-      "created": false,
-      "topics": []
-    },
-    "september": {
-      "created": false,
-      "topics": []
-    },
-    "october": {
-      "created": false,
-      "topics": []
-    },
-    "november": {
-      "created": false,
-      "topics": []
-    },
-    "december": {
-      "created": false,
-      "topics": []
-    }
-  },
-  "competitors": {
-    "identified": [],
-    "content_gaps_found": [],
-    "gaps_addressed": [],
-    "keywords_targeted_from_gaps": []
-  },
-  "image_requests": {
-    "pending": [],
-    "fulfilled": []
-  },
-  "technical_issues": {
-    "open": [],
-    "resolved": [],
-    "approved_for_fix": []
-  },
-  "metadata_changes": {
-    "log": [],
-    "last_change_date": "",
-    "pages_on_freeze": []
-  },
-  "content_refreshes": {
-    "completed": [],
-    "scheduled": [],
-    "next_refresh_due": ""
-  },
-  "reviews": {
-    "total_count": 0,
-    "average_rating": 0,
-    "last_checked": "",
-    "review_velocity": {
-      "this_week": 0,
-      "this_month": 0,
-      "trend": ""
-    },
-    "review_log": [],
-    "pending_responses": [],
-    "urgent_negative": []
-  },
-  "performance": {
-    "weekly_snapshots": [],
-    "conversion_issues": {
-      "open": [],
-      "resolved": []
-    },
-    "penalty_flags": [],
-    "build_failures": []
-  },
-  "pr_log": {
-    "total_prs_opened": 0,
-    "approved": [],
-    "rejected": [],
-    "pending": []
-  }
-}
+    "weekly_snapshots": [
+      {
+        "date": "2026-05-29",
+        "data": [
+          {
+            "keyword": "hood cleaning san diego",
+            "page": "https://www.corehoodcleaning.com/",
+            "clicks": 4,
+            "impressions": 116,
+            "position": 1
+          },
+          {
+            "keyword": "kitchen hood cleaning",
+            "page": "https://www.corehoodcleaning.com/",
+            "clicks": 4,
+            "impressions": 50,
+            "position": 3
+          },
+          {
+            "keyword": "commercial kitchen cleaning services",
+            "page": "https://www.corehoodcleaning.com/",
+            "clicks": 2,
+            "impressions": 23,
+            "position": 4
+          },
+          {
+            "keyword": "core services",
+            "page": "https://www.corehoodcleaning.com/",
+            "clicks": 2,
+            "impressions": 35,
+            "position": 3
+          },
+          {
+            "keyword": "hood cleaning",
+            "page": "https://www.corehoodcleaning.com/",
+            "clicks": 2,
+            "impressions": 80,
+            "position": 2
+          },
+          {
+            "keyword": "industrial kitchen hood cleaning",
+            "page": "https://www.corehoodcleaning.com/",
+            "clicks": 2,
+            "impressions": 7,
+            "position": 15
+          },
+          {
+            "keyword": "clean hood",
+            "page": "https://www.corehoodcleaning.com/",
+            "clicks": 1,
+            "impressions": 5,
+            "position": 2
+          },
+          {
+            "keyword": "commercial kitchen hood cleaners",
+            "page": "https://www.corehoodcleaning.com/",
+            "clicks": 1,
+            "impressions": 18,
+            "position": 17
+          },
+          {
+            "keyword": "commercial kitchen hood cleani
