@@ -237,7 +237,7 @@ Requirements:
   import Nav from '@/components/Nav'
   import Footer from '@/components/Footer'
 - Use only existing CSS variables and classNames
-- Include export const metadata with title, description, canonical
+- Include export const metadata with title, description, and alternates: { canonical: 'url' } — NEVER use canonical directly, always use alternates: { canonical: 'url' }
 - Include Open Graph and Twitter card tags in metadata
 - Include JSON-LD BlogPosting schema
 - Include JSON-LD FAQPage schema
