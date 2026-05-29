@@ -230,7 +230,12 @@ Canonical URL: https://www.corehoodcleaning.com/blog/${slug}
 
 Requirements:
 - Follow the exact blog post format from your brain rules
-- Use all required imports: Metadata, Image, Link, Nav, Footer
+- Start the file with EXACTLY these imports in this order:
+  import type { Metadata } from 'next'
+  import Image from 'next/image'
+  import Link from 'next/link'
+  import Nav from '@/components/Nav'
+  import Footer from '@/components/Footer'
 - Use only existing CSS variables and classNames
 - Include export const metadata with title, description, canonical
 - Include Open Graph and Twitter card tags in metadata
