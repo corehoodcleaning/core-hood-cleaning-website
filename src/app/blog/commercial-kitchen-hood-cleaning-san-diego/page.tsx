@@ -7,7 +7,7 @@ import Footer from '@/components/Footer'
 export const metadata: Metadata = {
   title: 'Commercial Kitchen Hood Cleaning San Diego: Complete NFPA 96 Compliance Guide',
   description: 'Expert commercial kitchen hood cleaning in San Diego. NFPA 96 certified technicians ensure full compliance and fire safety for your restaurant kitchen.',
-  canonical: 'https://www.corehoodcleaning.com/blog/commercial-kitchen-hood-cleaning-san-diego',
+  alternates: { canonical: 'https://www.corehoodcleaning.com/blog/commercial-kitchen-hood-cleaning-san-diego' },
   openGraph: {
     title: 'Commercial Kitchen Hood Cleaning San Diego: Complete NFPA 96 Compliance Guide',
     description: 'Expert commercial kitchen hood cleaning in San Diego. NFPA 96 certified technicians ensure full compliance and fire safety for your restaurant kitchen.',
