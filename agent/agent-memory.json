@@ -2,11 +2,15 @@
   "meta": {
     "last_run": "",
     "version": "2.0",
-    "site_url": "https://www.corehoodcleaning.com"
+    "site_url": "https://www.corehoodcleaning.com",
+    "total_runs": 0,
+    "last_updated": ""
   },
   "keywords": {
     "frozen": [],
-    "cannibalization_map": {}
+    "cannibalization_map": {},
+    "active_targets": {},
+    "cannibalization_flags": []
   },
   "blog_posts": {
     "existing_pre_agent": [],
@@ -18,6 +22,18 @@
   },
   "content_refreshes": {
     "completed": []
+  },
+  "rankings": {
+    "weekly_snapshots": []
+  },
+  "gbp_posts": [],
+  "technical_issues": {
+    "open": [],
+    "resolved": []
+  },
+  "pr_log": [],
+  "performance": {
+    "penalty_flags": []
   },
   "seo_metrics": {
     "weekly_snapshots": []
