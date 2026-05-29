@@ -1,180 +1,25 @@
 {
   "meta": {
-    "last_updated": "2026-05-29T03:45:42.552Z",
-    "last_run": "2026-05-29",
-    "total_runs": 1,
-    "agent_version": "1.0",
+    "last_run": "",
+    "version": "2.0",
     "site_url": "https://www.corehoodcleaning.com"
   },
-  "pr_history": [],
+  "keywords": {
+    "frozen": [],
+    "cannibalization_map": {}
+  },
   "blog_posts": {
-    "existing_pre_agent": [
-      {
-        "slug": "/blog/choosing-hood-cleaning-company-san-diego",
-        "refreshed": false,
-        "refresh_date": "",
-        "needs_refresh": true
-      },
-      {
-        "slug": "/blog/commercial-kitchen-fire-suppression",
-        "refreshed": false,
-        "refresh_date": "",
-        "needs_refresh": true
-      },
-      {
-        "slug": "/blog/grease-trap-vs-hood-cleaning",
-        "refreshed": false,
-        "refresh_date": "",
-        "needs_refresh": true
-      },
-      {
-        "slug": "/blog/health-inspection-checklist-san-diego",
-        "refreshed": false,
-        "refresh_date": "",
-        "needs_refresh": true
-      },
-      {
-        "slug": "/blog/hood-cleaning-frequency-cooking-type",
-        "refreshed": false,
-        "refresh_date": "",
-        "needs_refresh": true
-      },
-      {
-        "slug": "/blog/how-often-should-restaurant-hood-be-cleaned",
-        "refreshed": false,
-        "refresh_date": "",
-        "needs_refresh": true
-      },
-      {
-        "slug": "/blog/restaurant-compliance-san-diego-guide",
-        "refreshed": false,
-        "refresh_date": "",
-        "needs_refresh": true
-      },
-      {
-        "slug": "/blog/restaurant-fire-prevention-san-diego",
-        "refreshed": false,
-        "refresh_date": "",
-        "needs_refresh": true
-      },
-      {
-        "slug": "/blog/what-happens-during-hood-cleaning",
-        "refreshed": false,
-        "refresh_date": "",
-        "needs_refresh": true
-      },
-      {
-        "slug": "/blog/what-is-nfpa-96",
-        "refreshed": false,
-        "refresh_date": "",
-        "needs_refresh": true
-      }
-    ],
+    "existing_pre_agent": [],
     "created_by_agent": []
   },
   "location_pages": {
-    "existing": [
-      "pacific-beach",
-      "la-jolla"
-    ],
+    "existing": [],
     "created_by_agent": []
   },
-  "industry_pages": {
-    "existing": [
-      "/industries/restaurants",
-      "/industries/bars-breweries",
-      "/industries/hotels-resorts",
-      "/industries/schools-hospitals",
-      "/industries/stadiums-sports-venues",
-      "/industries/commissaries"
-    ],
-    "created_by_agent": []
+  "content_refreshes": {
+    "completed": []
   },
-  "service_pages": {
-    "existing": [
-      "/services/hood-cleaning",
-      "/services/filter-exchange",
-      "/services/nfpa-inspection"
-    ],
-    "created_by_agent": []
-  },
-  "gbp_posts": {
-    "scheduled": [],
-    "published": [],
-    "pending_images": []
-  },
-  "gbp_schedule": {
-    "current_month": "",
-    "batch_created": false,
-    "posts_this_month": []
-  },
-  "keywords": {
-    "active_targets": {},
-    "retired_targets": [],
-    "cannibalization_flags": [],
-    "do_not_target": []
-  },
-  "rankings": {
-    "baseline_snapshot": {},
-    "weekly_snapshots": [
-      {
-        "date": "2026-05-29",
-        "data": [
-          {
-            "keyword": "hood cleaning san diego",
-            "page": "https://www.corehoodcleaning.com/",
-            "clicks": 4,
-            "impressions": 116,
-            "position": 1
-          },
-          {
-            "keyword": "kitchen hood cleaning",
-            "page": "https://www.corehoodcleaning.com/",
-            "clicks": 4,
-            "impressions": 50,
-            "position": 3
-          },
-          {
-            "keyword": "commercial kitchen cleaning services",
-            "page": "https://www.corehoodcleaning.com/",
-            "clicks": 2,
-            "impressions": 23,
-            "position": 4
-          },
-          {
-            "keyword": "core services",
-            "page": "https://www.corehoodcleaning.com/",
-            "clicks": 2,
-            "impressions": 35,
-            "position": 3
-          },
-          {
-            "keyword": "hood cleaning",
-            "page": "https://www.corehoodcleaning.com/",
-            "clicks": 2,
-            "impressions": 80,
-            "position": 2
-          },
-          {
-            "keyword": "industrial kitchen hood cleaning",
-            "page": "https://www.corehoodcleaning.com/",
-            "clicks": 2,
-            "impressions": 7,
-            "position": 15
-          },
-          {
-            "keyword": "clean hood",
-            "page": "https://www.corehoodcleaning.com/",
-            "clicks": 1,
-            "impressions": 5,
-            "position": 2
-          },
-          {
-            "keyword": "commercial kitchen hood cleaners",
-            "page": "https://www.corehoodcleaning.com/",
-            "clicks": 1,
-            "impressions": 18,
-            "position": 17
-          },
-          {
-            "keyword": "commercial kitchen hood cleani
+  "seo_metrics": {
+    "weekly_snapshots": []
+  }
+}
