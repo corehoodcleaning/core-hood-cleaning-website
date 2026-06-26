@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
@@ -69,19 +68,6 @@ export default function CommercialKitchenHoodCleaningSanDiego() {
             <p style={{ color: 'rgba(238,239,226,0.7)', fontSize: '1rem', lineHeight: '1.7' }}>
               Everything San Diego restaurant owners need to know — cleaning frequency, what a full service actually covers, and exactly how to pass a fire marshal inspection.
             </p>
-          </div>
-        </div>
-
-        <div style={{ background: 'var(--black)', maxHeight: '420px', overflow: 'hidden' }}>
-          <div className="container" style={{ maxWidth: '760px', padding: '0' }}>
-            <Image
-              src="/images/tech-hood-interior.jpg"
-              alt="NFPA 96 certified technician cleaning commercial kitchen hood interior in San Diego restaurant"
-              width={760}
-              height={420}
-              priority
-              style={{ width: '100%', height: 'auto', display: 'block', opacity: 0.9 }}
-            />
           </div>
         </div>
 
