@@ -1,10 +1,10 @@
 {
   "meta": {
-    "last_run": "2026-06-25",
+    "last_run": "2026-06-26",
     "version": "2.0",
     "site_url": "https://www.corehoodcleaning.com",
-    "total_runs": 2,
-    "last_updated": "2026-06-25T00:00:00.000Z"
+    "total_runs": 3,
+    "last_updated": "2026-06-26T00:00:00.000Z"
   },
   "keywords": {
     "frozen": [],
@@ -19,6 +19,16 @@
         "page": "/blog/restaurant-hood-cleaning-san-diego",
         "date_targeted": "2026-06-25",
         "do_not_change_until": "2026-09-25"
+      },
+      "restaurant compliance san diego": {
+        "page": "/blog/restaurant-compliance-san-diego-guide",
+        "date_targeted": "2026-06-26",
+        "do_not_change_until": "2026-09-26"
+      },
+      "restaurant health inspection checklist san diego": {
+        "page": "/blog/health-inspection-checklist-san-diego",
+        "date_targeted": "2026-06-26",
+        "do_not_change_until": "2026-09-26"
       }
     },
     "cannibalization_flags": []
