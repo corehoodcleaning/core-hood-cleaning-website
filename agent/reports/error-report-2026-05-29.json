@@ -1,0 +1,10 @@
+{
+  "run_date": "2026-05-29",
+  "error": "Cannot read properties of undefined (reading 'push')",
+  "branch": "seo-agent/week-2026-05-29",
+  "partial_results": {
+    "plan": "completed",
+    "content": "partial",
+    "gbp": "not started"
+  }
+}

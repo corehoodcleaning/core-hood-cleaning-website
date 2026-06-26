@@ -1,6 +1,28 @@
+# Build output
 .next/
 out/
+
+# Dependencies
 node_modules/
+
+# Environment variables — NEVER commit these
 .env
 .env.local
+.env*.local
+
+# Sensitive key files — NEVER commit these
+payroll-agent-key.json
+*.key.json
+*-key.json
+
+# Payroll agent — has hardcoded API credentials, keep local only
+payroll-agent.js
+
+# Debug files
+debug.js
+
+# Claude local settings
+.claude/
+
+# macOS
 .DS_Store

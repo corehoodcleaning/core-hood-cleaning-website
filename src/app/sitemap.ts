@@ -6,13 +6,36 @@ const LOCATIONS = [
   'la-mesa','coronado','encinitas','del-mar','miramar','rancho-bernardo','poway','santee'
 ]
 
+const BLOG_POSTS = [
+  { slug: 'how-often-should-restaurant-hood-be-cleaned', date: '2025-02-01' },
+  { slug: 'what-is-nfpa-96', date: '2025-01-01' },
+  { slug: 'restaurant-fire-prevention-san-diego', date: '2025-01-01' },
+  { slug: 'what-happens-during-hood-cleaning', date: '2025-03-01' },
+  { slug: 'health-inspection-checklist-san-diego', date: '2025-03-01' },
+  { slug: 'grease-trap-vs-hood-cleaning', date: '2025-02-01' },
+  { slug: 'commercial-kitchen-fire-suppression', date: '2025-04-01' },
+  { slug: 'choosing-hood-cleaning-company-san-diego', date: '2025-04-01' },
+  { slug: 'restaurant-compliance-san-diego-guide', date: '2025-05-01' },
+  { slug: 'hood-cleaning-frequency-cooking-type', date: '2025-05-01' },
+  { slug: 'commercial-kitchen-hood-cleaning-san-diego', date: '2026-05-29' },
+  { slug: 'restaurant-hood-cleaning-san-diego', date: '2026-06-25' },
+]
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://www.corehoodcleaning.com'
+
   const locationPages = LOCATIONS.map((slug) => ({
     url: `${base}/locations/${slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.8,
+  }))
+
+  const blogPages = BLOG_POSTS.map(({ slug, date }) => ({
+    url: `${base}/blog/${slug}`,
+    lastModified: new Date(date),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
   }))
 
   const staticPages = [
@@ -26,6 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...staticPages,
+    ...blogPages,
     ...locationPages,
   ]
 }
