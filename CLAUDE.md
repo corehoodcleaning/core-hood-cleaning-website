@@ -1,4 +1,4 @@
-# CLAUDE.md — Workflow Preferences for Core Hood Cleaning
+# CLAUDE.md — Workflow Preferences for Core Hood Cleaning Website
 
 ## Terminal & Git Commands
 
@@ -9,7 +9,7 @@
 
 ### Standard deploy command
 ```
-cd ~/Desktop/core-hood-cleaning && git add . && git commit -m "<message>" && git push
+cd ~/Desktop/core-hood-cleaning-website && git add . && git commit -m "<message>" && git push
 ```
 
 ## Weekly SEO Workflow
@@ -19,7 +19,7 @@ cd ~/Desktop/core-hood-cleaning && git add . && git commit -m "<message>" && git
 3. Claude writes 1 new blog post as a `.tsx` file targeting an opportunity keyword
 4. Claude updates `src/app/blog/page.tsx` POSTS array
 5. Claude updates `src/app/sitemap.ts` with the new post
-6. Claude updates `agent/agent-memory.json` to track the keyword as active
+6. Claude updates `agent/agent-memory.json` to track the keyword as active — NOTE: agent-memory.json also lives in ~/Desktop/core-services-agents/seo/ as the master copy
 7. Claude writes deploy command to clipboard via computer-use
 8. Chase pastes in Terminal and hits Enter → Vercel auto-deploys
 
