@@ -20,6 +20,7 @@ const BLOG_POSTS = [
   { slug: 'commercial-kitchen-hood-cleaning-san-diego', date: '2026-05-29' },
   { slug: 'restaurant-hood-cleaning-san-diego', date: '2026-06-25' },
   { slug: 'emergency-hood-cleaning-san-diego', date: '2026-07-01' },
+  { slug: 'brewery-hood-cleaning-san-diego', date: '2026-07-10' },
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
