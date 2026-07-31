@@ -1,10 +1,10 @@
 {
   "meta": {
-    "last_run": "2026-06-26",
+    "last_run": "2026-07-30",
     "version": "2.0",
     "site_url": "https://www.corehoodcleaning.com",
-    "total_runs": 3,
-    "last_updated": "2026-06-26T00:00:00.000Z"
+    "total_runs": 6,
+    "last_updated": "2026-07-30T00:00:00.000Z"
   },
   "keywords": {
     "frozen": [],
@@ -69,6 +69,26 @@
         "page": "/blog/what-happens-during-hood-cleaning",
         "date_targeted": "2026-06-26",
         "do_not_change_until": "2026-09-26"
+      },
+      "emergency hood cleaning san diego": {
+        "page": "/blog/emergency-hood-cleaning-san-diego",
+        "date_targeted": "2026-07-01",
+        "do_not_change_until": "2026-10-01"
+      },
+      "brewery hood cleaning san diego": {
+        "page": "/blog/brewery-hood-cleaning-san-diego",
+        "date_targeted": "2026-07-10",
+        "do_not_change_until": "2026-10-10"
+      },
+      "after hours hood cleaning san diego": {
+        "page": "/blog/after-hours-hood-cleaning-san-diego",
+        "date_targeted": "2026-07-23",
+        "do_not_change_until": "2026-10-21"
+      },
+      "school and hospital hood cleaning san diego": {
+        "page": "/blog/school-hospital-hood-cleaning-san-diego",
+        "date_targeted": "2026-07-30",
+        "do_not_change_until": "2026-10-28"
       }
     },
     "cannibalization_flags": []
@@ -99,6 +119,32 @@
           "position": 30.7,
           "clicks": 0,
           "data_date": "2026-06-25"
+        }
+      },
+      {
+        "slug": "/blog/after-hours-hood-cleaning-san-diego",
+        "title": "After Hours Hood Cleaning San Diego: Nighttime Service for Restaurants and Bars",
+        "target_keyword": "after hours hood cleaning san diego",
+        "secondary_keywords": ["after-hours hood cleaning services", "overnight hood cleaning san diego", "24/7 kitchen exhaust service"],
+        "date_created": "2026-07-23",
+        "word_count": 2450,
+        "status": "live",
+        "gsc_opportunity": {
+          "impressions_note": "GA4 live pull failed this run (reauth required for analytics-mcp), sourced from stored GSC snapshot dated 2026-05-29: after-hours hood cleaning services keyword had 49 combined impressions across homepage, about, services/hood-cleaning, and multiple location pages, ranking positions 7 to 48, no dedicated page existed",
+          "data_date": "2026-05-29"
+        }
+      },
+      {
+        "slug": "/blog/school-hospital-hood-cleaning-san-diego",
+        "title": "School and Hospital Hood Cleaning San Diego: NFPA 96 Compliance for Institutional Kitchens",
+        "target_keyword": "school and hospital hood cleaning san diego",
+        "secondary_keywords": ["institutional kitchen hood cleaning san diego", "school cafeteria hood cleaning", "hospital kitchen hood cleaning san diego", "commissary hood cleaning"],
+        "date_created": "2026-07-30",
+        "word_count": 2350,
+        "status": "live",
+        "gsc_opportunity": {
+          "impressions_note": "GA4 property has no linked Search Console keyword dimension available via analytics-mcp this run (googleSearchConsoleQuery is not a valid GA4 dimension for this property). Selected based on GA4 landing-page organic traffic to /industries/schools-hospitals/ (6 sessions/90 days, no dedicated blog support) plus the blog topic backlog explicitly listing schools as an untargeted segment gap. Recommend a real GSC export next run to replace this proxy.",
+          "data_date": "2026-07-30"
         }
       }
     ]
