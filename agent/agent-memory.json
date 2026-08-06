@@ -1,10 +1,10 @@
 {
   "meta": {
-    "last_run": "2026-07-30",
+    "last_run": "2026-08-06",
     "version": "2.0",
     "site_url": "https://www.corehoodcleaning.com",
-    "total_runs": 6,
-    "last_updated": "2026-07-30T00:00:00.000Z"
+    "total_runs": 7,
+    "last_updated": "2026-08-06T00:00:00.000Z"
   },
   "keywords": {
     "frozen": [],
@@ -89,6 +89,11 @@
         "page": "/blog/school-hospital-hood-cleaning-san-diego",
         "date_targeted": "2026-07-30",
         "do_not_change_until": "2026-10-28"
+      },
+      "hotel hood cleaning san diego": {
+        "page": "/blog/hotel-hood-cleaning-san-diego",
+        "date_targeted": "2026-08-06",
+        "do_not_change_until": "2026-11-04"
       }
     },
     "cannibalization_flags": []
@@ -145,6 +150,19 @@
         "gsc_opportunity": {
           "impressions_note": "GA4 property has no linked Search Console keyword dimension available via analytics-mcp this run (googleSearchConsoleQuery is not a valid GA4 dimension for this property). Selected based on GA4 landing-page organic traffic to /industries/schools-hospitals/ (6 sessions/90 days, no dedicated blog support) plus the blog topic backlog explicitly listing schools as an untargeted segment gap. Recommend a real GSC export next run to replace this proxy.",
           "data_date": "2026-07-30"
+        }
+      },
+      {
+        "slug": "/blog/hotel-hood-cleaning-san-diego",
+        "title": "Hotel Hood Cleaning San Diego: NFPA 96 Compliance for Resort and Hotel Kitchens",
+        "target_keyword": "hotel hood cleaning san diego",
+        "secondary_keywords": ["resort hood cleaning san diego", "banquet kitchen hood cleaning", "hospitality hood cleaning san diego"],
+        "date_created": "2026-08-06",
+        "word_count": 2300,
+        "status": "live",
+        "gsc_opportunity": {
+          "impressions_note": "GA4 property still has no linked Search Console query dimension available via analytics-mcp this run. Selected based on GA4 landing-page organic traffic to /industries/hotels-resorts/ (4 sessions/90 days, no dedicated blog support) plus the CLAUDE.md customer segment list explicitly naming hotels and resorts, and the existence of a ready-made /images/serve-hotels.jpg asset with no post using it yet. Recommend a real GSC export next run to replace this proxy.",
+          "data_date": "2026-08-06"
         }
       }
     ]
