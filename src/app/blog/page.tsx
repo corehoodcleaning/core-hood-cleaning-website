@@ -42,7 +42,7 @@ export default function BlogPage() {
       <section style={{padding:'80px 0', background:'var(--off-white)'}}>
         <div className="container">
           <div style={{display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(320px, 1fr))', gap:'28px'}}>
-            {POSTS.map(post => (
+            {[...POSTS].reverse().map(post => (
               <Link key={post.slug} href={`/blog/${post.slug}`} style={{display:'block', background:'var(--white)', borderRadius:'8px', overflow:'hidden', border:'1px solid var(--gray-light)', transition:'all 0.25s', color:'inherit'}}>
                 <div style={{position:'relative', aspectRatio:'16/9', overflow:'hidden'}}>
                   <Image src={post.img} alt={post.title} fill style={{objectFit:'cover'}} sizes="400px" />
