@@ -24,6 +24,7 @@ const BLOG_POSTS = [
   { slug: 'after-hours-hood-cleaning-san-diego', date: '2026-07-23' },
   { slug: 'school-hospital-hood-cleaning-san-diego', date: '2026-07-30' },
   { slug: 'hotel-hood-cleaning-san-diego', date: '2026-08-06' },
+  { slug: 'stadium-sports-venue-hood-cleaning-san-diego', date: '2026-08-20' },
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
