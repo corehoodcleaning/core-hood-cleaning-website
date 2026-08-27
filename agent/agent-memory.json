@@ -1,10 +1,10 @@
 {
   "meta": {
-    "last_run": "2026-08-06",
+    "last_run": "2026-08-27",
     "version": "2.0",
     "site_url": "https://www.corehoodcleaning.com",
-    "total_runs": 7,
-    "last_updated": "2026-08-06T00:00:00.000Z"
+    "total_runs": 9,
+    "last_updated": "2026-08-27T00:00:00.000Z"
   },
   "keywords": {
     "frozen": [],
@@ -94,6 +94,16 @@
         "page": "/blog/hotel-hood-cleaning-san-diego",
         "date_targeted": "2026-08-06",
         "do_not_change_until": "2026-11-04"
+      },
+      "stadium and sports venue hood cleaning san diego": {
+        "page": "/blog/stadium-sports-venue-hood-cleaning-san-diego",
+        "date_targeted": "2026-08-20",
+        "do_not_change_until": "2026-11-18"
+      },
+      "food truck hood cleaning san diego": {
+        "page": "/blog/food-truck-hood-cleaning-san-diego",
+        "date_targeted": "2026-08-27",
+        "do_not_change_until": "2026-11-25"
       }
     },
     "cannibalization_flags": []
@@ -163,6 +173,32 @@
         "gsc_opportunity": {
           "impressions_note": "GA4 property still has no linked Search Console query dimension available via analytics-mcp this run. Selected based on GA4 landing-page organic traffic to /industries/hotels-resorts/ (4 sessions/90 days, no dedicated blog support) plus the CLAUDE.md customer segment list explicitly naming hotels and resorts, and the existence of a ready-made /images/serve-hotels.jpg asset with no post using it yet. Recommend a real GSC export next run to replace this proxy.",
           "data_date": "2026-08-06"
+        }
+      },
+      {
+        "slug": "/blog/stadium-sports-venue-hood-cleaning-san-diego",
+        "title": "Stadium and Sports Venue Hood Cleaning San Diego: NFPA 96 for Concession Kitchens",
+        "target_keyword": "stadium and sports venue hood cleaning san diego",
+        "secondary_keywords": ["sports venue hood cleaning san diego", "concession kitchen hood cleaning", "arena hood cleaning san diego", "golf clubhouse hood cleaning"],
+        "date_created": "2026-08-20",
+        "word_count": 2350,
+        "status": "live",
+        "gsc_opportunity": {
+          "impressions_note": "GA4 property still has no linked Search Console query dimension available via analytics-mcp this run (queried landingPagePlusQueryString and sessionDefaultChannelGroup instead). Selected based on GA4 landing-page traffic to /industries/stadiums-sports-venues/ (5 sessions/90 days, no dedicated blog support), the CLAUDE.md customer segment list explicitly naming sports and entertainment venue concessions, and a ready-made /images/serve-stadiums.jpg asset with no post using it yet. Avoided the commissaries gap deliberately since the school/hospital post already carries 'commissary hood cleaning' as a secondary keyword and a dedicated commissary page risked cannibalizing it. Recommend a real GSC export next run to replace this proxy.",
+          "data_date": "2026-08-20"
+        }
+      },
+      {
+        "slug": "/blog/food-truck-hood-cleaning-san-diego",
+        "title": "Food Truck Hood Cleaning San Diego: NFPA 96 Compliance for Mobile Kitchens",
+        "target_keyword": "food truck hood cleaning san diego",
+        "secondary_keywords": ["mobile kitchen hood cleaning san diego", "food truck NFPA 96 compliance", "commissary hood cleaning requirements"],
+        "date_created": "2026-08-27",
+        "word_count": 2100,
+        "status": "live",
+        "gsc_opportunity": {
+          "impressions_note": "GA4 property still has no linked Search Console query dimension available via analytics-mcp this run. Selected 'food truck hood cleaning san diego' as an explicitly named good target type in the weekly-seo-blog-post task instructions (schools, hotels, food trucks, commissaries, sports venues), and as the last untargeted segment gap that does not risk cannibalization, since the school/hospital post already owns 'commissary hood cleaning' as a secondary keyword and a dedicated commissary page would compete with it directly. Food trucks are a distinct mobile segment (NFPA 96 applies to any truck with a canopy hood over grease producing equipment) with no existing dedicated page, no /industries/ landing page competing for the term, and no image asset conflict (used unused /images/before-after-3.jpg). Recommend a real GSC export next run to replace this proxy, and recommend considering a dedicated /industries/food-trucks page if this keyword performs well.",
+          "data_date": "2026-08-27"
         }
       }
     ]
