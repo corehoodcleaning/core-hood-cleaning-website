@@ -27,6 +27,7 @@ const BLOG_POSTS = [
   { slug: 'stadium-sports-venue-hood-cleaning-san-diego', date: '2026-08-20' },
   { slug: 'food-truck-hood-cleaning-san-diego', date: '2026-08-27' },
   { slug: 'filter-exchange-vs-hood-cleaning-san-diego', date: '2026-09-03' },
+  { slug: 'hood-cleaning-certificate-of-compliance-san-diego', date: '2026-09-11' },
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
