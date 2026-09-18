@@ -74,11 +74,71 @@ const LOCATIONS: Record<string, {
     ],
     heroImage: '/images/tech-rooftop-palms.jpg',
   },
+  'mission-valley': {
+    name: 'Mission Valley',
+    title: 'Hood Cleaning Mission Valley',
+    heroDesc: 'Professional commercial kitchen hood cleaning serving Mission Valley, Fashion Valley, Hazard Center, Hotel Circle, and the I-8 corridor. NFPA 96 certified service for restaurants, hotel kitchens, and food courts.',
+    intro: "Core Hood Cleaning serves commercial kitchens throughout Mission Valley — one of San Diego's highest-volume dining corridors. From Fashion Valley and Mission Valley Center food courts to the hotel kitchens lining Hotel Circle and the full-service restaurants along Friars Road, Mission Valley kitchens run hard. High daily covers, extended operating hours, and proximity to SDSU mean most operations here need cleaning at the top of the NFPA 96 frequency scale. We schedule around your service windows and complete full-system cleaning from hood canopy to rooftop fan on every visit.",
+    whyUs: "Mission Valley's restaurant density and volume are among the highest in San Diego County. National chains, hotel food and beverage operations, and independently owned full-service restaurants all operate side by side — and health and fire inspections are frequent. We carry full NFPA 96 documentation on every job, coordinate with hotel engineering and property management teams, and work the late-night windows after last call so you're compliant before your morning prep crew arrives.",
+    neighborhoods: [
+      { name: 'Fashion Valley & Hotel Circle', desc: 'Hotel kitchens, upscale mall dining, and resort food and beverage operations along Hotel Circle Drive. We coordinate with hotel engineering teams and work to brand documentation standards.' },
+      { name: 'Mission Valley Center & Hazard Center', desc: 'High-volume food court and inline restaurant operations. National chain standards, mall property management coordination, and consistent after-hours scheduling.' },
+      { name: 'Friars Road Corridor', desc: 'Full-service restaurants, breweries, and sports bars along the I-8 corridor. Game day and event-night volume spikes drive demand for monthly service for many operators here.' },
+      { name: 'SDSU Adjacent & College Area', desc: 'Casual dining, late-night restaurants, and high-volume fast casual operations catering to university traffic. Extended hours and student-driven volume put kitchens at the top of cleaning frequency requirements.' },
+    ],
+    faqs: [
+      { q: 'Do you service hotel kitchens in the Hotel Circle area?', a: 'Yes. We regularly service hotel food and beverage kitchens throughout Mission Valley. We coordinate directly with engineering teams, work to hotel documentation standards, and complete service during agreed overnight windows.' },
+      { q: 'How often do Mission Valley restaurants need hood cleaning?', a: 'Mission Valley is a high-volume dining corridor. Most full-service restaurants and hotel kitchens here need quarterly service at minimum. High-volume bars and restaurants with extended hours often qualify for monthly service under NFPA 96.' },
+      { q: 'Can you service mall and food court kitchens?', a: 'Yes. We have experience with mall property management requirements, food court exhaust systems, and inline restaurant configurations at Fashion Valley, Mission Valley Center, and Hazard Center.' },
+      { q: 'What if I need emergency service after a failed inspection?', a: 'Call (858) 361-2570. We offer same-day emergency hood cleaning throughout Mission Valley and can often dispatch the same evening. We\'ve resolved red tag situations for Mission Valley operators within 24 hours.' },
+    ],
+    heroImage: '/images/tech-kitchen-cleaning.jpg',
+  },
+  'chula-vista': {
+    name: 'Chula Vista',
+    title: 'Hood Cleaning Chula Vista',
+    heroDesc: 'Professional commercial kitchen hood cleaning serving Chula Vista, Eastlake, Otay Ranch, Third Avenue Village, and the South Bay corridor. NFPA 96 certified service for South Bay restaurants.',
+    intro: "Core Hood Cleaning serves commercial kitchens throughout Chula Vista and the South Bay. Chula Vista is one of the fastest-growing cities in California, and its restaurant scene has grown with it. From the Third Avenue Village neighborhood dining district to the sprawling commercial corridors in Eastlake and Otay Ranch, Chula Vista kitchens range from family-owned taquerias to national chain operations to full-service hotel food and beverage. Every kitchen has the same NFPA 96 compliance obligation, and we service all of them with the same full-system cleaning from hood canopy to rooftop fan.",
+    whyUs: "Chula Vista's growth means newer commercial kitchens and stricter code enforcement from both the City of Chula Vista Fire Department and San Diego County Health. NFPA 96 compliance certificates must be current and complete. We provide full photo documentation, a signed compliance certificate, and an NFPA 96 sticker on the hood on every job. We schedule after closing so your kitchen is clean and compliant before your crew arrives the next morning.",
+    neighborhoods: [
+      { name: 'Third Avenue Village', desc: 'Chula Vista\'s historic downtown dining district. Full-service restaurants, bars, and cafes in mixed-use buildings with varying access. We navigate the street access and scheduling constraints this area requires.' },
+      { name: 'Eastlake & Otay Ranch', desc: 'The fastest-growing commercial corridors in Chula Vista. National chains, neighborhood restaurants, and food court operations in newer commercial centers with modern kitchen exhaust systems.' },
+      { name: 'Palomar Street & Broadway Corridor', desc: 'High-density commercial strip with full-service restaurants, fast casual, and legacy South Bay operators. Heavy kitchen volume and consistent health department presence make NFPA 96 documentation essential.' },
+      { name: 'South Bay & Olympic Training Center Area', desc: 'Restaurants and food service operations in the south Chula Vista commercial areas. We serve the full range of operators in the South Bay including catering operations and institutional food service.' },
+    ],
+    faqs: [
+      { q: 'Do you serve all of Chula Vista including Eastlake and Otay Ranch?', a: 'Yes. We service the entire City of Chula Vista including Third Avenue, Eastlake, Otay Ranch, the Palomar Street corridor, and all surrounding commercial areas.' },
+      { q: 'How does the City of Chula Vista enforce hood cleaning compliance?', a: 'Chula Vista Fire and San Diego County Health both inspect commercial kitchens. Fire marshals look for a current NFPA 96 compliance certificate and sticker on the hood. Health inspectors note overdue service as a violation. Our documentation satisfies both.' },
+      { q: 'How often do Chula Vista restaurants need hood cleaning?', a: 'Cleaning frequency depends on cooking type and volume. Most full-service restaurants need quarterly service. High-volume operations and those using solid fuel or wok cooking may need monthly service. We assess your kitchen and recommend the correct NFPA 96 interval.' },
+      { q: 'Do you offer emergency hood cleaning in South Bay?', a: 'Yes. Same-day emergency service is available throughout Chula Vista and the South Bay. Call (858) 361-2570 and we\'ll dispatch a technician to your location.' },
+    ],
+    heroImage: '/images/hero-commercial-kitchen.jpg',
+  },
+  'oceanside': {
+    name: 'Oceanside',
+    title: 'Hood Cleaning Oceanside',
+    heroDesc: 'Professional commercial kitchen hood cleaning serving Oceanside, Camp Pendleton corridor, Downtown Oceanside, and North County coast. NFPA 96 certified service for restaurants, bars, and institutional kitchens.',
+    intro: "Core Hood Cleaning serves commercial kitchens throughout Oceanside and the North County coast. Oceanside's restaurant scene has expanded significantly with the revitalization of downtown Mission Avenue, a growing craft brewery presence, and strong demand from operators serving the Camp Pendleton corridor. From oceanfront restaurants at the Pier to high-volume sports bars and breweries in the redeveloping downtown to institutional food service near base, Oceanside kitchens run busy schedules that demand compliant, reliable hood cleaning. We serve all of them with full-system NFPA 96 cleaning on every visit.",
+    whyUs: "Oceanside is at the northern edge of our San Diego County service area, but we run regular routes to North County and serve Oceanside operators on a consistent schedule. The City of Oceanside Fire Department and San Diego County Health enforce NFPA 96 compliance — our documentation package satisfies both. We schedule overnight and after-hours service so your kitchen is cleaned and compliant before morning prep, and we offer same-day emergency response for red tag situations throughout North County.",
+    neighborhoods: [
+      { name: 'Downtown Oceanside & Mission Avenue', desc: 'Oceanside\'s fastest-growing dining corridor. Craft breweries, farm-to-table restaurants, wine bars, and a growing nightlife scene. Late-night service windows and high cooking volume put most operators here on quarterly or monthly cleaning schedules.' },
+      { name: 'Oceanside Pier & Coastal', desc: 'Oceanfront restaurants, beach bars, and waterfront dining. Salt air accelerates corrosion on exhaust fans and ductwork. We inspect for salt damage on every visit and document any issues found.' },
+      { name: 'Camp Pendleton Corridor & El Camino Real', desc: 'Restaurants, fast casual, and full-service dining serving the military community along El Camino Real and adjacent commercial strips. High consistent volume and a demanding customer base that values reliability.' },
+      { name: 'North County Institutional', desc: 'School cafeterias, healthcare facility kitchens, and institutional food service operations throughout North Oceanside. Institutional kitchens have specific compliance timelines and documentation requirements that we meet on every visit.' },
+    ],
+    faqs: [
+      { q: 'Do you service breweries and taprooms in Oceanside?', a: 'Yes. Oceanside has a strong and growing craft brewery scene. We service brewery kitchens, taproom food programs, and restaurant operations with full NFPA 96 compliance documentation on every visit.' },
+      { q: 'How does salt air affect exhaust systems in coastal Oceanside?', a: 'Significantly. Exhaust fans, access panels, ductwork joints, and hinged components corrode faster in the marine environment. We inspect for corrosion on every visit, lubricate moving parts, and document any concerns found for your maintenance records.' },
+      { q: 'How often do Oceanside restaurants need hood cleaning?', a: 'Most Oceanside full-service restaurants need quarterly cleaning. High-volume operations, downtown breweries with busy kitchen programs, and restaurants open extended hours often need monthly service under NFPA 96.' },
+      { q: 'Is Oceanside within your service area?', a: 'Yes. Oceanside is within our North County service corridor. We run regular routes to Oceanside and schedule service throughout North San Diego County. Call (858) 361-2570 for availability.' },
+    ],
+    heroImage: '/images/tech-rooftop-palms.jpg',
+  },
 }
 
 // Generate remaining locations with standard template
 const STANDARD_LOCATIONS = [
-  'mission-valley', 'chula-vista', 'oceanside', 'carlsbad', 'escondido',
+  'carlsbad', 'escondido',
   'el-cajon', 'vista', 'san-marcos', 'national-city', 'la-mesa',
   'coronado', 'encinitas', 'del-mar', 'miramar', 'rancho-bernardo', 'poway', 'santee'
 ]
