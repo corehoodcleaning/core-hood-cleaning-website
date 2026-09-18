@@ -7,9 +7,29 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = seoConfig["hood-cleaning"]
 
+const SERVICE_FAQS = [
+  { q: 'How long does a commercial hood cleaning take?', a: 'Most commercial hood cleanings take 2 to 4 hours depending on system size and grease buildup. Larger systems, multiple hoods, or heavily soiled ductwork may take longer. We always schedule around your closing time so kitchen operations are never interrupted.' },
+  { q: 'How often is hood cleaning required under NFPA 96?', a: 'NFPA 96 sets cleaning frequency based on cooking volume and fuel type: monthly for high-volume or solid fuel cooking (woks, wood-burning, charcoal), quarterly for most full-service restaurants, and semi-annually for low-volume operations. We assess your kitchen at onboarding and recommend the correct schedule.' },
+  { q: 'What is included in a full-system hood cleaning?', a: 'Every Core Hood Cleaning service covers the complete exhaust pathway: hood canopy and baffles, plenum chamber, grease filters, full duct run from plenum to rooftop, exhaust fan housing and blades, and grease containment and disposal. We clean everything NFPA 96 requires — not just what is visible from the kitchen floor.' },
+  { q: 'Do you provide compliance documentation after every job?', a: 'Yes. Every service includes before and after photos of all areas cleaned, a detailed service report, and a signed NFPA 96 compliance certificate with the date and technician. The sticker is applied to your hood and the certificate is issued digitally. Both are accepted by fire marshals, health inspectors, and insurance carriers.' },
+  { q: 'Do you offer after-hours and emergency hood cleaning?', a: 'Yes. We offer night and weekend scheduling as the default so your kitchen never loses service time. We also offer 24/7 emergency response for red-tag situations, failed health inspections, or pre-inspection cleanup. Call (858) 361-2570 for same-day dispatch.' },
+  { q: 'What areas of San Diego County do you serve?', a: 'We serve all of San Diego County including Downtown, Pacific Beach, La Jolla, Mission Valley, North Park, Chula Vista, National City, Oceanside, Carlsbad, Escondido, El Cajon, Santee, La Mesa, Poway, Rancho Bernardo, Encinitas, Del Mar, Miramar, and everywhere in between.' },
+]
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: SERVICE_FAQS.map(f => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a }
+  }))
+}
+
 export default function HoodCleaningPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Nav />
 
       {/* HERO */}
@@ -182,6 +202,27 @@ export default function HoodCleaningPage() {
                 <Image src={src} alt={`Before and after ${i+1}`} width={600} height={450} style={{width:'100%', height:'100%', objectFit:'cover'}} />
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section style={{padding:'88px 0', background:'var(--off-white)'}}>
+        <div className="container">
+          <div style={{textAlign:'center', marginBottom:'56px'}}>
+            <p className="section-label">Common Questions</p>
+            <h2 className="section-title">Commercial Hood Cleaning FAQ</h2>
+          </div>
+          <div style={{maxWidth:'800px', margin:'0 auto'}}>
+            {SERVICE_FAQS.map(f => (
+              <div key={f.q} style={{borderBottom:'1px solid var(--gray-light)', padding:'24px 0'}}>
+                <h3 style={{fontFamily:'var(--font-display)', fontSize:'1rem', fontWeight:800, textTransform:'uppercase', color:'var(--black)', marginBottom:'10px', lineHeight:'1.4'}}>{f.q}</h3>
+                <p style={{fontSize:'0.92rem', color:'var(--gray-text)', lineHeight:'1.8', margin:0}}>{f.a}</p>
+              </div>
+            ))}
+          </div>
+          <div style={{textAlign:'center', marginTop:'48px'}}>
+            <p style={{fontSize:'0.9rem', color:'var(--gray-text)'}}>More questions? <a href="tel:8583612570" style={{color:'var(--rust)', fontWeight:700}}>Call us — we&apos;ll give you a straight answer.</a></p>
           </div>
         </div>
       </section>

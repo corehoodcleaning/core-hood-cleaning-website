@@ -34,8 +34,51 @@ const SERVE = [
 ]
 
 export default function HomePage() {
+  const localBusinessSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CleaningService',
+    name: 'Core Hood Cleaning',
+    description: 'San Diego NFPA 96 certified commercial kitchen exhaust hood cleaning. Full system service from hood canopy to rooftop fan with photo documentation and compliance certificates on every job.',
+    url: 'https://www.corehoodcleaning.com',
+    telephone: '+18583612570',
+    priceRange: '$$',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'San Diego',
+      addressRegion: 'CA',
+      addressCountry: 'US'
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 32.7157,
+      longitude: -117.1611
+    },
+    areaServed: [
+      'Pacific Beach', 'La Jolla', 'Mission Valley', 'Downtown San Diego',
+      'Chula Vista', 'Oceanside', 'Carlsbad', 'Escondido', 'El Cajon',
+      'Vista', 'San Marcos', 'National City', 'La Mesa', 'Coronado',
+      'Encinitas', 'Del Mar', 'Miramar', 'Rancho Bernardo', 'Poway', 'Santee'
+    ],
+    openingHoursSpecification: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+      opens: '00:00',
+      closes: '23:59'
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Commercial Kitchen Exhaust Services',
+      itemListElement: [
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Commercial Hood Cleaning', url: 'https://www.corehoodcleaning.com/services/hood-cleaning' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Grease Filter Exchange', url: 'https://www.corehoodcleaning.com/services/filter-exchange' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'NFPA 96 Inspection', url: 'https://www.corehoodcleaning.com/services/nfpa-inspection' } }
+      ]
+    }
+  }
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
       <Nav />
 
       {/* HERO clean commercial kitchen background */}
