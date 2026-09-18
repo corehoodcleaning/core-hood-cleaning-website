@@ -56,7 +56,7 @@ export default function HoodCleaningPage() {
       {/* TRUST BAR */}
       <div className="trust-bar">
         <div className="trust-bar-inner">
-          {['NFPA 96 Certified', 'Photo Documentation Included', '200+ Restaurants Served', '24/7 Emergency Service', 'Fully Licensed & Insured'].map(t => (
+          {['NFPA 96 Certified', 'Photo Documentation Included', '325+ Customers Served', '24/7 Emergency Service', 'Fully Licensed & Insured'].map(t => (
             <div key={t} className="trust-pill"><span className="dot" />{t}</div>
           ))}
         </div>

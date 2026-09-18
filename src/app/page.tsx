@@ -93,7 +93,7 @@ export default function HomePage() {
         <div className="hero-content">
           <div>
             <div className="hero-badge">
-              <span>40+ Five-Star Reviews &middot; San Diego&apos;s #1 Rated</span>
+              <span>4.9/5 Rating on Google &middot; San Diego&apos;s #1 Rated</span>
             </div>
             <h1 className="hero-title">
               San Diego&apos;s<br />
@@ -102,7 +102,7 @@ export default function HomePage() {
             </h1>
             <p className="hero-subtitle">
               NFPA 96 certified commercial kitchen exhaust cleaning.
-              Trusted by 200+ restaurants across San Diego County.
+              Trusted by 325+ customers across San Diego County.
               Same-day and emergency service available.
             </p>
             <div className="hero-actions">
@@ -110,9 +110,9 @@ export default function HomePage() {
               <a href="tel:8583612570" className="btn-secondary">Call Now</a>
             </div>
             <div className="hero-trust">
-              <div className="trust-item"><span className="num">200+</span><span className="label">Restaurants Served</span></div>
+              <div className="trust-item"><span className="num">325+</span><span className="label">Customers Served</span></div>
               <div className="trust-divider" />
-              <div className="trust-item"><span className="num">40+</span><span className="label">5-Star Reviews</span></div>
+              <div className="trust-item"><span className="num">90+</span><span className="label">Google Reviews</span></div>
               <div className="trust-divider" />
               <div className="trust-item"><span className="num">24/7</span><span className="label">Emergency Service</span></div>
             </div>
@@ -124,7 +124,7 @@ export default function HomePage() {
             <a href="tel:8583612570" className="call-link">(858) 361-2570</a>
             <div className="card-trust">
               <div className="card-trust-item">NFPA 96<br/>Certified</div>
-              <div className="card-trust-item">40+ Five<br/>Star Reviews</div>
+              <div className="card-trust-item">4.9/5<br/>Google Rating</div>
               <div className="card-trust-item">Fully<br/>Insured</div>
             </div>
           </div>
@@ -134,7 +134,7 @@ export default function HomePage() {
       {/* TRUST BAR */}
       <div className="trust-bar">
         <div className="trust-bar-inner">
-          {['NFPA 96 Certified','Fully Licensed & Insured','Same-Day Emergency Service','200+ San Diego Restaurants Served','Photo Documentation on Every Job'].map(t => (
+          {['NFPA 96 Certified','Fully Licensed & Insured','Same-Day Emergency Service','325+ Customers Served','Photo Documentation on Every Job'].map(t => (
             <div key={t} className="trust-pill"><span className="dot" />{t}</div>
           ))}
         </div>
@@ -216,8 +216,8 @@ export default function HomePage() {
                 and a compliance certificate. We do the work right the first time, every time.
               </p>
               <div className="why-stats">
-                <div className="why-stat"><div className="big">200+</div><div className="small">Restaurants Served</div></div>
-                <div className="why-stat"><div className="big">40+</div><div className="small">5-Star Reviews</div></div>
+                <div className="why-stat"><div className="big">325+</div><div className="small">Customers Served</div></div>
+                <div className="why-stat"><div className="big">90+</div><div className="small">Google Reviews</div></div>
                 <div className="why-stat"><div className="big">24/7</div><div className="small">Emergency Available</div></div>
                 <div className="why-stat"><div className="big">100%</div><div className="small">Photo Documented</div></div>
               </div>

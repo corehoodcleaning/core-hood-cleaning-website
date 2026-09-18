@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     default: '#1 Hood Cleaning San Diego | NFPA 96 Certified | Core Hood Cleaning',
     template: '%s | Core Hood Cleaning San Diego'
   },
-  description: 'San Diego\'s top-rated commercial hood cleaning company. NFPA 96 certified, 40+ 5-star reviews, same-day service. Serving all of San Diego County. Call (858) 361-2570.',
+  description: 'San Diego\'s top-rated commercial hood cleaning company. NFPA 96 certified, 90+ Google reviews, same-day service. Serving all of San Diego County. Call (858) 361-2570.',
   keywords: ['hood cleaning San Diego', 'commercial kitchen exhaust cleaning', 'NFPA 96', 'restaurant hood cleaning', 'grease duct cleaning San Diego'],
   openGraph: {
     type: 'website',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     url: 'https://www.corehoodcleaning.com',
     siteName: 'Core Hood Cleaning',
     title: '#1 Hood Cleaning San Diego | NFPA 96 Certified',
-    description: 'San Diego\'s top-rated commercial hood cleaning. NFPA 96 certified, 40+ 5-star reviews, same-day service.',
+    description: 'San Diego\'s top-rated commercial hood cleaning. NFPA 96 certified, 90+ Google reviews, same-day service.',
   },
   robots: {
     index: true,

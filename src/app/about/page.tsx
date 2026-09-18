@@ -51,12 +51,12 @@ export default function AboutPage() {
                 with before and after photos, why we show up on time, and why we do the job right every single time.
               </p>
               <p style={{fontSize:'0.95rem', color:'var(--gray-text)', lineHeight:'1.8', marginBottom:'40px'}}>
-                Today, Core Hood Cleaning serves 200+ restaurants, hotels, schools, and commercial facilities 
+                Today, Core Hood Cleaning serves 325+ commercial kitchens, hotels, schools, and facilities
                 across San Diego County. Every technician is NFPA 96 certified and wears the Core Services jacket with pride.
               </p>
 
               <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap:'16px', marginBottom:'40px'}}>
-                {[{n:'200+', l:'Restaurants Served'},{n:'40+', l:'5-Star Reviews'},{n:'NFPA 96', l:'Certified Team'},{n:'24/7', l:'Emergency Service'}].map(s => (
+                {[{n:'325+', l:'Customers Served'},{n:'90+', l:'Google Reviews'},{n:'NFPA 96', l:'Certified Team'},{n:'24/7', l:'Emergency Service'}].map(s => (
                   <div key={s.l} style={{background:'var(--off-white)', border:'1px solid var(--gray-light)', borderTop:'3px solid var(--rust)', borderRadius:'8px', padding:'20px', textAlign:'center'}}>
                     <div style={{fontFamily:'var(--font-display)', fontSize:'1.8rem', fontWeight:900, color:'var(--rust)', marginBottom:'4px'}}>{s.n}</div>
                     <div style={{fontSize:'0.78rem', color:'var(--gray-text)', textTransform:'uppercase', letterSpacing:'0.06em', fontWeight:600}}>{s.l}</div>

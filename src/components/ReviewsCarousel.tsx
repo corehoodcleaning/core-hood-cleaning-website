@@ -55,7 +55,7 @@ export default function ReviewsCarousel() {
             style={{display:'inline-flex', alignItems:'center', gap:'8px', padding:'14px 28px', border:'2px solid var(--rust)', color:'var(--rust)', borderRadius:'4px', fontFamily:'var(--font-display)', fontWeight:800, fontSize:'0.85rem', letterSpacing:'0.06em', textTransform:'uppercase', transition:'all 0.2s'}}
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-            View All 40+ Google Reviews
+            View All 90+ Google Reviews
           </a>
         </div>
       </div>

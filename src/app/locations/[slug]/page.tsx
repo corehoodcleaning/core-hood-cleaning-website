@@ -212,7 +212,7 @@ export default function LocationPage({ params }: { params: { slug: string } }) {
       {/* TRUST BAR */}
       <div className="trust-bar">
         <div className="trust-bar-inner">
-          {['NFPA 96 Certified','Photo Documentation Included','Same-Day Emergency Service','Fully Licensed & Insured','40+ Five-Star Reviews'].map(t => (
+          {['NFPA 96 Certified','Photo Documentation Included','Same-Day Emergency Service','Fully Licensed & Insured','4.9/5 on Google'].map(t => (
             <div key={t} className="trust-pill"><span className="dot" />{t}</div>
           ))}
         </div>

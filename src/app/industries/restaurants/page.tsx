@@ -70,8 +70,8 @@ export default function RestaurantsPage() {
               </div>
               <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap:'16px'}}>
                 {[
-                  { n:'200+', label:'Restaurants Served' },
-                  { n:'40+', label:'5-Star Reviews' },
+                  { n:'325+', label:'Customers Served' },
+                  { n:'90+', label:'Google Reviews' },
                   { n:'24/7', label:'Emergency Available' },
                   { n:'100%', label:'Photo Documented' },
                 ].map(s => (
