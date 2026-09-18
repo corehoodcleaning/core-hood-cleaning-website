@@ -250,6 +250,16 @@ export default function WhatHappensDuringHoodCleaning() {
                 <p style={{ fontSize: '0.92rem', color: 'var(--gray-text)', lineHeight: '1.8', margin: 0 }}>{faq.a}</p>
               </div>
             ))}
+
+            <div style={{ borderTop: '1px solid var(--gray-light)', paddingTop: '32px', marginTop: '40px' }}>
+              <p style={{ fontFamily: 'var(--font-display)', fontSize: '0.8rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--gray-text)', marginBottom: '16px' }}>Related Reading</p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <Link href="/services/hood-cleaning" style={{ fontSize: '0.9rem', color: 'var(--rust)', textDecoration: 'none' }}>→ Our Commercial Hood Cleaning Service</Link>
+                <Link href="/blog/how-often-should-restaurant-hood-be-cleaned" style={{ fontSize: '0.9rem', color: 'var(--rust)', textDecoration: 'none' }}>→ How Often Should a Restaurant Hood Be Cleaned? (NFPA 96 Guide)</Link>
+                <Link href="/blog/choosing-hood-cleaning-company-san-diego" style={{ fontSize: '0.9rem', color: 'var(--rust)', textDecoration: 'none' }}>→ How to Choose a Hood Cleaning Company in San Diego</Link>
+              </div>
+            </div>
+
           </div>
         </div>
       </article>

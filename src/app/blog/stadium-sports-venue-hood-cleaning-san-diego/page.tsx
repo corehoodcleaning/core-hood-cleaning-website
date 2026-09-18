@@ -309,6 +309,7 @@ export default function StadiumSportsVenueHoodCleaningSanDiego() {
                 <Link href="/blog/school-hospital-hood-cleaning-san-diego" style={{ fontSize: '0.9rem', color: 'var(--rust)', textDecoration: 'none' }}>→ School and Hospital Hood Cleaning San Diego: NFPA 96 for Institutional Kitchens</Link>
                 <Link href="/blog/emergency-hood-cleaning-san-diego" style={{ fontSize: '0.9rem', color: 'var(--rust)', textDecoration: 'none' }}>→ Emergency Hood Cleaning San Diego: Same-Day Service for Red Tags & Inspections</Link>
                 <Link href="/services/nfpa-inspection" style={{ fontSize: '0.9rem', color: 'var(--rust)', textDecoration: 'none' }}>→ Our NFPA 96 Inspection Service</Link>
+                <Link href="/services/hood-cleaning" style={{ fontSize: '0.9rem', color: 'var(--rust)', textDecoration: 'none' }}>→ Our Commercial Hood Cleaning Service</Link>
               </div>
             </div>
 

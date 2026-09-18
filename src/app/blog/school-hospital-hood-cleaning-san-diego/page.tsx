@@ -309,6 +309,7 @@ export default function SchoolHospitalHoodCleaningSanDiego() {
                 <Link href="/blog/hood-cleaning-frequency-cooking-type" style={{ fontSize: '0.9rem', color: 'var(--rust)', textDecoration: 'none' }}>→ Hood Cleaning Frequency by Cooking Type: A Breakdown for San Diego Kitchens</Link>
                 <Link href="/blog/restaurant-compliance-san-diego-guide" style={{ fontSize: '0.9rem', color: 'var(--rust)', textDecoration: 'none' }}>→ The Complete Guide to Restaurant Compliance in San Diego County</Link>
                 <Link href="/services/nfpa-inspection" style={{ fontSize: '0.9rem', color: 'var(--rust)', textDecoration: 'none' }}>→ Our NFPA 96 Inspection Service</Link>
+                <Link href="/services/hood-cleaning" style={{ fontSize: '0.9rem', color: 'var(--rust)', textDecoration: 'none' }}>→ Our Commercial Hood Cleaning Service</Link>
               </div>
             </div>
 
