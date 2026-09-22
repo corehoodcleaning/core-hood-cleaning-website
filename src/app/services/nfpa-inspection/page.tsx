@@ -7,9 +7,51 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = seoConfig["nfpa-inspection"]
 
+const faqs = [
+  {
+    q: 'What does an NFPA 96 inspection cover?',
+    a: 'A full NFPA 96 inspection covers every component of your kitchen exhaust system: the hood canopy and mounting, grease filters (type, condition, and fit), the plenum chamber, the full ductwork run, the rooftop exhaust fan, make-up air systems, fire suppression nozzle placement, grease drip trays and containment, access panel locations, and clearances from combustible materials. Every deficiency found is documented by location and description.',
+  },
+  {
+    q: 'How is an NFPA 96 inspection different from a hood cleaning?',
+    a: 'A hood cleaning removes grease from the system. An NFPA 96 inspection assesses whether the entire system meets the code standard — including components that cleaning doesn\'t address, like suppression nozzle placement, ductwork access panels, fan clearances, and structural condition. Both are required. Many operators get an inspection done after a cleaning to confirm the system is fully compliant before a scheduled fire marshal or health department visit.',
+  },
+  {
+    q: 'How often is an NFPA 96 inspection required in San Diego?',
+    a: 'San Diego fire marshals and health departments reference NFPA 96 directly when reviewing commercial kitchens. Most operators schedule inspections on the same cadence as their required hood cleaning — monthly, quarterly, or semi-annually depending on cooking volume and fuel type. Opening a new location, taking over an existing one, or making changes to your exhaust system also triggers an inspection requirement.',
+  },
+  {
+    q: 'Will your compliance certificate be accepted by San Diego fire marshals and health inspectors?',
+    a: 'Yes. Our compliance certificates are issued by NFPA 96 certified technicians and are accepted by San Diego County fire marshals, the Department of Environmental Health, and commercial insurance carriers. We also apply an inspection sticker directly to your hood noting the inspection date and next required service — which is what code requires and what inspectors look for.',
+  },
+  {
+    q: 'What happens if deficiencies are found during the inspection?',
+    a: 'Every deficiency is documented in your written report with location, description, and recommended corrective action. Nothing is left vague. We can quote the corrective work directly and schedule a follow-up inspection once it\'s addressed. For minor items like a damaged filter or a missing access panel, we often handle it the same visit. For structural or suppression system issues, we document and advise so you can get the right contractor involved.',
+  },
+  {
+    q: 'Do I need a standalone inspection or does hood cleaning include one?',
+    a: 'Our full-system hood cleaning includes a compliance certificate and NFPA 96 inspection sticker. A standalone inspection is a separate service for operators who need documented compliance confirmation between cleanings — for example, before a scheduled fire marshal visit, when opening a new location, after equipment modifications, or for insurance documentation. If you\'re unsure which you need, call us and we\'ll tell you straight.',
+  },
+]
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map(faq => ({
+        '@type': 'Question',
+        name: faq.q,
+        acceptedAnswer: { '@type': 'Answer', text: faq.a },
+      })),
+    },
+  ],
+}
+
 export default function NFPAPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Nav />
       <section style={{paddingTop:'0', minHeight:'55vh', background:'var(--black)', position:'relative', overflow:'hidden', display:'flex', alignItems:'center'}}>
         <div style={{position:'absolute', inset:0}}>
@@ -39,14 +81,14 @@ export default function NFPAPage() {
               <p className="section-label">What Is NFPA 96</p>
               <h2 className="section-title" style={{marginBottom:'24px'}}>The Fire Code Standard<br/>Every Kitchen Must Meet</h2>
               <p style={{fontSize:'0.95rem', color:'var(--gray-text)', lineHeight:'1.8', marginBottom:'20px'}}>
-                NFPA 96 the Standard for Ventilation Control and Fire Protection of Commercial
-                Cooking Operations is the primary fire code governing commercial kitchen exhaust
+                NFPA 96 — the Standard for Ventilation Control and Fire Protection of Commercial
+                Cooking Operations — is the primary fire code governing commercial kitchen exhaust
                 systems in the United States. In San Diego, fire marshals and health departments
                 reference NFPA 96 directly when inspecting your kitchen.
               </p>
               <p style={{fontSize:'0.95rem', color:'var(--gray-text)', lineHeight:'1.8', marginBottom:'20px'}}>
                 The standard covers the design, installation, operation, and maintenance of commercial
-                cooking exhaust systems including required cleaning frequencies, access panel
+                cooking exhaust systems — including required cleaning frequencies, access panel
                 placement, fire suppression system compatibility, and grease containment.
               </p>
               <p style={{fontSize:'0.95rem', color:'var(--gray-text)', lineHeight:'1.8', marginBottom:'20px'}}>
@@ -133,6 +175,32 @@ export default function NFPAPage() {
           <div className="cta-actions">
             <a href="https://api.leadconnectorhq.com/widget/bookings/corehoodcleaning" className="btn-white">Book Inspection</a>
             <a href="tel:8583612570" className="btn-secondary">(858) 361-2570</a>
+          </div>
+        </div>
+      </section>
+
+      <section style={{padding:'88px 0', background:'var(--white)'}}>
+        <div className="container" style={{maxWidth:'800px'}}>
+          <div style={{textAlign:'center', marginBottom:'56px'}}>
+            <p className="section-label">Common Questions</p>
+            <h2 className="section-title">NFPA 96 Inspection FAQ</h2>
+          </div>
+          <div>
+            {faqs.map(faq => (
+              <div key={faq.q} style={{borderBottom:'1px solid var(--gray-light)', padding:'24px 0'}}>
+                <h3 style={{fontFamily:'var(--font-display)', fontSize:'1rem', fontWeight:900, textTransform:'uppercase', color:'var(--black)', marginBottom:'12px', lineHeight:'1.4'}}>{faq.q}</h3>
+                <p style={{fontSize:'0.92rem', color:'var(--gray-text)', lineHeight:'1.8', margin:0}}>{faq.a}</p>
+              </div>
+            ))}
+          </div>
+          <div style={{borderTop:'1px solid var(--gray-light)', paddingTop:'32px', marginTop:'40px'}}>
+            <p style={{fontFamily:'var(--font-display)', fontSize:'0.8rem', fontWeight:800, textTransform:'uppercase', letterSpacing:'0.08em', color:'var(--gray-text)', marginBottom:'16px'}}>Related Services</p>
+            <div style={{display:'flex', flexDirection:'column', gap:'8px'}}>
+              <Link href="/services/hood-cleaning" style={{fontSize:'0.9rem', color:'var(--rust)', textDecoration:'none'}}>→ Full-System Hood Cleaning</Link>
+              <Link href="/services/filter-exchange" style={{fontSize:'0.9rem', color:'var(--rust)', textDecoration:'none'}}>→ Grease Filter Exchange Program</Link>
+              <Link href="/blog/what-is-nfpa-96" style={{fontSize:'0.9rem', color:'var(--rust)', textDecoration:'none'}}>→ What Is NFPA 96? A Guide for Restaurant Operators</Link>
+              <Link href="/blog/restaurant-compliance-san-diego-guide" style={{fontSize:'0.9rem', color:'var(--rust)', textDecoration:'none'}}>→ San Diego Restaurant Compliance Guide</Link>
+            </div>
           </div>
         </div>
       </section>
