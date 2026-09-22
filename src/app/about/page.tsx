@@ -106,6 +106,21 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* INLINE CTA — before footer */}
+      <section style={{padding:'80px 0', background:'var(--off-white)'}}>
+        <div className="container" style={{maxWidth:'760px'}}>
+          <div style={{background:'var(--true-blue)', borderRadius:'8px', padding:'48px', textAlign:'center'}}>
+            <p style={{fontFamily:'var(--font-display)', fontSize:'0.75rem', fontWeight:800, textTransform:'uppercase', letterSpacing:'0.12em', color:'rgba(238,239,226,0.5)', marginBottom:'12px'}}>Ready to Get Started?</p>
+            <h2 style={{fontFamily:'var(--font-display)', fontSize:'clamp(1.6rem,3vw,2.2rem)', fontWeight:900, textTransform:'uppercase', color:'var(--off-white)', lineHeight:1.1, marginBottom:'16px'}}>Get a Free Quote for Your Kitchen</h2>
+            <p style={{color:'rgba(238,239,226,0.65)', fontSize:'1rem', lineHeight:1.75, marginBottom:'32px', maxWidth:'480px', margin:'0 auto 32px'}}>Same-day response. No obligation. NFPA 96 certified service throughout San Diego County.</p>
+            <div style={{display:'flex', gap:'16px', justifyContent:'center', flexWrap:'wrap'}}>
+              <a href="https://api.leadconnectorhq.com/widget/bookings/corehoodcleaning" style={{display:'inline-flex', alignItems:'center', gap:'8px', background:'var(--rust)', color:'var(--off-white)', fontFamily:'var(--font-display)', fontWeight:900, textTransform:'uppercase', fontSize:'0.9rem', letterSpacing:'0.06em', padding:'14px 28px', borderRadius:'4px', textDecoration:'none'}}>Book a Free Quote</a>
+              <a href="tel:8583612570" style={{display:'inline-flex', alignItems:'center', gap:'8px', background:'transparent', color:'var(--off-white)', fontFamily:'var(--font-display)', fontWeight:900, textTransform:'uppercase', fontSize:'0.9rem', letterSpacing:'0.06em', padding:'14px 28px', borderRadius:'4px', border:'2px solid rgba(238,239,226,0.4)', textDecoration:'none'}}>(858) 361-2570</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section style={{padding:'80px 0', background:'var(--rust)'}}>
         <div className="cta-inner">
           <h2>Work With Our Team</h2>
