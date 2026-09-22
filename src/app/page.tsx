@@ -326,6 +326,26 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* FROM THE BLOG */}
+      <section style={{padding:'64px 0', background:'var(--off-white)'}}>
+        <div className="container">
+          <p style={{fontFamily:'var(--font-display)', fontSize:'0.75rem', fontWeight:800, textTransform:'uppercase', letterSpacing:'0.1em', color:'var(--rust)', marginBottom:'8px', textAlign:'center'}}>From the Blog</p>
+          <h2 style={{fontFamily:'var(--font-display)', fontSize:'clamp(1.4rem,3vw,1.8rem)', fontWeight:900, textTransform:'uppercase', color:'var(--black)', textAlign:'center', marginBottom:'32px'}}>Hood Cleaning Guides for San Diego Operators</h2>
+          <div style={{display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(260px, 1fr))', gap:'16px', maxWidth:'800px', margin:'0 auto'}}>
+            <Link href="/blog/restaurant-hood-cleaning-san-diego" style={{display:'block', background:'var(--white)', border:'1px solid var(--gray-light)', borderTop:'3px solid var(--rust)', borderRadius:'8px', padding:'24px', textDecoration:'none'}}>
+              <p style={{fontFamily:'var(--font-display)', fontSize:'0.7rem', fontWeight:800, textTransform:'uppercase', letterSpacing:'0.08em', color:'var(--rust)', marginBottom:'8px'}}>Restaurant Kitchens</p>
+              <h3 style={{fontFamily:'var(--font-display)', fontSize:'1rem', fontWeight:900, textTransform:'uppercase', color:'var(--black)', lineHeight:'1.3', marginBottom:'8px'}}>Hood Cleaning for San Diego Restaurants</h3>
+              <p style={{fontSize:'0.85rem', color:'var(--gray-text)', lineHeight:'1.6', margin:0}}>Frequencies, compliance timelines, and what a full service actually covers for restaurant operators.</p>
+            </Link>
+            <Link href="/blog/commercial-kitchen-hood-cleaning-san-diego" style={{display:'block', background:'var(--white)', border:'1px solid var(--gray-light)', borderTop:'3px solid var(--rust)', borderRadius:'8px', padding:'24px', textDecoration:'none'}}>
+              <p style={{fontFamily:'var(--font-display)', fontSize:'0.7rem', fontWeight:800, textTransform:'uppercase', letterSpacing:'0.08em', color:'var(--rust)', marginBottom:'8px'}}>NFPA 96 Guide</p>
+              <h3 style={{fontFamily:'var(--font-display)', fontSize:'1rem', fontWeight:900, textTransform:'uppercase', color:'var(--black)', lineHeight:'1.3', marginBottom:'8px'}}>Commercial Kitchen Hood Cleaning San Diego</h3>
+              <p style={{fontSize:'0.85rem', color:'var(--gray-text)', lineHeight:'1.6', margin:0}}>Complete NFPA 96 frequency schedule, what inspectors look for, and how San Diego kitchens stay compliant.</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* FOOTER */}
       <Footer />
     </>

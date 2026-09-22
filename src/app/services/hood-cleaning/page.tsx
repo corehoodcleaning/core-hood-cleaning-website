@@ -227,6 +227,20 @@ export default function HoodCleaningPage() {
         </div>
       </section>
 
+      {/* RELATED READING */}
+      <section style={{padding:'48px 0', background:'var(--off-white)'}}>
+        <div className="container" style={{maxWidth:'760px'}}>
+          <div style={{borderTop:'1px solid var(--gray-light)', paddingTop:'32px'}}>
+            <p style={{fontFamily:'var(--font-display)', fontSize:'0.8rem', fontWeight:800, textTransform:'uppercase', letterSpacing:'0.08em', color:'var(--gray-text)', marginBottom:'16px'}}>Related Reading</p>
+            <div style={{display:'flex', flexDirection:'column', gap:'8px'}}>
+              <Link href="/blog/restaurant-hood-cleaning-san-diego" style={{fontSize:'0.9rem', color:'var(--rust)', textDecoration:'none'}}>→ Hood Cleaning for San Diego Restaurants: Frequencies, Compliance, and What to Expect</Link>
+              <Link href="/blog/commercial-kitchen-hood-cleaning-san-diego" style={{fontSize:'0.9rem', color:'var(--rust)', textDecoration:'none'}}>→ Commercial Kitchen Hood Cleaning San Diego: The Complete NFPA 96 Guide</Link>
+              <Link href="/services/nfpa-inspection" style={{fontSize:'0.9rem', color:'var(--rust)', textDecoration:'none'}}>→ NFPA 96 Compliance Inspections</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section style={{padding:'88px 0', background:'var(--rust)'}}>
         <div className="cta-inner">

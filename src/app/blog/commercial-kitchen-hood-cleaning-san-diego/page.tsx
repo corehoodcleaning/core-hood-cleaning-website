@@ -4,8 +4,8 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Commercial Kitchen Hood Cleaning San Diego: Complete NFPA 96 Guide | Core Hood Cleaning',
-  description: 'Everything San Diego restaurant owners need to know about commercial kitchen hood cleaning — NFPA 96 requirements, cleaning frequency, what a full service covers, and how to pass fire marshal inspections.',
+  title: 'Commercial Kitchen Hood Cleaning San Diego | NFPA 96 Certified | Core Hood Cleaning',
+  description: 'NFPA 96 requires hood cleaning every 3 to 12 months based on cooking type. See the full frequency schedule, what a service actually covers, and how San Diego kitchens stay compliant.',
   alternates: { canonical: 'https://www.corehoodcleaning.com/blog/commercial-kitchen-hood-cleaning-san-diego' },
 }
 
