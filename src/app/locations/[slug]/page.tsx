@@ -136,15 +136,298 @@ const LOCATIONS: Record<string, {
   },
 }
 
-// Generate remaining locations with standard template
-const STANDARD_LOCATIONS = [
-  'carlsbad', 'escondido',
-  'el-cajon', 'vista', 'san-marcos', 'national-city', 'la-mesa',
-  'coronado', 'encinitas', 'del-mar', 'miramar', 'rancho-bernardo', 'poway', 'santee'
-]
+// Fully customized additional location data
+const EXTRA_LOCATIONS: typeof LOCATIONS = {
+  'carlsbad': {
+    name: 'Carlsbad',
+    title: 'Hood Cleaning Carlsbad',
+    heroDesc: 'Professional commercial kitchen hood cleaning serving Carlsbad Village, Bressi Ranch, The Forum, and the Carlsbad coast. NFPA 96 certified service for restaurants, breweries, and resort kitchens.',
+    intro: "Core Hood Cleaning serves commercial kitchens throughout Carlsbad, from the restaurants lining Carlsbad Village Drive to the chain and independent operators filling Bressi Ranch and The Forum at Carlsbad. Carlsbad's dining scene has grown substantially with the city's population, and so has the scrutiny from San Diego County Fire and Health. Whether you're running a busy coastal restaurant, a taproom kitchen, or a resort food and beverage operation, NFPA 96 compliance has to be current. We provide full-system cleaning from hood canopy to rooftop fan on every visit, with photo documentation and a compliance certificate on every job.",
+    whyUs: "Carlsbad sits in our North County corridor and we run consistent routes through the area. The city attracts a mix of local regulars and tourist traffic that drives high cooking volume, especially in summer. We schedule service during your closed hours and provide the NFPA 96 documentation that satisfies San Diego County Health and Carlsbad Fire. No surprise fees, no partial cleanings.",
+    neighborhoods: [
+      { name: 'Carlsbad Village', desc: 'The historic downtown dining district along Carlsbad Village Drive and State Street. Independent restaurants, wine bars, cafes, and gastropubs with a mix of older buildings and newer commercial spaces.' },
+      { name: 'Bressi Ranch & The Forum', desc: 'High-traffic retail and dining destinations in east Carlsbad. National chains, fast casual, and local restaurant operators in newer commercial developments with modern kitchen exhaust systems.' },
+      { name: 'Carlsbad Coast & Carlsbad Boulevard', desc: 'Oceanfront restaurants, resort dining, and beachside cafes. Salt air exposure accelerates corrosion on exhaust fans and ductwork. We inspect and document on every service.' },
+      { name: 'Palomar Airport Road Corridor', desc: 'Business park restaurants, hotel food and beverage, and commercial kitchens serving the industrial and tech sectors. Consistent volume from corporate lunch and catering operations.' },
+    ],
+    faqs: [
+      { q: 'Do you service brewery kitchens in Carlsbad?', a: 'Yes. Carlsbad has a growing brewery and taproom scene. We service all brewery kitchen exhaust systems with full NFPA 96 documentation on every visit.' },
+      { q: 'How often do Carlsbad restaurants need hood cleaning?', a: 'Most full-service restaurants in Carlsbad need quarterly service. High-volume operations, coastal restaurants with extended summer hours, and breweries with busy kitchen programs often need monthly cleaning under NFPA 96.' },
+      { q: 'Do you serve Bressi Ranch and The Forum restaurants?', a: 'Yes. We service all commercial kitchen operators in Carlsbad including those in Bressi Ranch, The Forum, and surrounding commercial centers. Call (858) 361-2570 for scheduling.' },
+      { q: 'What happens if we get red-tagged by Carlsbad Fire?', a: 'Call us immediately at (858) 361-2570. We offer same-day emergency hood cleaning in Carlsbad and can typically dispatch the same day or next morning. We provide the documentation Carlsbad Fire needs to clear the red tag.' },
+    ],
+    heroImage: '/images/tech-kitchen-cleaning.jpg',
+  },
+  'escondido': {
+    name: 'Escondido',
+    title: 'Hood Cleaning Escondido',
+    heroDesc: 'Professional commercial kitchen hood cleaning serving downtown Escondido, Grand Avenue, the Highway 78 corridor, and surrounding North County inland areas. NFPA 96 certified.',
+    intro: "Core Hood Cleaning provides full-system NFPA 96 certified hood cleaning throughout Escondido, North County's largest inland city. Downtown Escondido's Grand Avenue revitalization has brought new restaurants and breweries into older buildings with complex ductwork that demands thorough cleaning. The Highway 78 commercial corridor runs some of the highest restaurant volume in North County, with national chains and full-service independents running back-to-back service daily. We schedule around your hours and complete the full system from hood canopy to rooftop fan on every visit.",
+    whyUs: "Escondido's location inland means extreme summer heat that accelerates grease buildup and puts kitchen exhaust systems under significant stress. Combined with active San Diego County Health and Escondido Fire enforcement, operators here cannot afford to let service dates slip. We provide same-day emergency response for red tag situations and carry complete NFPA 96 documentation on every scheduled service.",
+    neighborhoods: [
+      { name: 'Downtown Escondido & Grand Avenue', desc: 'The heart of Escondido\'s dining revival. Craft breweries, farm-to-table restaurants, and neighborhood bistros in historic buildings. Complex older ductwork requires experienced cleaning crews.' },
+      { name: 'Highway 78 Corridor', desc: 'The highest-volume commercial dining stretch in North County inland. National chains, family dining, and fast casual operations running high daily covers. Most operators here qualify for monthly or quarterly NFPA 96 cleaning.' },
+      { name: 'Stone Brewing World Bistro Area', desc: 'The Liberty Station of North County, anchored by one of San Diego\'s most well-known brewery operations. Surrounding restaurants and food and beverage businesses in a revitalized industrial setting.' },
+      { name: 'Westfield North County & Centre City Pkwy', desc: 'Food court and inline restaurant operations in the mall commercial zone. National chain kitchen standards, property management coordination, and consistent after-hours scheduling.' },
+    ],
+    faqs: [
+      { q: 'Does the summer heat in Escondido affect how often we need cleaning?', a: 'Yes. Inland heat accelerates grease breakdown and buildup in ductwork. Many Escondido operators need more frequent service than coastal kitchens with similar cooking volume. We assess your system and recommend the correct NFPA 96 interval.' },
+      { q: 'Do you service craft breweries and taprooms in Escondido?', a: 'Yes. We service brewery kitchen exhaust systems throughout Escondido. Full-system cleaning, NFPA 96 compliance documentation, and photo proof on every visit.' },
+      { q: 'How often do Highway 78 restaurants need hood cleaning?', a: 'High-volume operations along the 78 corridor typically need quarterly service at minimum. Many qualify for monthly cleaning under NFPA 96 based on cooking volume and extended operating hours.' },
+      { q: 'Do you offer same-day emergency service in Escondido?', a: 'Yes. Call (858) 361-2570. We offer same-day emergency hood cleaning throughout Escondido and all of North County inland. We\'ve resolved red tag violations for Escondido restaurants within 24 hours.' },
+    ],
+    heroImage: '/images/tech-hood-interior.jpg',
+  },
+  'el-cajon': {
+    name: 'El Cajon',
+    title: 'Hood Cleaning El Cajon',
+    heroDesc: 'Professional commercial kitchen hood cleaning serving El Cajon, Fletcher Hills, Rancho San Diego, and the East County corridor. NFPA 96 certified service for restaurants and commercial kitchens.',
+    intro: "Core Hood Cleaning serves commercial kitchens throughout El Cajon and the broader East County. El Cajon is one of San Diego's largest cities and its commercial dining corridors along Main Street, Magnolia Avenue, and Mission Gorge Road run significant volume. The city's diverse restaurant scene includes a thriving Middle Eastern and Mediterranean dining district, growing craft brewery presence, and high-volume fast casual and full-service operators. Every kitchen in El Cajon has the same NFPA 96 obligation, and we service all of them with full-system cleaning from hood to rooftop fan.",
+    whyUs: "El Cajon's East County inland climate means high summer temperatures that stress kitchen exhaust systems and accelerate grease buildup. San Diego County Health and El Cajon Fire both inspect commercial kitchens and look for current NFPA 96 compliance documentation. We provide the full compliance package on every job and offer same-day emergency response for red tag situations throughout East County.",
+    neighborhoods: [
+      { name: 'Downtown El Cajon & Main Street', desc: 'El Cajon\'s commercial core. A diverse dining scene including Middle Eastern, Mediterranean, and American cuisine alongside bars, cafes, and quick-service operations. High foot traffic and active health inspection presence.' },
+      { name: 'Magnolia Avenue Corridor', desc: 'One of El Cajon\'s primary commercial strips with full-service restaurants, fast casual, and neighborhood dining. Consistent kitchen volume and a broad mix of cooking equipment types.' },
+      { name: 'Rancho San Diego & Fletcher Hills', desc: 'Growing residential and commercial areas with newer restaurant developments and strip mall dining. Shopping center kitchen operators on national and regional chain standards.' },
+      { name: 'Mission Gorge Road & East County Breweries', desc: 'Mission Gorge has become a destination for East County\'s growing craft brewery scene alongside established full-service restaurants and commercial kitchen operations.' },
+    ],
+    faqs: [
+      { q: 'Do you serve restaurants across all of El Cajon?', a: 'Yes. We service commercial kitchens throughout El Cajon including downtown, Magnolia Avenue, Rancho San Diego, Fletcher Hills, and all surrounding areas.' },
+      { q: 'How often do El Cajon restaurants need hood cleaning?', a: 'Cleaning frequency depends on cooking type and volume. Most full-service restaurants need quarterly service. High-volume operations and those using wok cooking or charbroilers often need monthly cleaning under NFPA 96.' },
+      { q: 'Do you service Middle Eastern and ethnic restaurants?', a: 'Yes. El Cajon has a thriving and diverse restaurant community. We service all cuisine types including Middle Eastern, Mediterranean, and international restaurants with the same full-system NFPA 96 service.' },
+      { q: 'What documentation do we get after service?', a: 'Every service includes before and after photos of the full system, a detailed written service report, and an NFPA 96 compliance certificate accepted by San Diego County Health, El Cajon Fire, and your insurance carrier.' },
+    ],
+    heroImage: '/images/hero-commercial-kitchen.jpg',
+  },
+  'vista': {
+    name: 'Vista',
+    title: 'Hood Cleaning Vista',
+    heroDesc: 'Professional commercial kitchen hood cleaning serving Vista, Shadowridge, the downtown brewery district, and surrounding North County areas. NFPA 96 certified service for restaurants and taprooms.',
+    intro: "Core Hood Cleaning serves commercial kitchens throughout Vista, one of North County's most active dining and brewing communities. Vista's downtown Eucalyptus Avenue corridor has become a destination for craft breweries, taprooms, and restaurants that draw traffic from across the region. Shadowridge and the surrounding commercial areas add significant volume from neighborhood restaurants, chain operations, and commercial kitchens. We provide full-system NFPA 96 cleaning from hood canopy to rooftop fan on every visit, with complete photo documentation and compliance certificates on every job.",
+    whyUs: "Vista's growing brewery and restaurant scene operates in a mix of older downtown buildings and newer commercial developments, each presenting different cleaning challenges. San Diego County Health and Vista Fire both actively inspect commercial kitchens. We run regular routes through Vista and North County and can service your kitchen on a consistent schedule. Same-day emergency response is available for red tag situations.",
+    neighborhoods: [
+      { name: 'Downtown Vista & Eucalyptus Avenue', desc: 'Vista\'s craft brewery and dining hub. Multiple taprooms, restaurants, and food destinations that have turned downtown Vista into a North County destination. Older commercial buildings with varied exhaust system configurations.' },
+      { name: 'Shadowridge & North Vista', desc: 'Residential and commercial growth areas with a mix of chain and independent restaurant operators in newer strip malls and commercial centers. Consistent cooking volume and standard exhaust systems.' },
+      { name: 'Vista Village & South Santa Fe Avenue', desc: 'The historic commercial core of Vista with full-service restaurants, cafes, and long-established dining operations. A mix of building ages and exhaust system types.' },
+      { name: 'Highway 78 & Business Park Corridor', desc: 'Commercial and industrial kitchens, corporate catering, and restaurant operators along the 78 corridor. Business lunch and catering volume drives consistent kitchen output.' },
+    ],
+    faqs: [
+      { q: 'Do you service Vista\'s brewery and taproom kitchens?', a: 'Yes. Vista has one of North County\'s most active craft brewery scenes. We service all brewery kitchen exhaust systems with full NFPA 96 documentation including photo proof on every visit.' },
+      { q: 'How often do Vista restaurants need hood cleaning?', a: 'Most Vista full-service restaurants need quarterly service. High-volume operations, busy brewery kitchens, and restaurants with extended hours often qualify for monthly cleaning under NFPA 96. We assess your operation and recommend the correct interval.' },
+      { q: 'Do you work with older downtown Vista buildings?', a: 'Yes. Downtown Vista has a mix of older commercial buildings with aging ductwork and varied exhaust system configurations. We have experience cleaning complex and non-standard systems.' },
+      { q: 'Is Vista within your regular service area?', a: 'Yes. Vista is within our North County service corridor and we run regular scheduled routes through the area. Call (858) 361-2570 to get on our schedule.' },
+    ],
+    heroImage: '/images/tech-rooftop-palms.jpg',
+  },
+  'san-marcos': {
+    name: 'San Marcos',
+    title: 'Hood Cleaning San Marcos',
+    heroDesc: 'Professional commercial kitchen hood cleaning serving San Marcos, Cal State San Marcos, San Elijo Hills, and the Highway 78 corridor. NFPA 96 certified for restaurants and institutional kitchens.',
+    intro: "Core Hood Cleaning serves commercial kitchens throughout San Marcos, a city whose restaurant scene has grown in step with its rapid population expansion. The Cal State San Marcos campus generates consistent demand from restaurant operators on and near campus. San Elijo Hills and Twin Oaks Valley Road commercial corridors have brought dozens of new restaurant operations to the area in recent years. We serve them all with full-system NFPA 96 cleaning on every visit, complete with photo documentation and compliance certificates.",
+    whyUs: "San Marcos is in our North County service corridor and we schedule consistent routes through the area. The student and residential base here drives high kitchen volume at competitive price points, meaning operators run equipment hard. Consistent NFPA 96 compliance maintenance protects your license, your insurance, and your kitchen. We offer same-day emergency response for red tag situations and schedule overnight service so your morning crew arrives to a clean, compliant system.",
+    neighborhoods: [
+      { name: 'Cal State San Marcos Area & Discovery Street', desc: 'University-adjacent restaurants, fast casual, and dining operations that run high volume during the academic year. Student traffic drives extended hours and heavy kitchen output.' },
+      { name: 'San Elijo Hills Town Center', desc: 'San Marcos\'s newest and fastest-growing commercial dining district. Modern restaurant operations in a planned community commercial center with newer kitchen exhaust systems.' },
+      { name: 'Twin Oaks Valley Road & Highway 78 Corridor', desc: 'High-traffic commercial strip with national chains, neighborhood restaurants, and full-service dining. One of the busiest commercial kitchen concentrations in North County.' },
+      { name: 'Richmar Industrial Area', desc: 'Commissaries, catering operations, and commercial food production facilities in San Marcos\'s industrial zone. Large-scale kitchen exhaust systems with significant cleaning needs.' },
+    ],
+    faqs: [
+      { q: 'Do you service restaurant kitchens near Cal State San Marcos?', a: 'Yes. We service all commercial kitchens in the San Marcos area including those near the CSUSM campus. University-adjacent restaurants often have extended hours and high volume that drives more frequent cleaning needs.' },
+      { q: 'How often do San Marcos restaurants need hood cleaning?', a: 'Frequency depends on cooking volume and equipment type. Most full-service restaurants need quarterly service. High-volume operations and those near the university often need monthly cleaning under NFPA 96.' },
+      { q: 'Do you serve newer commercial developments in San Elijo Hills?', a: 'Yes. San Elijo Hills and all San Marcos commercial areas are within our service corridor. Newer developments have modern exhaust systems that are straightforward to maintain on a compliant schedule.' },
+      { q: 'What documentation do San Marcos fire and health inspectors accept?', a: 'San Diego County Health and San Marcos Fire Department accept our NFPA 96 compliance certificates. Every service includes the certificate, a full written service report, and before and after photo documentation.' },
+    ],
+    heroImage: '/images/tech-kitchen-cleaning.jpg',
+  },
+  'national-city': {
+    name: 'National City',
+    title: 'Hood Cleaning National City',
+    heroDesc: 'Professional commercial kitchen hood cleaning serving National City, the Mile of Cars corridor, Highland Avenue, and the South Bay. NFPA 96 certified service for restaurants and commercial kitchens.',
+    intro: "Core Hood Cleaning serves commercial kitchens throughout National City and the South Bay. National City's dining scene spans Highland Avenue's established neighborhood restaurants, the Sweetwater Crossing commercial area, and a growing number of independent operators serving the city's diverse population. National City Fire and San Diego County Health actively inspect commercial kitchens and require current NFPA 96 compliance documentation. We provide full-system cleaning from hood canopy to rooftop fan on every visit and give you the documentation that keeps your kitchen compliant.",
+    whyUs: "National City is a densely commercial city with a high concentration of independent restaurant operators. Many of these kitchens run extended hours, high cooking volumes, and equipment that demands consistent maintenance. We schedule service during your closed hours and respond same-day for emergency situations. Our full NFPA 96 documentation package satisfies both National City Fire and San Diego County Health inspectors.",
+    neighborhoods: [
+      { name: 'Highland Avenue Corridor', desc: 'National City\'s primary dining street with established neighborhood restaurants, taquerias, and full-service operations. High cooking volume and active health inspection presence.' },
+      { name: 'Sweetwater Crossing & Plaza Bonita Area', desc: 'Commercial shopping and dining destination with national chains, food court operations, and inline restaurant tenants. Mall property management standards and consistent kitchen volume.' },
+      { name: 'National City Mile of Cars & Bay Front', desc: 'Commercial and industrial areas with restaurant operators serving workers and families. Catering operations, quick service, and neighborhood dining along the bay front corridor.' },
+      { name: 'Westside & 8th Street Corridor', desc: 'Neighborhood restaurants, bakeries, and independent operators serving National City\'s residential communities. A diverse mix of cuisine types with high community-driven volume.' },
+    ],
+    faqs: [
+      { q: 'Do you service South Bay restaurants in National City?', a: 'Yes. National City is within our South Bay service area. We run regular routes through National City and surrounding South Bay communities. Call (858) 361-2570 to schedule.' },
+      { q: 'How often do National City restaurants need hood cleaning?', a: 'Cleaning frequency depends on cooking type and volume. Most full-service restaurants in National City need quarterly service. Operations with high cooking volume, wok stations, or charbroilers may need monthly service under NFPA 96.' },
+      { q: 'Does National City Fire accept your compliance certificate?', a: 'Yes. Our NFPA 96 compliance certificate is accepted by National City Fire Department and San Diego County Health. Every certificate includes the date of service, technician information, and a summary of work completed.' },
+      { q: 'Do you offer same-day emergency hood cleaning in National City?', a: 'Yes. Call (858) 361-2570 for same-day emergency service. We\'ve helped National City restaurants resolve red tag violations and pass emergency inspections within 24 hours.' },
+    ],
+    heroImage: '/images/hero-commercial-kitchen.jpg',
+  },
+  'la-mesa': {
+    name: 'La Mesa',
+    title: 'Hood Cleaning La Mesa',
+    heroDesc: 'Professional commercial kitchen hood cleaning serving La Mesa Village, Spring Street, and the East County corridor. NFPA 96 certified for restaurants, bars, and commercial kitchens.',
+    intro: "Core Hood Cleaning serves commercial kitchens throughout La Mesa, including the revitalized La Mesa Village dining district, the Spring Street commercial corridor, and neighborhood restaurants throughout the city. La Mesa Village has attracted new restaurants, wine bars, and craft operations to its walkable downtown, while El Cajon Boulevard and Spring Street continue to host established full-service restaurants and bars. We provide full-system NFPA 96 cleaning on every visit, with before and after photo documentation and a compliance certificate that satisfies San Diego County Health and La Mesa Fire.",
+    whyUs: "La Mesa's restaurant scene serves a mix of longtime local regulars and a newer dining population drawn to the village scene. Kitchens run consistent volume year-round. San Diego County Health and La Mesa Fire inspect commercial kitchens and require up-to-date NFPA 96 compliance. We schedule service during your closed hours, complete the full system from hood canopy to rooftop fan, and leave you with documentation ready for any inspector.",
+    neighborhoods: [
+      { name: 'La Mesa Village Downtown', desc: 'La Mesa\'s revitalized historic downtown with restaurants, wine bars, gastropubs, and neighborhood cafes. A mix of older commercial buildings and new tenant buildouts.' },
+      { name: 'Spring Street & El Cajon Boulevard', desc: 'La Mesa\'s primary commercial corridors with full-service restaurants, bars, and established neighborhood dining. Consistent kitchen volume and a broad range of cooking equipment types.' },
+      { name: 'Grossmont Center Area', desc: 'Shopping center and inline restaurant operators near Grossmont Center. National chains and regional restaurant brands with standard commercial kitchen exhaust configurations.' },
+      { name: 'La Mesa Neighborhoods & Mt. Helix', desc: 'Neighborhood restaurants, cafes, and local eateries serving La Mesa\'s residential communities throughout the city including the Mt. Helix and Fletcher Hills areas.' },
+    ],
+    faqs: [
+      { q: 'Do you service La Mesa Village restaurants?', a: 'Yes. La Mesa Village is within our East County service area. We service all commercial kitchens in the village and throughout La Mesa on a consistent schedule.' },
+      { q: 'How often do La Mesa restaurants need hood cleaning?', a: 'Most La Mesa full-service restaurants need quarterly service. Bars and restaurants with extended hours or high cooking volume may need monthly cleaning under NFPA 96. We assess your kitchen and recommend the right frequency.' },
+      { q: 'Does San Diego County Health accept your documentation in La Mesa?', a: 'Yes. Our NFPA 96 compliance certificates are accepted by San Diego County Health and La Mesa Fire Department. Every service includes the certificate, full written report, and before and after photos.' },
+      { q: 'Do you offer same-day emergency service in La Mesa?', a: 'Yes. Call (858) 361-2570. We offer same-day emergency hood cleaning throughout La Mesa and East County.' },
+    ],
+    heroImage: '/images/tech-kitchen-cleaning.jpg',
+  },
+  'coronado': {
+    name: 'Coronado',
+    title: 'Hood Cleaning Coronado',
+    heroDesc: 'Professional commercial kitchen hood cleaning serving Coronado, Hotel del Coronado, Orange Avenue restaurants, and the Ferry Landing. NFPA 96 certified service for resort and restaurant kitchens.',
+    intro: "Core Hood Cleaning provides full-system NFPA 96 certified hood cleaning throughout Coronado, including the resort kitchens at Hotel del Coronado, the restaurant row along Orange Avenue, and commercial kitchen operations at the Ferry Landing. Coronado's dining scene is driven by tourism, resort food and beverage, and a tight-knit community of local operators. Hotel del Coronado alone operates multiple kitchen venues requiring consistent compliance maintenance. We schedule service during closed hours, coordinate with hotel engineering teams, and provide the documentation package that hotel brand standards and San Diego County inspectors require.",
+    whyUs: "Coronado's island location and salt air environment accelerate corrosion on exhaust fans, access panels, and ductwork. We inspect for salt damage on every visit, lubricate moving parts, and document any concerns found. Resort and hotel kitchen operations on Coronado have strict brand documentation requirements that we meet on every job. Same-day emergency response is available, though the bridge and ferry access make advance scheduling particularly valuable for Coronado operators.",
+    neighborhoods: [
+      { name: 'Hotel del Coronado & Resort Row', desc: 'Multiple restaurant and banquet kitchen venues across the historic resort property. Executive chef coordination, hotel brand documentation standards, and service during closed dining periods.' },
+      { name: 'Orange Avenue Restaurant District', desc: 'Coronado\'s main commercial dining street with restaurants, cafes, wine bars, and local favorites. Year-round tourist and community traffic drives consistent kitchen volume.' },
+      { name: 'Ferry Landing Marketplace', desc: 'Waterfront dining and commercial kitchen operations at the Ferry Landing. Bay-facing exposure and tourist traffic. Salt air corrosion is a consistent issue for kitchen exhaust systems here.' },
+      { name: 'North Island & Coronado Cays', desc: 'Restaurant and food service operations serving the military community and residential areas of North Island and Coronado Cays. Institutional and residential-scale commercial kitchen operations.' },
+    ],
+    faqs: [
+      { q: 'Do you service Hotel del Coronado kitchen operations?', a: 'Yes. We service resort and hotel kitchen exhaust systems throughout Coronado including large multi-venue properties. We coordinate with engineering teams and meet hotel brand documentation requirements.' },
+      { q: 'How does Coronado\'s salt air affect our kitchen exhaust system?', a: 'Significantly. Coronado\'s bayside and oceanfront location accelerates corrosion on exhaust fans, hinges, access panels, and ductwork. We inspect for salt damage on every service and document any issues found for your maintenance records.' },
+      { q: 'How do you schedule service given Coronado\'s island access?', a: 'We plan Coronado routes with the bridge crossing built in. We recommend scheduling in advance to ensure access during your preferred service window. Same-day emergency service is available by calling (858) 361-2570.' },
+      { q: 'How often do Coronado hotels and restaurants need hood cleaning?', a: 'Hotel kitchens running multiple dining venues typically need monthly to quarterly service depending on volume. Orange Avenue restaurants usually need quarterly service. We assess your specific operation and recommend the NFPA 96 compliant interval.' },
+    ],
+    heroImage: '/images/tech-hood-interior.jpg',
+  },
+  'encinitas': {
+    name: 'Encinitas',
+    title: 'Hood Cleaning Encinitas',
+    heroDesc: 'Professional commercial kitchen hood cleaning serving Encinitas, Leucadia, Old Encinitas, Cardiff, and Moonlight Beach. NFPA 96 certified for coastal restaurants, cafes, and commercial kitchens.',
+    intro: "Core Hood Cleaning serves commercial kitchens throughout Encinitas, from the coastal cafes and juice bars of Leucadia to the full-service restaurants in Old Encinitas and Cardiff-by-the-Sea. Encinitas has a unique dining culture driven by health-conscious cuisine, surf lifestyle, and a loyal local base that supports independent operators. The stretch along Coast Highway 101 from Leucadia through Cardiff is one of the most concentrated independent restaurant corridors in North County. We provide full-system NFPA 96 cleaning on every visit with photo documentation and a compliance certificate on every job.",
+    whyUs: "Encinitas restaurants operate in a coastal environment where salt air accelerates corrosion on kitchen exhaust systems. Combined with San Diego County Health and San Diego County Fire enforcement, staying current on NFPA 96 service dates is not optional. We schedule service during your closed hours, work efficiently to minimize disruption, and provide the complete documentation package your inspectors need.",
+    neighborhoods: [
+      { name: 'Leucadia & North Coast Highway 101', desc: 'Eclectic cafes, surf-adjacent restaurants, and neighborhood dining spots along the 101 corridor. Independent operators with strong local followings and varied kitchen configurations.' },
+      { name: 'Old Encinitas & Downtown', desc: 'The commercial heart of Encinitas with full-service restaurants, wine bars, and casual dining on and around South El Camino Real and Encinitas Boulevard. A mix of established operators and newer entrants.' },
+      { name: 'Cardiff-by-the-Sea', desc: 'Beachside restaurants, cafes, and community dining spots along San Elijo Lagoon and the Cardiff coast. Salt air exposure and a devoted local customer base that drives consistent year-round volume.' },
+      { name: 'Encinitas Ranch & El Camino Real', desc: 'East Encinitas commercial corridor with shopping center restaurants, national chains, and local operators serving the residential communities east of I-5.' },
+    ],
+    faqs: [
+      { q: 'Do you service restaurants along the 101 in Leucadia and Encinitas?', a: 'Yes. The Coast Highway 101 corridor from Leucadia through Cardiff is within our regular North County route. We service all commercial kitchen operators along this stretch.' },
+      { q: 'How does coastal salt air affect kitchen exhaust systems in Encinitas?', a: 'Salt air corrodes exhaust fan components, access panels, ductwork joints, and hinges faster than inland locations. We inspect for corrosion on every visit and document any issues found for your records.' },
+      { q: 'How often do Encinitas restaurants need hood cleaning?', a: 'Most Encinitas full-service restaurants need quarterly service. High-volume operations and restaurants with extended summer hours may need monthly cleaning under NFPA 96. We assess and recommend the right schedule for your kitchen.' },
+      { q: 'Do you offer same-day emergency service in Encinitas?', a: 'Yes. Same-day emergency hood cleaning is available throughout Encinitas and North County. Call (858) 361-2570 and we\'ll dispatch as quickly as possible.' },
+    ],
+    heroImage: '/images/tech-rooftop-palms.jpg',
+  },
+  'del-mar': {
+    name: 'Del Mar',
+    title: 'Hood Cleaning Del Mar',
+    heroDesc: 'Professional commercial kitchen hood cleaning serving Del Mar Village, Del Mar Highlands, Carmel Valley, and the Del Mar Racetrack area. NFPA 96 certified for upscale restaurants and seasonal operations.',
+    intro: "Core Hood Cleaning provides NFPA 96 certified hood cleaning for commercial kitchens throughout Del Mar, including the upscale restaurants of Del Mar Village, the growing dining scene in Carmel Valley, and the high-volume catering and event operations that ramp up dramatically during racing season at the Del Mar Racetrack. Del Mar's dining scene skews toward fine dining, high-end casual, and oceanfront experiences that attract clientele with high expectations. We schedule service discreetly during closed hours and provide the full-system cleaning and documentation package that premium operations require.",
+    whyUs: "Del Mar's seasonal volume swings demand a reliable service provider who can adapt. Racing season brings a surge of kitchen activity across Del Mar and Carmel Valley that puts exhaust systems under heavy stress. We proactively schedule service before and after peak periods and respond same-day for emergency situations. Salt air from the coast accelerates system corrosion, which we inspect for on every visit. Every job includes complete NFPA 96 documentation.",
+    neighborhoods: [
+      { name: 'Del Mar Village & Camino del Mar', desc: 'Upscale dining, oceanfront restaurants, and boutique cafes in Del Mar\'s walkable village center. High-expectation clientele and premium operations that require professional, discreet service.' },
+      { name: 'Del Mar Racetrack & Fairgrounds', desc: 'Large-scale catering, concession, and event kitchen operations that ramp up significantly during racing and fair season. High-volume exhaust systems that need proactive compliance maintenance.' },
+      { name: 'Carmel Valley & Del Mar Highlands', desc: 'Rapidly growing dining corridor with upscale casual, fine dining, and established chains in newer commercial developments east of I-5. High residential density driving consistent lunch and dinner volume.' },
+      { name: 'One Paseo & Torrey Hills', desc: 'Mixed-use development bringing new restaurants and food and beverage concepts to the area. Modern kitchen configurations with standard commercial exhaust systems.' },
+    ],
+    faqs: [
+      { q: 'How does racing season affect hood cleaning scheduling in Del Mar?', a: 'Racing season significantly increases kitchen volume at Del Mar restaurants and catering operations. We recommend scheduling service before the season starts and again after to handle the elevated grease load. Call ahead to secure your spot.' },
+      { q: 'Do you service upscale Del Mar restaurants?', a: 'Yes. Del Mar\'s fine dining and upscale casual restaurants are within our regular service area. We schedule service discreetly during closed hours and operate professionally in all kitchen environments.' },
+      { q: 'How often do Del Mar restaurants need hood cleaning?', a: 'Most Del Mar full-service restaurants need quarterly service. Operations that see significant volume increases during racing season may need more frequent service. We assess your kitchen and recommend the right NFPA 96 interval.' },
+      { q: 'Do you service Carmel Valley restaurants?', a: 'Yes. Carmel Valley is within our service area. We service all commercial kitchens in Del Mar, Carmel Valley, Del Mar Highlands, and surrounding North Coastal communities.' },
+    ],
+    heroImage: '/images/tech-kitchen-cleaning.jpg',
+  },
+  'miramar': {
+    name: 'Miramar',
+    title: 'Hood Cleaning Miramar',
+    heroDesc: 'Professional commercial kitchen hood cleaning serving Miramar, Miramar Road, MCAS Miramar, and the Miramar craft brewery district. NFPA 96 certified for restaurants, breweries, and commercial kitchens.',
+    intro: "Core Hood Cleaning serves commercial kitchens throughout the Miramar area, including the restaurants lining Miramar Road, the craft brewery kitchens that have made Miramar one of San Diego's most recognized beer destinations, and commercial and institutional kitchen operations near MCAS Miramar. The Miramar Road commercial corridor runs some of the highest restaurant density in the region, including major national chain locations, hotel food and beverage, and established full-service independents. We provide full-system NFPA 96 cleaning on every visit with complete photo documentation.",
+    whyUs: "Miramar's commercial kitchen concentration means active San Diego County Health and Fire enforcement. The brewery district in particular operates kitchens under high continuous volume. We schedule service during closed hours, complete the full system from hood canopy to rooftop exhaust fan, and provide the NFPA 96 documentation package that satisfies both county and military-adjacent compliance requirements. Same-day emergency response is available throughout Miramar.",
+    neighborhoods: [
+      { name: 'Miramar Craft Brewery District', desc: 'San Diego\'s most concentrated craft brewery zone, including major production breweries with substantial kitchen operations. High and continuous cooking volume demands consistent NFPA 96 maintenance.' },
+      { name: 'Miramar Road Commercial Corridor', desc: 'One of San Diego\'s longest and busiest commercial strips with national chains, hotel food and beverage, and full-service restaurants. High daily covers and extended operating hours.' },
+      { name: 'MCAS Miramar Adjacent', desc: 'Restaurants and food service operations serving the military community and commercial areas adjacent to the base. Consistent institutional and community-driven kitchen volume.' },
+      { name: 'Miramar Industrial & Business Parks', desc: 'Commissaries, catering operations, and commercial food production facilities in Miramar\'s industrial zones. Large kitchen exhaust systems with significant cleaning requirements.' },
+    ],
+    faqs: [
+      { q: 'Do you service brewery kitchens in the Miramar brewery district?', a: 'Yes. The Miramar brewery district is within our regular service area. We service all craft brewery kitchen exhaust systems with full NFPA 96 documentation on every visit.' },
+      { q: 'How often do Miramar restaurants need hood cleaning?', a: 'Miramar Road is a high-volume commercial corridor. Most full-service restaurants here need quarterly service. Brewery kitchens and operations with extended hours often need monthly cleaning under NFPA 96.' },
+      { q: 'Do you service hotel kitchens on Miramar Road?', a: 'Yes. We service hotel food and beverage operations throughout Miramar. We coordinate with hotel engineering teams and provide documentation that meets both county requirements and hotel brand standards.' },
+      { q: 'Do you offer same-day emergency service in Miramar?', a: 'Yes. Call (858) 361-2570. Same-day emergency hood cleaning is available throughout the Miramar area. We\'ve helped Miramar operators resolve red tag violations within 24 hours.' },
+    ],
+    heroImage: '/images/hero-commercial-kitchen.jpg',
+  },
+  'rancho-bernardo': {
+    name: 'Rancho Bernardo',
+    title: 'Hood Cleaning Rancho Bernardo',
+    heroDesc: 'Professional commercial kitchen hood cleaning serving Rancho Bernardo, Bernardo Center Drive, Rancho Peñasquitos, and surrounding North County communities. NFPA 96 certified.',
+    intro: "Core Hood Cleaning provides full-system NFPA 96 certified hood cleaning throughout Rancho Bernardo and surrounding North County communities. Rancho Bernardo's dining scene is centered along Bernardo Center Drive and the Westwood commercial corridors, serving a substantial residential base and significant business park and corporate campus population. The area also has an established senior living community with institutional kitchen operations that require consistent compliance maintenance. We service all of them with full-system cleaning and complete documentation on every visit.",
+    whyUs: "Rancho Bernardo's inland location means high summer temperatures that accelerate grease accumulation in kitchen exhaust systems. San Diego County Health and Fire inspect commercial kitchens regularly throughout the area. We schedule service during closed hours, complete the full system on every visit, and provide NFPA 96 documentation that satisfies all inspectors. Our North County routes serve Rancho Bernardo on a consistent schedule.",
+    neighborhoods: [
+      { name: 'Bernardo Center Drive & Westwood', desc: 'Rancho Bernardo\'s primary dining corridor with national chains, neighborhood restaurants, and full-service operations serving the area\'s substantial residential and business population.' },
+      { name: 'Rancho Bernardo Business Park', desc: 'Corporate campus cafeterias, catering operations, and employee dining facilities in one of San Diego\'s largest business park concentrations. Institutional kitchen standards and consistent weekday volume.' },
+      { name: 'Senior Living Communities', desc: 'Institutional kitchen operations at the area\'s senior living and continuing care communities. Regular NFPA 96 compliance maintenance with documentation appropriate for institutional licensing.' },
+      { name: 'Pomerado Road & East Bernardo', desc: 'Neighborhood restaurants, strip mall dining, and local operators serving the residential communities along Pomerado Road and east Rancho Bernardo.' },
+    ],
+    faqs: [
+      { q: 'Do you service corporate campus cafeterias in Rancho Bernardo?', a: 'Yes. We service institutional and corporate kitchen exhaust systems in Rancho Bernardo\'s business park area. We coordinate with facilities teams and provide the documentation required for institutional compliance.' },
+      { q: 'How often do Rancho Bernardo restaurants need hood cleaning?', a: 'Most Rancho Bernardo full-service restaurants need quarterly service. Corporate cafeterias and high-volume operations may need more frequent cleaning. We assess your kitchen and recommend the correct NFPA 96 interval.' },
+      { q: 'Does summer heat in Rancho Bernardo affect our cleaning schedule?', a: 'Yes. Inland heat increases the rate at which grease accumulates in ductwork and on fans. Some operations that would be on a quarterly schedule in coastal areas need monthly service in the inland heat. We account for this in our assessment.' },
+      { q: 'Is Rancho Bernardo within your service area?', a: 'Yes. Rancho Bernardo is within our North County service corridor. We run regular routes through the area and can get your kitchen on a consistent NFPA 96 maintenance schedule.' },
+    ],
+    heroImage: '/images/tech-hood-interior.jpg',
+  },
+  'poway': {
+    name: 'Poway',
+    title: 'Hood Cleaning Poway',
+    heroDesc: 'Professional commercial kitchen hood cleaning serving Poway, Community Road, Poway Road, and surrounding East North County. NFPA 96 certified for restaurants and commercial kitchens.',
+    intro: "Core Hood Cleaning serves commercial kitchens throughout Poway, a growing community whose restaurant scene has expanded along Poway Road, Community Road, and the surrounding commercial corridors. Poway's family-oriented dining culture supports a strong base of independent restaurants, sports bars, and neighborhood eateries alongside national chain operations. We provide full-system NFPA 96 cleaning from hood canopy to rooftop fan on every visit, with photo documentation and a compliance certificate accepted by San Diego County Health and Poway Fire.",
+    whyUs: "Poway's inland East County location means high summer heat that accelerates grease accumulation in exhaust systems. San Diego County Health and Poway Fire inspect commercial kitchens and require current NFPA 96 documentation. We schedule service during your closed hours, complete the full exhaust path on every visit, and leave you with documentation ready for any inspector. Same-day emergency response is available for red tag situations throughout East North County.",
+    neighborhoods: [
+      { name: 'Poway Road Corridor', desc: 'Poway\'s main commercial strip with full-service restaurants, fast casual, sports bars, and neighborhood dining. Consistent traffic from the residential communities north and south of the corridor.' },
+      { name: 'Community Road & Midland Road', desc: 'Neighborhood commercial areas with local restaurants, cafes, and dining operations serving Poway\'s residential communities. A mix of independent operators and regional chain locations.' },
+      { name: 'Old Poway Park Area', desc: 'The historic commercial and community hub near Old Poway Park with local restaurants and community-focused dining. Weekend and event traffic drives volume spikes.' },
+      { name: 'Poway Business Park & Industrial', desc: 'Corporate cafeterias, catering operations, and commercial kitchen facilities in Poway\'s industrial and business park zones. Consistent institutional and employee dining volume.' },
+    ],
+    faqs: [
+      { q: 'Do you service Poway Road restaurants?', a: 'Yes. Poway Road and all Poway commercial corridors are within our service area. We run regular routes through Poway and East North County.' },
+      { q: 'How often do Poway restaurants need hood cleaning?', a: 'Most Poway full-service restaurants need quarterly service. Poway\'s hot inland summers can accelerate grease buildup, meaning some operations need more frequent cleaning than comparable kitchens in coastal areas.' },
+      { q: 'What documentation do you provide in Poway?', a: 'Every service includes before and after photos of the full system, a written service report, and an NFPA 96 compliance certificate accepted by San Diego County Health and Poway Fire Department.' },
+      { q: 'Do you offer same-day emergency hood cleaning in Poway?', a: 'Yes. Call (858) 361-2570 for same-day emergency service. We serve Poway and all of East North County and can typically dispatch the same day or next morning.' },
+    ],
+    heroImage: '/images/tech-rooftop-palms.jpg',
+  },
+  'santee': {
+    name: 'Santee',
+    title: 'Hood Cleaning Santee',
+    heroDesc: 'Professional commercial kitchen hood cleaning serving Santee, Santee Town Center, Mission Gorge Road, and the East County corridor. NFPA 96 certified service for restaurants and commercial kitchens.',
+    intro: "Core Hood Cleaning serves commercial kitchens throughout Santee, one of East County's fastest-growing cities. Santee Town Center, Mission Gorge Road, and the Cuyamaca Street commercial area host a growing roster of restaurants, sports bars, breweries, and quick-service operations serving Santee's substantial and expanding residential base. We provide full-system NFPA 96 cleaning from hood canopy to rooftop exhaust fan on every visit, with photo documentation and a compliance certificate on every job.",
+    whyUs: "Santee's East County location means hot summers that accelerate grease buildup in kitchen exhaust systems. San Diego County Health and Santee Fire actively inspect commercial kitchens and require current NFPA 96 compliance documentation. We schedule service during your closed hours, respond same-day for red tag emergencies, and give you the complete documentation package your inspectors need. Our East County routes serve Santee on a consistent schedule.",
+    neighborhoods: [
+      { name: 'Santee Town Center & Mission Gorge Road', desc: 'Santee\'s primary commercial hub with national chains, neighborhood restaurants, and growing local operators. High foot traffic from the surrounding residential communities drives consistent daily volume.' },
+      { name: 'Cuyamaca Street Corridor', desc: 'Santee\'s second major commercial strip with full-service restaurants, sports bars, and fast casual operations. Consistent residential traffic and a strong local dining community.' },
+      { name: 'Magnolia Avenue & North Santee', desc: 'Neighborhood commercial areas serving North Santee residential communities. Local restaurants, cafes, and community dining spots with consistent neighborhood-driven volume.' },
+      { name: 'Santee Business Park & Industrial', desc: 'Commercial and industrial kitchen operations including catering, commissaries, and corporate food service in Santee\'s growing business park area.' },
+    ],
+    faqs: [
+      { q: 'Do you service Santee Town Center restaurants?', a: 'Yes. Santee Town Center and all Santee commercial areas are within our East County service corridor. We run regular routes through Santee and can get your kitchen on a consistent NFPA 96 schedule.' },
+      { q: 'How often do Santee restaurants need hood cleaning?', a: 'Most Santee full-service restaurants need quarterly service. East County summer heat can increase cleaning frequency needs for high-volume operations. We assess your kitchen and recommend the correct interval under NFPA 96.' },
+      { q: 'Do you service breweries and sports bars in Santee?', a: 'Yes. Santee\'s growing craft brewery and sports bar scene is within our service area. We service all commercial kitchen exhaust systems with full NFPA 96 documentation on every visit.' },
+      { q: 'Do you offer same-day emergency hood cleaning in Santee?', a: 'Yes. Call (858) 361-2570. We offer same-day emergency service throughout Santee and East County. We\'ve helped East County operators resolve red tag violations within 24 hours.' },
+    ],
+    heroImage: '/images/hero-commercial-kitchen.jpg',
+  },
+}
+
+// Merge all location data
+const ALL_LOCATIONS = { ...LOCATIONS, ...EXTRA_LOCATIONS }
+
+// Generate remaining locations with standard template (safety net for any unlisted slugs)
+const STANDARD_LOCATIONS: string[] = []
 
 function getLocationData(slug: string) {
-  if (LOCATIONS[slug]) return LOCATIONS[slug]
+  if (ALL_LOCATIONS[slug]) return ALL_LOCATIONS[slug]
   const name = slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
   return {
     name,
@@ -169,10 +452,7 @@ function getLocationData(slug: string) {
 }
 
 export async function generateStaticParams() {
-  const allSlugs = [
-    ...Object.keys(LOCATIONS),
-    ...STANDARD_LOCATIONS
-  ]
+  const allSlugs = Object.keys(ALL_LOCATIONS)
   return allSlugs.map(slug => ({ slug }))
 }
 
