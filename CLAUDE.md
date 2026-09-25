@@ -14,14 +14,18 @@ cd ~/Desktop/core-hood-cleaning-website && git add . && git commit -m "<message>
 
 ## Weekly SEO Workflow
 
-1. Chase drops Google Search Console CSV export (or pastes key metrics)
-2. Claude analyzes for keyword gaps and opportunities
+This runs on an automated Thursday schedule (scheduled task "Weekly seo blog post"). It is fully autonomous end to end — no review step, no clipboard, no waiting on Chase. Confirmed by Chase on 2026-09-25.
+
+1. Claude pulls real Search Console data from GA4 (property 493228273) for keyword gap analysis
+2. Claude analyzes for keyword gaps and opportunities against agent-memory.json active_targets
 3. Claude writes 1 new blog post as a `.tsx` file targeting an opportunity keyword
 4. Claude updates `src/app/blog/page.tsx` POSTS array
 5. Claude updates `src/app/sitemap.ts` with the new post
-6. Claude updates `agent/agent-memory.json` to track the keyword as active — NOTE: agent-memory.json also lives in ~/Desktop/core-services-agents/seo/ as the master copy
-7. Claude writes deploy command to clipboard via computer-use
-8. Chase pastes in Terminal and hits Enter → Vercel auto-deploys
+6. Claude updates `agent-memory.json` in ~/Desktop/core-services-agents/seo/ (the master copy) to track the keyword as active
+7. Claude verifies the new post against the hard rules and template below
+8. Claude commits and pushes directly: `cd ~/Desktop/core-hood-cleaning-website && git add . && git commit -m "Add [slug] blog post" && git push` — run this itself via the device shell, do not hand it to Chase
+9. Vercel auto-deploys from the push
+10. Claude notifies Chase with what was published and a link, after the fact — this is a status update, not a request for approval
 
 ## File Structure Reference
 
@@ -169,4 +173,4 @@ The reference template is `emergency-hood-cleaning-san-diego/page.tsx`. Every ne
 - Use CSS class names not defined in `globals.css`
 - State specific pricing unless Chase provides current numbers
 - Repeat a keyword already tracked as `active` in `agent-memory.json`
-- Push to git — Chase always does this step
+- Push to git for anything OTHER than the automated Thursday weekly SEO blog post — for ad hoc work in a live conversation, always use the clipboard flow so Chase reviews and runs it himself. Exception: the weekly SEO blog post workflow commits and pushes automatically without waiting for review, per Chase's explicit request on 2026-09-25.
