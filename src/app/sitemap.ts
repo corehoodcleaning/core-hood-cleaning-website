@@ -30,6 +30,7 @@ const BLOG_POSTS = [
   { slug: 'hood-cleaning-certificate-of-compliance-san-diego', date: '2026-09-11' },
   { slug: 'kitchen-exhaust-duct-cleaning-san-diego', date: '2026-09-17' },
   { slug: 'commissary-kitchen-hood-cleaning-san-diego', date: '2026-09-25' },
+  { slug: 'kitchen-exhaust-inspection-san-diego', date: '2026-10-01' },
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
