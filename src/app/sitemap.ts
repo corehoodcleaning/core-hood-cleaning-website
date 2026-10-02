@@ -6,6 +6,10 @@ const LOCATIONS = [
   'la-mesa','coronado','encinitas','del-mar','miramar','rancho-bernardo','poway','santee'
 ]
 
+const INDUSTRIES = [
+  'restaurants','bars-breweries','hotels-resorts','schools-hospitals','commissaries','stadiums-sports-venues'
+]
+
 const BLOG_POSTS = [
   { slug: 'how-often-should-restaurant-hood-be-cleaned', date: '2025-02-01' },
   { slug: 'what-is-nfpa-96', date: '2025-01-01' },
@@ -38,7 +42,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const locationPages = LOCATIONS.map((slug) => ({
     url: `${base}/locations/${slug}`,
-    lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.8,
   }))
@@ -51,16 +54,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   const staticPages = [
-    { url: base, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 1.0 },
-    { url: `${base}/services/hood-cleaning`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.9 },
-    { url: `${base}/services/filter-exchange`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.9 },
-    { url: `${base}/services/nfpa-inspection`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.9 },
-    { url: `${base}/about`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.7 },
-    { url: `${base}/blog`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.8 },
+    { url: base, changeFrequency: 'weekly' as const, priority: 1.0 },
+    { url: `${base}/services/hood-cleaning`, changeFrequency: 'weekly' as const, priority: 0.9 },
+    { url: `${base}/services/filter-exchange`, changeFrequency: 'weekly' as const, priority: 0.9 },
+    { url: `${base}/services/nfpa-inspection`, changeFrequency: 'weekly' as const, priority: 0.9 },
+    { url: `${base}/about`, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: `${base}/blog`, changeFrequency: 'weekly' as const, priority: 0.8 },
+    { url: `${base}/locations`, changeFrequency: 'monthly' as const, priority: 0.8 },
   ]
+
+  const industryPages = INDUSTRIES.map((slug) => ({
+    url: `${base}/industries/${slug}`,
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }))
 
   return [
     ...staticPages,
+    ...industryPages,
     ...blogPages,
     ...locationPages,
   ]

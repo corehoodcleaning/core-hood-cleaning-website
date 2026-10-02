@@ -12,6 +12,7 @@ const LOCATIONS: Record<string, {
   whyUs: string
   neighborhoods: { name: string; desc: string }[]
   faqs: { q: string; a: string }[]
+  extra?: { heading: string; paragraphs: string[] }
   heroImage: string
 }> = {
   'pacific-beach': {
@@ -215,7 +216,17 @@ const EXTRA_LOCATIONS: typeof LOCATIONS = {
       { q: 'How often do Vista restaurants need hood cleaning?', a: 'Most Vista full-service restaurants need quarterly service. High-volume operations, busy brewery kitchens, and restaurants with extended hours often qualify for monthly cleaning under NFPA 96. We assess your operation and recommend the correct interval.' },
       { q: 'Do you work with older downtown Vista buildings?', a: 'Yes. Downtown Vista has a mix of older commercial buildings with aging ductwork and varied exhaust system configurations. We have experience cleaning complex and non-standard systems.' },
       { q: 'Is Vista within your regular service area?', a: 'Yes. Vista is within our North County service corridor and we run regular scheduled routes through the area. Call (858) 361-2570 to get on our schedule.' },
+      { q: 'What does NFPA 96 require for a Vista restaurant?', a: 'NFPA 96 requires inspection and cleaning monthly for solid-fuel cooking, quarterly for high-volume cooking such as charbroiling and wok, semi-annually for moderate volume, and annually for low-volume kitchens. We assess your cooking type and volume and recommend the correct interval.' },
+      { q: 'Can you clean overnight so our Vista kitchen does not lose a service?', a: 'Yes. We schedule service after you close so your crew opens to a clean, compliant system with no lost service hours.' },
+      { q: 'What should I have ready for a Vista fire or health inspection?', a: 'Your most recent cleaning certificate and written service report. We provide both, along with before and after photos, after every visit.' },
     ],
+    extra: {
+      heading: 'NFPA 96 Compliance for Vista Kitchens',
+      paragraphs: [
+        "NFPA 96 sets how often your exhaust system must be inspected and cleaned based on what you cook: monthly for solid-fuel cooking, quarterly for high-volume cooking like charbroiling and wok, semi-annually for moderate volume, and annually for low volume. Vista's taprooms and restaurants with long hours and heavy fryer and grill use often fall in the quarterly or more frequent range.",
+        "After every service you get a compliance certificate, before and after photos of the full system, and a written report to hand to a fire inspector, health inspector or insurance carrier. In older Eucalyptus Avenue buildings, where ductwork is hard to see, that photo record matters most.",
+      ],
+    },
     heroImage: '/images/tech-rooftop-palms.jpg',
   },
   'san-marcos': {
@@ -235,7 +246,17 @@ const EXTRA_LOCATIONS: typeof LOCATIONS = {
       { q: 'How often do San Marcos restaurants need hood cleaning?', a: 'Frequency depends on cooking volume and equipment type. Most full-service restaurants need quarterly service. High-volume operations and those near the university often need monthly cleaning under NFPA 96.' },
       { q: 'Do you serve newer commercial developments in San Elijo Hills?', a: 'Yes. San Elijo Hills and all San Marcos commercial areas are within our service corridor. Newer developments have modern exhaust systems that are straightforward to maintain on a compliant schedule.' },
       { q: 'What documentation do San Marcos fire and health inspectors accept?', a: 'San Diego County Health and San Marcos Fire Department accept our NFPA 96 compliance certificates. Every service includes the certificate, a full written service report, and before and after photo documentation.' },
+      { q: 'What does NFPA 96 require for a San Marcos restaurant?', a: 'NFPA 96 requires inspection and cleaning monthly for solid-fuel cooking, quarterly for high-volume cooking such as charbroiling and wok, semi-annually for moderate volume, and annually for low-volume kitchens. We assess your cooking type and volume and recommend the correct interval.' },
+      { q: 'Can you clean overnight near Cal State San Marcos or in San Elijo Hills?', a: 'Yes. We schedule service after you close so your crew opens to a clean, compliant system, whether you are near campus, in San Elijo Hills or in the Richmar industrial area.' },
+      { q: 'What should I have ready for a San Marcos fire or health inspection?', a: 'Your most recent cleaning certificate and written service report. We provide both, along with before and after photos, after every visit.' },
     ],
+    extra: {
+      heading: 'NFPA 96 Compliance for San Marcos Kitchens',
+      paragraphs: [
+        "NFPA 96 sets cleaning frequency by cooking type and volume: monthly for solid-fuel, quarterly for high-volume, semi-annually for moderate, annually for low volume. Restaurants near Cal State San Marcos and along Twin Oaks Valley Road run long hours and heavy volume, so many land at quarterly or more frequent service. Commissaries and catering kitchens in the Richmar industrial area often need the same.",
+        "Every service ends with a compliance certificate, before and after photos of the full system, and a written report you can show a fire inspector, health inspector or insurer. We schedule overnight so your morning crew starts in a clean, compliant kitchen.",
+      ],
+    },
     heroImage: '/images/tech-kitchen-cleaning.jpg',
   },
   'national-city': {
@@ -423,6 +444,30 @@ const EXTRA_LOCATIONS: typeof LOCATIONS = {
 // Merge all location data
 const ALL_LOCATIONS = { ...LOCATIONS, ...EXTRA_LOCATIONS }
 
+// Nearby cities for internal linking (geographic neighbors)
+const NEARBY: Record<string, string[]> = {
+  'la-jolla': ['pacific-beach','del-mar','miramar'],
+  'pacific-beach': ['la-jolla','mission-valley','downtown-san-diego'],
+  'mission-valley': ['downtown-san-diego','la-mesa','pacific-beach'],
+  'downtown-san-diego': ['coronado','mission-valley','national-city'],
+  'chula-vista': ['national-city','coronado','la-mesa'],
+  'oceanside': ['carlsbad','vista','san-marcos'],
+  'carlsbad': ['oceanside','encinitas','san-marcos'],
+  'escondido': ['san-marcos','poway','rancho-bernardo'],
+  'el-cajon': ['la-mesa','santee','poway'],
+  'vista': ['san-marcos','oceanside','escondido'],
+  'san-marcos': ['vista','escondido','carlsbad'],
+  'national-city': ['chula-vista','downtown-san-diego','coronado'],
+  'la-mesa': ['el-cajon','mission-valley','santee'],
+  'coronado': ['downtown-san-diego','national-city','chula-vista'],
+  'encinitas': ['carlsbad','del-mar','san-marcos'],
+  'del-mar': ['la-jolla','encinitas','rancho-bernardo'],
+  'miramar': ['rancho-bernardo','mission-valley','la-jolla'],
+  'rancho-bernardo': ['poway','escondido','miramar'],
+  'poway': ['rancho-bernardo','escondido','el-cajon'],
+  'santee': ['el-cajon','la-mesa','poway'],
+}
+
 // Generate remaining locations with standard template (safety net for any unlisted slugs)
 const STANDARD_LOCATIONS: string[] = []
 
@@ -458,18 +503,51 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const loc = getLocationData(params.slug)
+  const long = `Hood Cleaning in ${loc.name}, CA | NFPA 96 Certified | Core Hood Cleaning`
+  const title = long.length <= 70 ? long : `Hood Cleaning in ${loc.name}, CA | Core Hood Cleaning`
   return {
-    title: `${loc.title} | NFPA 96 Certified | Core Hood Cleaning`,
-    description: loc.heroDesc,
+    title: { absolute: title },
+    description: `NFPA 96 certified commercial hood cleaning in ${loc.name}. Restaurants, breweries & commercial kitchens. Photo proof every visit. Call (858) 361-2570.`,
     alternates: { canonical: `https://www.corehoodcleaning.com/locations/${params.slug}` }
   }
 }
 
 export default function LocationPage({ params }: { params: { slug: string } }) {
   const loc = getLocationData(params.slug)
+  const extra = (loc as { extra?: { heading: string; paragraphs: string[] } }).extra
+  const nearby = (NEARBY[params.slug] || []).filter(sl => ALL_LOCATIONS[sl])
+  const pageUrl = `https://www.corehoodcleaning.com/locations/${params.slug}/`
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Service',
+        '@id': `${pageUrl}#service`,
+        name: `Commercial Kitchen Hood Cleaning in ${loc.name}`,
+        serviceType: 'Commercial kitchen exhaust hood cleaning',
+        description: loc.intro,
+        provider: { '@id': 'https://www.corehoodcleaning.com' },
+        areaServed: { '@type': 'City', name: loc.name, containedInPlace: { '@type': 'AdministrativeArea', name: 'San Diego County, California' } },
+        url: pageUrl,
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: loc.faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.corehoodcleaning.com/' },
+          { '@type': 'ListItem', position: 2, name: 'Locations', item: 'https://www.corehoodcleaning.com/locations/' },
+          { '@type': 'ListItem', position: 3, name: loc.name, item: pageUrl },
+        ],
+      },
+    ],
+  }
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Nav />
 {/* HERO */}
       <section style={{paddingTop:'0', minHeight:'55vh', background:'var(--black)', position:'relative', overflow:'hidden', display:'flex', alignItems:'center'}}>
@@ -535,6 +613,18 @@ export default function LocationPage({ params }: { params: { slug: string } }) {
         </div>
       </section>
 
+      {/* COMPLIANCE (optional per-city section) */}
+      {extra && (
+        <section style={{padding:'72px 0', background:'var(--white)', borderTop:'1px solid var(--gray-light)'}}>
+          <div className="container" style={{maxWidth:'800px'}}>
+            <h2 className="section-title" style={{marginBottom:'24px'}}>{extra.heading}</h2>
+            {extra.paragraphs.map((p, i) => (
+              <p key={i} style={{fontSize:'0.95rem', color:'var(--gray-text)', lineHeight:'1.8', marginBottom:'20px'}}>{p}</p>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* NEIGHBORHOODS */}
       <section style={{padding:'80px 0', background:'var(--off-white)'}}>
         <div className="container">
@@ -594,6 +684,22 @@ export default function LocationPage({ params }: { params: { slug: string } }) {
           </div>
         </div>
       </section>
+
+      {/* NEARBY AREAS */}
+      {nearby.length > 0 && (
+        <section style={{padding:'56px 0', background:'var(--off-white)'}}>
+          <div className="container" style={{textAlign:'center'}}>
+            <p className="section-label">Nearby Areas</p>
+            <h2 className="section-title" style={{marginBottom:'24px'}}>Also Serving Near {loc.name}</h2>
+            <div style={{display:'flex', gap:'12px', justifyContent:'center', flexWrap:'wrap'}}>
+              {nearby.map(sl => (
+                <Link key={sl} href={`/locations/${sl}`} className="btn-secondary" style={{color:'var(--black)', borderColor:'var(--gray-light)'}}>Hood Cleaning {ALL_LOCATIONS[sl].name}</Link>
+              ))}
+              <Link href="/locations" className="btn-secondary" style={{color:'var(--black)', borderColor:'var(--gray-light)'}}>All Locations</Link>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* CTA */}
       <section style={{padding:'80px 0', background:'var(--rust)'}}>

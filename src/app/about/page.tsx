@@ -1,11 +1,14 @@
 import type { Metadata } from 'next'
-import seoConfig from '@/seo-config.json'
 import Image from 'next/image'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
-export const metadata: Metadata = { ...seoConfig.about, alternates: { canonical: 'https://www.corehoodcleaning.com/about' } }
+export const metadata: Metadata = {
+  title: { absolute: 'About Core Hood Cleaning | NFPA 96 Certified Team in San Diego' },
+  description: 'Meet the NFPA 96 certified team behind Core Hood Cleaning. 90+ Google reviews, 4.9 stars. Full-system kitchen exhaust cleaning with photo proof on every job.',
+  alternates: { canonical: 'https://www.corehoodcleaning.com/about' },
+}
 
 export default function AboutPage() {
   return (

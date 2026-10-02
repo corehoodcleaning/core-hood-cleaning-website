@@ -241,6 +241,20 @@ export default function HoodCleaningPage() {
         </div>
       </section>
 
+      {/* SERVICE AREAS */}
+      <section style={{padding:'56px 0', background:'var(--off-white)'}}>
+        <div className="container" style={{textAlign:'center'}}>
+          <p className="section-label">Service Areas</p>
+          <h2 className="section-title" style={{marginBottom:'24px'}}>Commercial Hood Cleaning Across San Diego County</h2>
+          <div style={{display:'flex', gap:'12px', justifyContent:'center', flexWrap:'wrap'}}>
+            {[['oceanside','Oceanside'],['carlsbad','Carlsbad'],['vista','Vista'],['san-marcos','San Marcos'],['escondido','Escondido'],['la-jolla','La Jolla'],['downtown-san-diego','Downtown San Diego'],['el-cajon','El Cajon'],['chula-vista','Chula Vista']].map(([slug,name]) => (
+              <Link key={slug} href={`/locations/${slug}`} className="btn-secondary" style={{color:'var(--black)', borderColor:'var(--gray-light)'}}>Hood Cleaning {name}</Link>
+            ))}
+            <Link href="/locations" className="btn-secondary" style={{color:'var(--black)', borderColor:'var(--gray-light)'}}>All Locations</Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section style={{padding:'88px 0', background:'var(--rust)'}}>
         <div className="cta-inner">

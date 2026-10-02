@@ -22,9 +22,6 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
     googleBot: { index: true, follow: true }
-  },
-  verification: {
-    google: 'YOUR_GOOGLE_VERIFICATION_CODE',
   }
 }
 
@@ -38,7 +35,6 @@ const localBusinessSchema = {
   "url": "https://www.corehoodcleaning.com",
   "telephone": "+18583612570",
   "email": "chase@corehoodcleaning.com",
-  "priceRange": "$$",
   "image": "https://www.corehoodcleaning.com/images/core-hood-cleaning-logo.png",
   "address": {
     "@type": "PostalAddress",
@@ -82,8 +78,8 @@ const localBusinessSchema = {
   },
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "40",
+    "ratingValue": "4.9",
+    "reviewCount": "90",
     "bestRating": "5",
     "worstRating": "1"
   },

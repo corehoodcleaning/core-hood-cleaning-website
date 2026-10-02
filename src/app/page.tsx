@@ -41,7 +41,6 @@ export default function HomePage() {
     description: 'San Diego NFPA 96 certified commercial kitchen exhaust hood cleaning. Full system service from hood canopy to rooftop fan with photo documentation and compliance certificates on every job.',
     url: 'https://www.corehoodcleaning.com',
     telephone: '+18583612570',
-    priceRange: '$$',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'San Diego',

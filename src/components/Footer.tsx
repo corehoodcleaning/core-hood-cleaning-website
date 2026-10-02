@@ -29,9 +29,10 @@ export default function Footer() {
           <div className="footer-col">
             <h4>Locations</h4>
             <ul>
-              {['La Jolla','Pacific Beach','Downtown San Diego','Chula Vista','Oceanside','Carlsbad','Escondido'].map(l => (
+              {['La Jolla','Pacific Beach','Downtown San Diego','Chula Vista','Oceanside','Carlsbad','Escondido','Vista','San Marcos'].map(l => (
                 <li key={l}><Link href={`/locations/${l.toLowerCase().replace(/ /g,'-')}`}>{l}</Link></li>
               ))}
+              <li><Link href="/locations">All Locations</Link></li>
             </ul>
           </div>
           <div className="footer-col">
