@@ -41,30 +41,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://www.corehoodcleaning.com'
 
   const locationPages = LOCATIONS.map((slug) => ({
-    url: `${base}/locations/${slug}`,
+    url: `${base}/locations/${slug}/`,
     changeFrequency: 'monthly' as const,
     priority: 0.8,
   }))
 
   const blogPages = BLOG_POSTS.map(({ slug, date }) => ({
-    url: `${base}/blog/${slug}`,
+    url: `${base}/blog/${slug}/`,
     lastModified: new Date(date),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }))
 
   const staticPages = [
-    { url: base, changeFrequency: 'weekly' as const, priority: 1.0 },
-    { url: `${base}/services/hood-cleaning`, changeFrequency: 'weekly' as const, priority: 0.9 },
-    { url: `${base}/services/filter-exchange`, changeFrequency: 'weekly' as const, priority: 0.9 },
-    { url: `${base}/services/nfpa-inspection`, changeFrequency: 'weekly' as const, priority: 0.9 },
-    { url: `${base}/about`, changeFrequency: 'monthly' as const, priority: 0.7 },
-    { url: `${base}/blog`, changeFrequency: 'weekly' as const, priority: 0.8 },
-    { url: `${base}/locations`, changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: `${base}/`, changeFrequency: 'weekly' as const, priority: 1.0 },
+    { url: `${base}/services/hood-cleaning/`, changeFrequency: 'weekly' as const, priority: 0.9 },
+    { url: `${base}/services/filter-exchange/`, changeFrequency: 'weekly' as const, priority: 0.9 },
+    { url: `${base}/services/nfpa-inspection/`, changeFrequency: 'weekly' as const, priority: 0.9 },
+    { url: `${base}/about/`, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: `${base}/blog/`, changeFrequency: 'weekly' as const, priority: 0.8 },
+    { url: `${base}/locations/`, changeFrequency: 'monthly' as const, priority: 0.8 },
   ]
 
   const industryPages = INDUSTRIES.map((slug) => ({
-    url: `${base}/industries/${slug}`,
+    url: `${base}/industries/${slug}/`,
     changeFrequency: 'monthly' as const,
     priority: 0.8,
   }))
