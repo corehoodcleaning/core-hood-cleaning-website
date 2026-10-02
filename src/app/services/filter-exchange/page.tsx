@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
-export const metadata: Metadata = seoConfig["filter-exchange"]
+export const metadata: Metadata = { ...seoConfig["filter-exchange"], alternates: { canonical: 'https://www.corehoodcleaning.com/services/filter-exchange' } }
 
 const faqs = [
   {

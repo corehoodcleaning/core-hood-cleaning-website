@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
-export const metadata: Metadata = seoConfig["hood-cleaning"]
+export const metadata: Metadata = { ...seoConfig["hood-cleaning"], alternates: { canonical: 'https://www.corehoodcleaning.com/services/hood-cleaning' } }
 
 const SERVICE_FAQS = [
   { q: 'How long does a commercial hood cleaning take?', a: 'Most commercial hood cleanings take 2 to 4 hours depending on system size and grease buildup. Larger systems, multiple hoods, or heavily soiled ductwork may take longer. We always schedule around your closing time so kitchen operations are never interrupted.' },

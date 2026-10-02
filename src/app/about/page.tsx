@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
-export const metadata: Metadata = seoConfig.about
+export const metadata: Metadata = { ...seoConfig.about, alternates: { canonical: 'https://www.corehoodcleaning.com/about' } }
 
 export default function AboutPage() {
   return (

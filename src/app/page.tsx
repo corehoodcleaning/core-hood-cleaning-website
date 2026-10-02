@@ -6,7 +6,7 @@ import ReviewsCarousel from '@/components/ReviewsCarousel'
 import GalleryCarousel from '@/components/GalleryCarousel'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
-export const metadata: Metadata = seoConfig.homepage
+export const metadata: Metadata = { ...seoConfig.homepage, alternates: { canonical: 'https://www.corehoodcleaning.com' } }
 
 const LOCATIONS = [
   'Pacific Beach','La Jolla','Mission Valley','Downtown San Diego',
