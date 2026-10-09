@@ -36,6 +36,7 @@ const localBusinessSchema = {
   "telephone": "+18583612570",
   "email": "chase@corehoodcleaning.com",
   "image": "https://www.corehoodcleaning.com/images/core-hood-cleaning-logo.png",
+  "logo": "https://www.corehoodcleaning.com/images/core-hood-cleaning-logo.png",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "5284 Eastgate Mall",
