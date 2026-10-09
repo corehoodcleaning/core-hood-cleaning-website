@@ -16,7 +16,7 @@ cd ~/Desktop/core-hood-cleaning-website && git add . && git commit -m "<message>
 
 This runs on an automated Thursday schedule (scheduled task "Weekly seo blog post"). It is fully autonomous end to end — no review step, no clipboard, no waiting on Chase. Confirmed by Chase on 2026-09-25.
 
-1. Claude pulls real Search Console data from GA4 (property 493228273) for keyword gap analysis
+1. Claude pulls real query level Search Console data with the `google-search-console` MCP for keyword gap analysis (see "Search Console data" below)
 2. Claude analyzes for keyword gaps and opportunities against agent-memory.json active_targets
 3. Claude writes 1 new blog post as a `.tsx` file targeting an opportunity keyword
 4. Claude updates `src/app/blog/page.tsx` POSTS array
@@ -174,3 +174,25 @@ The reference template is `emergency-hood-cleaning-san-diego/page.tsx`. Every ne
 - State specific pricing unless Chase provides current numbers
 - Repeat a keyword already tracked as `active` in `agent-memory.json`
 - Push to git for anything OTHER than the automated Thursday weekly SEO blog post — for ad hoc work in a live conversation, always use the clipboard flow so Chase reviews and runs it himself. Exception: the weekly SEO blog post workflow commits and pushes automatically without waiting for review, per Chase's explicit request on 2026-09-25.
+
+## Git Lock Rule (weekly SEO deploy)
+
+Learned 2026-10-01: a read only `git status` run from the sandbox left an empty `.git/index.lock` that it could not delete, which made the real `git add` fail.
+
+- Do NOT run `git status`, `git diff`, `git log`, `git fetch` or any other git command in this repo before the deploy. Verify changes by checking files directly, not with git.
+- If git is needed before the deploy, use `git --no-optional-locks status` (it does not create a lock file).
+- Deploy step order: (1) check `ls .git/index.lock`. If it exists AND is zero bytes AND no git process is running, call device_request_delete_permission for the website folder, then `rm .git/index.lock`. If it is not empty or a git process is running, stop and report. (2) Run `git add . && git commit -m "Add [slug] blog post" && git push`.
+- Never force anything, never use `--force`, never delete anything in `.git` other than an empty stale `index.lock`.
+
+## Search Console data
+
+Primary source: the `google-search-console` MCP (read only, connected 2026-10-02). Site: `sc-domain:corehoodcleaning.com`.
+
+- Call `gsc_search_analytics` with `dimensions: ["query"]`, `row_limit: 500` and a 28 day window that ends 3 days ago (Search Console data lags 2 to 3 days). Call it again with `dimensions: ["page"]` to see which pages get the impressions.
+- Good blog targets are queries with real impressions but few clicks or a position beyond page one. Check them against `agent-memory.json` active_targets before picking one.
+- After a deploy, `gsc_inspect_url` can confirm whether the new post is indexed.
+- If the tool returns an error such as `accessNotConfigured` or "No properties visible", say so in the status update instead of guessing.
+
+Fallbacks, in order: (1) GA4 `run_report` on property 493228273, which only gives a landing page proxy; (2) the Search Console UI, below.
+
+If the `google-search-console` MCP is missing from the session or keeps erroring, pull the data from the Search Console UI with Claude in Chrome: https://search.google.com/search-console/performance/search-analytics?resource_id=sc-domain%3Acorehoodcleaning.com&num_of_days=90&breakdown=query&metrics=CLICKS%2CIMPRESSIONS%2CPOSITION . Set rows per page to 500 through javascript_tool (click the listbox with aria-label "Number of rows per page", then the option "500"). All rows are then in the DOM and can be read with javascript_tool. This gives true query level data, which is better than the GA4 page level proxy.
