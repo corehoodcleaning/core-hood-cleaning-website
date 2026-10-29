@@ -38,6 +38,7 @@ const BLOG_POSTS = [
   { slug: 'fire-code-hood-cleaning-san-diego', date: '2026-10-09' },
   { slug: 'exhaust-fan-cleaning-san-diego', date: '2026-10-15' },
   { slug: 'certified-hood-cleaning-san-diego', date: '2026-10-22' },
+  { slug: 'commercial-kitchen-cleaning-san-diego', date: '2026-10-29' },
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {

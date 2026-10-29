@@ -1,0 +1,183 @@
+{
+  "mcpServers": {
+    "analytics-mcp": {
+      "command": "/opt/homebrew/bin/uvx",
+      "args": [
+        "--python",
+        "3.12",
+        "analytics-mcp"
+      ],
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "/Users/chasemangini/Desktop/core-services-agents/google-analytics-mcp/core-services-mcp-f36cdd968002.json",
+        "GOOGLE_PROJECT_ID": "core-services-mcp"
+      }
+    },
+    "google-sheets": {
+      "command": "python3.14",
+      "args": [
+        "/Users/chasemangini/Desktop/core-services-agents/google-sheets-mcp/server.py"
+      ],
+      "env": {
+        "GOOGLE_SERVICE_ACCOUNT_KEY": "/Users/chasemangini/Desktop/core-services-agents/google-sheets-mcp/service-account-key.json"
+      }
+    },
+    "fieldroutes": {
+      "command": "node",
+      "args": [
+        "/Users/chasemangini/Documents/fieldroutes-mcp-server/dist/index.js"
+      ],
+      "env": {
+        "FIELDROUTES_SUBDOMAIN": "coreservices",
+        "FIELDROUTES_AUTH_KEY": "rujlmda8rcvn9582oa3sqe68p9qprfll81797p4jcad3mi6f5g35rhnlflbbtc3o",
+        "FIELDROUTES_AUTH_TOKEN": "h2j6dhapo25g92qjbultgm710e321989vdseql4p5973h5qerj97t2t5463j2ng5"
+      }
+    },
+    "google-search-console": {
+      "command": "/opt/homebrew/bin/uv",
+      "args": [
+        "run",
+        "--python",
+        "3.12",
+        "/Users/chasemangini/Desktop/core-services-agents/google-search-console-mcp/server.py"
+      ],
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "/Users/chasemangini/Desktop/core-services-agents/google-analytics-mcp/core-services-mcp-f36cdd968002.json"
+      }
+    }
+  },
+  "coworkUserFilesPath": "/Users/chasemangini/Claude",
+  "preferences": {
+    "coworkBrowserToolsEnabled": true,
+    "coworkPreferredBrowser": "chrome",
+    "launchPreviewPersistedWorkspaces": [
+      "cowork-shared"
+    ],
+    "launchPreviewSessionScopedSessions": [],
+    "launchPreviewAllowedOrigins": [
+      "https://domains.squarespace.com"
+    ],
+    "launchChromeImportPrompt": "done",
+    "localAgentModeTrustedFolders": [
+      "/Users/chasemangini/Desktop/core-services-agents",
+      "/Users/chasemangini/Desktop/core-services-maintenance",
+      "/Users/chasemangini/Desktop/core-hood-cleaning-website"
+    ],
+    "remoteFolderConsentMemory": [
+      "/Users/chasemangini/Desktop/core-services-agents",
+      "/Users/chasemangini/Desktop/core-hood-cleaning-website",
+      "/Users/chasemangini/Desktop/Core Services LLC"
+    ],
+    "remoteSessionFolderGrants": {
+      "session_01BLCnptY4UJbMdK5xrL7rZc": [
+        "/Users/chasemangini/Desktop/core-services-agents",
+        "/Users/chasemangini/Desktop/core-hood-cleaning-website"
+      ],
+      "session_01L4vUTNXs7hx5RJzyY3VhSy": [
+        "/Users/chasemangini/Desktop/core-hood-cleaning-website",
+        "/Users/chasemangini/Desktop/core-services-agents"
+      ],
+      "session_012tPMdFyzWhr6eHb8aQwcc2": [
+        "/Users/chasemangini/Desktop/core-services-agents",
+        "/Users/chasemangini/Desktop/core-hood-cleaning-website"
+      ],
+      "session_01SEsU9NBsH8gZsoefcLJSZ1": [
+        "/Users/chasemangini/Desktop/Core Services LLC"
+      ]
+    },
+    "remoteChatFolderGrants": {
+      "97f2dfd6-e383-47b0-96c4-88931da8af5b": {
+        "orgUuid": "7e023a56-38da-4271-a1db-8393e83537ee",
+        "accountUuid": "de36d7b9-29af-4619-b30d-d3ee7c7fe952",
+        "folders": [
+          "/Users/chasemangini/Desktop/core-hood-cleaning-website",
+          "/Users/chasemangini/Desktop/Core Services LLC"
+        ]
+      },
+      "4ab18b8c-de01-4fdf-bbfd-c24461660836": {
+        "orgUuid": "7e023a56-38da-4271-a1db-8393e83537ee",
+        "accountUuid": "de36d7b9-29af-4619-b30d-d3ee7c7fe952",
+        "folders": [
+          "/Users/chasemangini/Desktop/core-hood-cleaning-website",
+          "/Users/chasemangini/Desktop/core-services-agents",
+          "/Users/chasemangini/Desktop/Core Services LLC"
+        ]
+      },
+      "46d46389-91f8-4093-8e10-24a5cd56d316": {
+        "orgUuid": "7e023a56-38da-4271-a1db-8393e83537ee",
+        "accountUuid": "de36d7b9-29af-4619-b30d-d3ee7c7fe952",
+        "folders": [
+          "/Users/chasemangini/Desktop/core-hood-cleaning-website",
+          "/Users/chasemangini/Desktop/core-services-agents"
+        ]
+      }
+    },
+    "coworkLegacyRootGrantsPruned": true,
+    "coworkHasBoundRoutine": {
+      "7e023a56-38da-4271-a1db-8393e83537ee": true
+    },
+    "routineFolderGrants": {
+      "trig_018b8zLhPBRvWrKeSGnaKVdG": {
+        "orgUuid": "7e023a56-38da-4271-a1db-8393e83537ee",
+        "accountUuid": "de36d7b9-29af-4619-b30d-d3ee7c7fe952",
+        "folders": [
+          "/Users/chasemangini/Desktop/core-services-agents",
+          "/Users/chasemangini/Desktop/core-hood-cleaning-website"
+        ]
+      },
+      "trig_01GbJ2CtDbwP5qxN7YzKJNj5": {
+        "orgUuid": "7e023a56-38da-4271-a1db-8393e83537ee",
+        "accountUuid": "de36d7b9-29af-4619-b30d-d3ee7c7fe952",
+        "folders": [
+          "/Users/chasemangini/Desktop/core-services-agents"
+        ]
+      }
+    },
+    "allowAllBrowserActions": true,
+    "coworkScheduledTasksEnabled": true,
+    "coworkHipaaRestricted": false,
+    "orgWorkAcrossAppsDisabled": false,
+    "ccdScheduledTasksEnabled": true,
+    "earlyWindowShowLatched": true,
+    "storeReadCacheLatched": true,
+    "sidebarMode": "chat",
+    "bypassPermissionsGateByAccount": {
+      "de36d7b9-29af-4619-b30d-d3ee7c7fe952": false
+    },
+    "coworkWebSearchEnabled": true,
+    "coworkModelAutoFallbackByAccount": {
+      "de36d7b9-29af-4619-b30d-d3ee7c7fe952": true
+    },
+    "chicagoEnabled": true,
+    "remoteToolsDeviceName": "macbook-pro-local",
+    "chicagoBackgroundIntroSeen": true,
+    "epitaxyPrefs": {
+      "starred-local-code-sessions": [],
+      "starred-cowork-spaces": [],
+      "starred-session-groups": [],
+      "dframe-local-slice": {
+        "pinnedOrder": [],
+        "homeProjectsPinnedOrder": []
+      },
+      "dframe-group-scopes": {},
+      "ccd-sessions-filter": {
+        "state": {
+          "selectedProjects": []
+        },
+        "version": 0
+      },
+      "desktop-frame.paneStore.v1": {
+        "state": {
+          "extraPanesByMode": {},
+          "colWeightsByMode": {},
+          "rowSplit": 0.5,
+          "draftNonce": 0,
+          "lastPrimaryCodeSession": null
+        },
+        "version": 4
+      },
+      "starred-local-routines": [],
+      "epitaxy-transcript-links-in-preview": false,
+      "epitaxy-transcript-links-chooser-seen": true
+    }
+  }
+}
