@@ -26,3 +26,7 @@ debug.js
 
 # macOS
 .DS_Store
+
+# Claude config backups contain API keys, never commit
+claude_config_backup.json
+*config_backup*.json
