@@ -41,6 +41,7 @@ const BLOG_POSTS = [
   { slug: 'commercial-kitchen-cleaning-san-diego', date: '2026-10-29' },
   { slug: 'grease-filter-exchange-program-san-diego', date: '2026-11-04' },
   { slug: 'commercial-kitchen-cleaning-coronado-ca', date: '2026-11-12' },
+  { slug: 'commercial-kitchen-cleaning-la-jolla-ca', date: '2026-11-20' },
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
